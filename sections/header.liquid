@@ -1,193 +1,190 @@
 <header>
-        <div style="position: sticky; top: 0; z-index: 5;" class="navbar bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand pinyon-script-regular text-light" href="#">J. Hawks</a>
-            </div>
-        </div>
+  <div style="position: sticky; top: 0; z-index: 5;" class="navbar bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand pinyon-script-regular text-light" href="#">J. Hawks</a>
+      <div class="header__menu">
+        {% for link in section.settings.menu.links %}
+          {{ link.title | link_to: link.url }}
+        {% endfor %}
+      </div>
+      <div class="header__icons">
+        {% if shop.customer_accounts_enabled %}
+          {{ 'icon-account.svg' | inline_asset_content | link_to: routes.account_url }}
+        {% endif %}
 
-  <div class="header__menu">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
-  </div>
+        <a href="{{ routes.cart_url }}">
+          {% if cart.item_count > 0 %}
+            <sup>{{ cart.item_count }}</sup>
+          {% endif %}
 
-  <div class="header__icons">
-    {% if shop.customer_accounts_enabled %}
-      {{ 'icon-account.svg' | inline_asset_content | link_to: routes.account_url }}
-    {% endif %}
-
-    <a href="{{ routes.cart_url }}">
-      {% if cart.item_count > 0 %}
-        <sup>{{ cart.item_count }}</sup>
-      {% endif %}
-
-      {{ 'icon-cart.svg' | inline_asset_content }}
-    </a>
+          {{ 'icon-cart.svg' | inline_asset_content }}
+        </a>
+      </div>
+    </div>
   </div>
 </header>
 
 {% stylesheet %}
-/*
- * Image optimization through a CDN?
- *
- */
+  /*
+   * Image optimization through a CDN?
+   *
+   */
 
-.cover {
-    /*   -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
-    filter: grayscale(100%);*/
-    z-index: 0;
-}
+  .cover {
+      /*   -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0
+      filter: grayscale(100%);*/
+      z-index: 0;
+  }
 
-/*
+  /*
 
-#804E27
-#BF7D3A
-#F7CA79
-#383838
-#F4E1D2
+  #804E27
+  #BF7D3A
+  #F7CA79
+  #383838
+  #F4E1D2
 
-*/
-.overlay {
-    background-color: black;
-    opacity: 0.5;
-    height: 100vh;
-    position: absolute;
-    width: 100vw;
-    top: 0;
-    z-index: 1;
-}
+  */
+  .overlay {
+      background-color: black;
+      opacity: 0.5;
+      height: 100vh;
+      position: absolute;
+      width: 100vw;
+      top: 0;
+      z-index: 1;
+  }
 
-.mld {
-    font-family: "Monsieur La Doulaise", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
+  .mld {
+      font-family: "Monsieur La Doulaise", cursive;
+      font-weight: 400;
+      font-style: normal;
+  }
 
-.pinyon-script-regular {
-    font-family: "Pinyon Script", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
+  .pinyon-script-regular {
+      font-family: "Pinyon Script", cursive;
+      font-weight: 400;
+      font-style: normal;
+  }
 
-.inconsolata-expanded {
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings: "wdth" 125;
-}
+  .inconsolata-expanded {
+      font-family: "Inconsolata", monospace;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
+      font-variation-settings: "wdth" 125;
+  }
 
-.overlay-title {
-    color: white;
-    z-index: 1;
-}
-.cover-container {
-    height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -6;
-    position: absolute;
-    top: 0;
+  .overlay-title {
+      color: white;
+      z-index: 1;
+  }
+  .cover-container {
+      height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -6;
+      position: absolute;
+      top: 0;
 
-    /*   -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
-    filter: grayscale(100%);*/
-    z-index: 0;
-}
-.page-content {
-    position: relative;
-    top: 100vh;
-}
-body {
-    background-color: #f2f2f2;
-    overflow-x: hidden;
-}
-.btn-primary {
-    background-color: #383838;
-}
-.highlight {
-}
-.midpage {
-    height: 100vh;
-}
+      /*   -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0
+      filter: grayscale(100%);*/
+      z-index: 0;
+  }
+  .page-content {
+      position: relative;
+      top: 100vh;
+  }
+  body {
+      background-color: #f2f2f2;
+      overflow-x: hidden;
+  }
+  .btn-primary {
+      background-color: #383838;
+  }
+  .highlight {
+  }
+  .midpage {
+      height: 100vh;
+  }
 
-.carousel-animation {
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: 0.5s;
-    height: 50%;
-}
-.carousel-animation:hover {
-    height: 100%;
-    background-color: rgba(0, 0, 0, 1);
-    animation-name: height-expand;
-    animation-duration: 0.5s;
-}
+  .carousel-animation {
+      background-color: rgba(0, 0, 0, 0.8);
+      transition: 0.5s;
+      height: 50%;
+  }
+  .carousel-animation:hover {
+      height: 100%;
+      background-color: rgba(0, 0, 0, 1);
+      animation-name: height-expand;
+      animation-duration: 0.5s;
+  }
 
-@keyframes height-expand {
-    from {
-        height: 50%;
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-    to {
-        height: 100%;
-        background-color: rgba(0, 0, 0, 1);
-    }
-}
+  @keyframes height-expand {
+      from {
+          height: 50%;
+          background-color: rgba(0, 0, 0, 0.8);
+      }
+      to {
+          height: 100%;
+          background-color: rgba(0, 0, 0, 1);
+      }
+  }
 
-.carousel-img-1 {
-    background-image: url(../images/IMG_8762.jpg);
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-}
-.carousel-img-2 {
-    background-image: url(https://cdn.pixabay.com/photo/2016/06/17/16/04/fountain-pen-1463463_960_720.jpg);
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-}
-.carousel-img-3 {
-    background-image: url(../images/cufflinks-925004.jpg);
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-}
-.carousel-img-4 {
-    background-image: url(../images/IMG_8762.jpg);
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-}
-btn {
-    border: none;
-}
-.moreBtn {
-    width: 30px;
-    height: 30px;
-}
-a {
-    text-decoration: none;
-    color: white;
-}
-
+  .carousel-img-1 {
+      background-image: url(../images/IMG_8762.jpg);
+      width: 300px;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+  }
+  .carousel-img-2 {
+      background-image: url(https://cdn.pixabay.com/photo/2016/06/17/16/04/fountain-pen-1463463_960_720.jpg);
+      width: 300px;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+  }
+  .carousel-img-3 {
+      background-image: url(../images/cufflinks-925004.jpg);
+      width: 300px;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+  }
+  .carousel-img-4 {
+      background-image: url(../images/IMG_8762.jpg);
+      width: 300px;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+  }
+  btn {
+      border: none;
+  }
+  .moreBtn {
+      width: 30px;
+      height: 30px;
+  }
+  a {
+      text-decoration: none;
+      color: white;
+  }
 {% endstylesheet %}
 
 {% schema %}
