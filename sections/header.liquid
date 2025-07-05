@@ -1,7 +1,9 @@
 <header>
-  <h2 class="header__title">
-    {{ shop.name | link_to: routes.root_url }}
-  </h2>
+        <div style="position: sticky; top: 0; z-index: 5;" class="navbar bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand pinyon-script-regular text-light" href="#">J. Hawks</a>
+            </div>
+        </div>
 
   <div class="header__menu">
     {% for link in section.settings.menu.links %}
