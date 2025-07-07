@@ -46,6 +46,10 @@
     display: flex;
     gap: 1rem;
   }
+svg{
+
+  fill:white;
+}
 
 .navbar{
   z-index: 5;
