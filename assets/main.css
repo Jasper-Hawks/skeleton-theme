@@ -20,6 +20,10 @@
 #F4E1D2
 
 */
+.navbar{
+  z-index: 5;
+  
+}
 .overlay{
 
     background-color: black;
