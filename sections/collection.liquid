@@ -24,7 +24,7 @@
                 %}
               {% endif %}
               <div class="collection-product__content inconsolata-expanded">
-                <p>{{ product.title | escape | link_to: product.url }}</p>
+                <p class="black-text">{{ product.title | escape | link_to: product.url }}</p>
                 <p>{{ product.price | money }}</p>
               </div>
             </div>
@@ -45,7 +45,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   }
-  .collection-product__content{
+  .black-text{
     color:black;
   }
 {% endstylesheet %}
