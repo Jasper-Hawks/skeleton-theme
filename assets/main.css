@@ -3,12 +3,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-    .navbar{
    width:100%;
       position: sticky;
       top: 0;
-      z-index: 5;
+      z-index: 5;    
+  }
+    .navbar{
+
     }
     header a {
       position: relative;
