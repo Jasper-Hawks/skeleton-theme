@@ -212,8 +212,10 @@ btn{
 	width: 30px;
 	height: 30px;
 }
+.text-white{
+  	color:white !important;
+}
 a{
 	text-decoration: none !important;
-	color:white !important;
 
 }
