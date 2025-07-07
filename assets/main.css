@@ -159,7 +159,7 @@ body{
 
 
 .carousel-img-1{
-	background-image: url(assets/IMG_8762.jpg);
+	background-image: url(../assets/IMG_8762.jpg);
 	width: 300px;
 	height: 300px;
 	 background-size: cover;
@@ -181,7 +181,7 @@ body{
 
 }
 .carousel-img-3{
-	background-image: url(assets/cufflinks-925004.jpg);
+	background-image: url(../assets/cufflinks-925004.jpg);
 	width: 300px;
 	height: 300px;
 	 background-size: cover;
