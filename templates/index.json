@@ -9,12 +9,19 @@
  */
 {
   "sections": {
-    "main": {
+    "cover": {
       "type": "cover",
       "settings": {}
+    },
+    "main":{
+
+      "type": "main-page",
+      "settings": {}
+      
     }
   },
   "order": [
+    "cover",
     "main"
   ]
 }
