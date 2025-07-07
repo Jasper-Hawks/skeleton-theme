@@ -9,12 +9,17 @@
  */
 {
   "sections": {
+      "mini-cover": {
+      "type": "mini-cover",
+      "settings": {}
+    },
     "main": {
       "type": "collection",
       "settings": {}
-    }
+    },
   },
   "order": [
+    "mini-cover",
     "main"
   ]
 }
