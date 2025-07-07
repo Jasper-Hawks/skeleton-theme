@@ -11,7 +11,7 @@
     {% paginate collection.products by 20 %}
       <div class="row">
         {% for product in collection.products %}
-          <div class="col">
+          <div class="col product-listing">
             <div class="collection-product">
               {% if product.featured_image %}
                 {% render 'image',
@@ -37,6 +37,10 @@
   </div>
 </div>
 {% stylesheet %}
+  .product-listing{
+  border: 5px black;
+
+  }
   .collection-products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
