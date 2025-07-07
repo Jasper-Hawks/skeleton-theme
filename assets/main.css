@@ -137,6 +137,7 @@ body{
 	background-color: rgba(0,0,0,0.8);
 	transition: 0.5s;
 	height:50%;
+  text-decoration:none;
 }
 .carousel-animation:hover{
 	height:100%;
