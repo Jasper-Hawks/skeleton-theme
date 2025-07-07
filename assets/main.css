@@ -20,9 +20,13 @@
 #F4E1D2
 
 */
+header{
+
+  position: sticky;
+  top:0;
+}
 .navbar{
   z-index: 5;
-
 }
 .overlay{
 
