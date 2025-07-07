@@ -13,11 +13,9 @@
       "type": "cover",
       "settings": {}
     },
-    "main":{
-
+    "main": {
       "type": "main-page",
       "settings": {}
-      
     }
   },
   "order": [
