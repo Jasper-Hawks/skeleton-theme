@@ -122,6 +122,8 @@
                 <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
                   {{ filter.label }}: {{ filter_value.label }} X
                 </a>
+                <br>
+                <br>
               {%- endfor -%}
             {%- endif -%}
           {%- endfor -%}
@@ -165,6 +167,10 @@
   .product-listing{
   border: 1px solid black;
 
+  }
+  .active-filters__remove-filter{
+
+    text-decoration:none;
   }
 {% endstylesheet %}
 
