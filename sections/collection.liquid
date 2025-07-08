@@ -10,7 +10,7 @@
     {% paginate collection.products by 20 %}
       <div class="row">
         {% for product in collection.products %}
-          <div class="col product-listing">
+          <div class="col col-sm-3 product-listing">
             <div class="collection-product">
               {% if product.featured_image %}
                 {% render 'image',
