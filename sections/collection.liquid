@@ -6,7 +6,7 @@
 {% endcomment %}
 
 <div class="container">
-
+<div class="row">
 <form class="filter-form">
   {%- for filter in collection.filters -%}
     <details class="filter-group">
@@ -146,6 +146,7 @@
       </div>
     {% endpaginate %}
   </div>
+</div>
 </div>
 {% stylesheet %}
   .product-listing{
