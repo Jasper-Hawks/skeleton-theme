@@ -119,12 +119,12 @@
 
 </div>
 
-  <div class="col-6">
+  <div class="col-sm-1">
   <div class="collection-products">
     {% paginate collection.products by 20 %}
       <div class="row">
         {% for product in collection.products %}
-          <div class="col col-sm-6 product-listing">
+          <div class="col col-sm-1 product-listing">
             <div class="collection-product">
               {% if product.featured_image %}
                 {% render 'image',
