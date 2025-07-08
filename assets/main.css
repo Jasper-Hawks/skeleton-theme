@@ -235,8 +235,8 @@ a{
   top: 0;
   background-image: url(../assets/IMG_8635.jpg);
 
- /*   -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
-    filter: grayscale(100%);*/
+   webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
+    filter: grayscale(100%);
     z-index: 0;
 
 }
