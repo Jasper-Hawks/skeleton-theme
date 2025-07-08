@@ -5,7 +5,6 @@
   https://shopify.dev/docs/storefronts/themes/architecture/templates/collection
 {% endcomment %}
 
-<h1>{{ collection.title }}</h1>
 <div class="container">
   <div class="collection-products">
     {% paginate collection.products by 20 %}
@@ -44,9 +43,6 @@
   .collection-products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  }
-  .black-text{
-    color:black !important;
   }
 {% endstylesheet %}
 
