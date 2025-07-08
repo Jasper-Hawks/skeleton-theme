@@ -106,7 +106,9 @@
         {%- endfor -%}
 
         <div class="active-filters">
-          <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">Clear all</a>
+          <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">Clear all</a
+          ><br>
+          <br>
 
           {%- for filter in collection.filters -%}
             {%- if filter.type == 'price_range' -%}
@@ -122,8 +124,6 @@
                 <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
                   {{ filter.label }}: {{ filter_value.label }} X
                 </a>
-                <br>
-                <br>
               {%- endfor -%}
             {%- endif -%}
           {%- endfor -%}
