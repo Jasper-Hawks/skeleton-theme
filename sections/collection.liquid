@@ -10,7 +10,7 @@
   <div class="col-sm-3">
 <form class="filter-form">
   {%- for filter in collection.filters -%}
-    <details class="filter-group">
+    <details class="filter-group inconsolata-expanded">
       <summary class="filter-group-summary">
         <div>
           <span>{{ filter.label }}</span>
@@ -159,6 +159,10 @@
   .collection-products {
    /* display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); */
+  }
+  .filter-group{
+
+    
   }
 {% endstylesheet %}
 
