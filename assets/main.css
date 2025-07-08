@@ -243,6 +243,6 @@ a{
 .mini-cover-title{
     color: white;
     z-index:1;
-
+position:relative;
   top:30%;
 }
