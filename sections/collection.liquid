@@ -187,7 +187,7 @@
     const formData = new FormData(this);
     const queryString = new URLSearchParams(formData).toString();
 
-    console.log(queryString)
+    console.log(formData)
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
       .then(response => response.text())
       .then(data => {
