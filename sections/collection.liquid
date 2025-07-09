@@ -194,6 +194,8 @@
         document.getElementById('filtered-results').innerHTML = data;
         const activeFilterAnchor = document.createElement("a");
         activeFilterAnchor.setAttribute('class',"active-filters__remove-filter bg-dark");
+                activeFilterAnchor.setAttribute('href',"{{ filter_value.url_to_remove }}");
+
         document.getElementById('active-filters').append(`
         <a class="active-filters__remove-filter bg-dark" href="{{ filter_value.url_to_remove }}">
                   {{ filter.label }}: {{ filter_value.label }} X
