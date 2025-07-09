@@ -49,13 +49,9 @@
   </head>
 
   <body>
-    {% if request.path contains 'view=ajax' %}
-      {% sections 'header-group' %}
-    {% endif %}
+    {% sections 'header-group' %}
 
     {{ content_for_layout }}
-    {% if request.path contains 'view=ajax' %}
-      {% sections 'footer-group' %}
-    {% endif %}
+    {% sections 'footer-group' %}
   </body>
 </html>
