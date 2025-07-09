@@ -193,7 +193,8 @@
         // Update the filtered results section with the new content
         document.getElementById('filtered-results').innerHTML = data;
         const activeFilterAnchor = document.createElement("a");
-        const urlToRemove = {{filter_value.url_to_remove}};
+        const urlToRemove = await {{filter_value.url_to_remove}};
+        console.log(urlToRemove)
       //  activeFilterAnchor.setAttribute('class',"active-filters__remove-filter bg-dark");
         //        activeFilterAnchor.setAttribute('href',urlToRemove);
       //activeFilterAnchor.innerText = `{{ filter.label }}: {{ filter_value.label }} X`
