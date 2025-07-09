@@ -180,6 +180,16 @@
     }
 {% endstylesheet %}
 
+
+<script>
+    var form = document.getElementByClass("filter-form");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevents page refresh
+        // Add your form submission logic here
+    });
+</script>
+  
+</script>
 {% schema %}
 {
   "name": "t:general.collection",
