@@ -11,7 +11,7 @@
     <div class="col-sm-3">
       <h5 class="pt-serif-regular text-center">Filter</h5>
       <hr>
-      <form class="filter-form" method="get" action="/collections/{{ collection.handle }}">
+      <form id="filter-form" class="filter-form" method="get" action="/collections/{{ collection.handle }}">
         {%- for filter in collection.filters -%}
           <details class="filter-group pt-serif-regular">
             <summary class="filter-group-summary">
@@ -182,7 +182,7 @@
 
 
 <script>
-  document.getElementByClass('filter-form').addEventListener('submit', function(event) {
+  document.getElementById('filter-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
     const formData = new FormData(this);
