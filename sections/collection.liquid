@@ -192,9 +192,6 @@
       .then(data => {
         // Update the filtered results section with the new content
         document.getElementById('filtered-results').innerHTML = data;
-
-
-        console.log("updated")
       })
       .catch(error => console.error('Error:', error));
   });
