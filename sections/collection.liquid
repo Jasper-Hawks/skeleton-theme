@@ -15,7 +15,7 @@
         {%- for filter in collection.filters -%}
           <details class="filter-group pt-serif-regular">
             <summary class="filter-group-summary">
-              <h6>{{ filter.label }}</h6>
+              <span>{{ filter.label }}</span>
               <hr>
               {%- if filter.active_values.size > 0 -%}
                 <span>({{ filter.active_values.size }})</span>
