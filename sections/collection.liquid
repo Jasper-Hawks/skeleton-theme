@@ -12,6 +12,7 @@
 <div class="container my-2">
   <div class="row">
     <div class="col-sm-3">
+      <h5>Filter</h5>
       <form class="filter-form">
         {%- for filter in collection.filters -%}
           <details class="filter-group pt-serif-regular">
@@ -121,7 +122,7 @@
               {%- endif -%}
             {%- else -%}
               {%- for filter_value in filter.active_values -%}
-                <a class="active-filters__remove-filter bg-dark my-2" href="{{ filter_value.url_to_remove }}">
+                <a class="active-filters__remove-filter bg-dark" href="{{ filter_value.url_to_remove }}">
                   {{ filter.label }}: {{ filter_value.label }} X
                 </a>
               {%- endfor -%}
