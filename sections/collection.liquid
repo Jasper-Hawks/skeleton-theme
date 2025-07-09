@@ -192,10 +192,10 @@
       .then(data => {
         // Update the filtered results section with the new content
         document.getElementById('filtered-results').innerHTML = data;
-        document.getElementById('active-filters').append(```
+        document.getElementById('active-filters').append(`
         <a class="active-filters__remove-filter bg-dark" href="{{ filter_value.url_to_remove }}">
                   {{ filter.label }}: {{ filter_value.label }} X
-                </a>```)
+                </a>`)
       })
       .catch(error => console.error('Error:', error));
   });
