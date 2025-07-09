@@ -11,7 +11,7 @@
     <div class="col-sm-3">
       <h5 class="pt-serif-regular text-center">Filter</h5>
       <hr>
-      <form class="filter-form">
+      <form class="filter-form" method="get" action="/collections/{{ collection.handle }}">
         {%- for filter in collection.filters -%}
           <details class="filter-group pt-serif-regular">
             <summary class="filter-group-summary">
@@ -182,12 +182,22 @@
 
 
 <script>
-    var form = document.getElementByClass("filter-form");
-    form.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevents page refresh
-        // Add your form submission logic here
-    });
+  document.getElementById('filter-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this);
+    const queryString = new URLSearchParams(formData).toString();
+
+    fetch(`/collections/{{ collection.title }}?${queryString}`)
+      .then(response => response.text())
+      .then(data => {
+        // Update the filtered results section with the new content
+        document.getElementById('filtered-results').innerHTML = data;
+      })
+      .catch(error => console.error('Error:', error));
+  });
 </script>
+
   
 </script>
 {% schema %}
