@@ -49,10 +49,13 @@
   </head>
 
   <body>
-    {% sections 'header-group' %}
+    {% if request.params.view != 'ajax' %}
+      {% sections 'header-group' %}
+    {% endif %}
 
     {{ content_for_layout }}
-
-    {% sections 'footer-group' %}
+    {% if request.params.view != 'ajax' %}
+      {% sections 'footer-group' %}
+    {% endif %}
   </body>
 </html>
