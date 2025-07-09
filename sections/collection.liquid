@@ -182,7 +182,6 @@
 
 
 <script>
-  console.log({{template.suffix}})
   document.getElementById('filter-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -194,6 +193,8 @@
       .then(data => {
         // Update the filtered results section with the new content
         document.getElementById('filtered-results').innerHTML = data;
+          console.log(`{{template.suffix}}`)
+
         console.log("updated")
       })
       .catch(error => console.error('Error:', error));
