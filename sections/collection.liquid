@@ -187,12 +187,14 @@
     const formData = new FormData(this);
     const queryString = new URLSearchParams(formData).toString();
 
+    const checkedBoxes = document.querySelectorAll('input[type=checkboxes]:checked');
+    console.log(checkedBoxes)
+
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
       .then(response => response.text())
       .then(data => {
         // Update the filtered results section with the new content
         document.getElementById('filtered-results').innerHTML = data;
-        console.log(data)
         const activeFilterAnchor = document.createElement("a");
         let urlToRemove = '{{filter_value.url_to_remove}}';
         console.log(urlToRemove)
