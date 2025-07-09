@@ -195,7 +195,7 @@
         const activeFilterAnchor = document.createElement("a");
         activeFilterAnchor.setAttribute('class',"active-filters__remove-filter bg-dark");
                 activeFilterAnchor.setAttribute('href',"{{ filter_value.url_to_remove }}");
-      activeFilterAnchor.innerText = "{{ filter.label }}: {{ filter_value.label }} X"
+      activeFilterAnchor.innerText = `{{ filter.label }}: {{ filter_value.label }} X`
 
         document.getElementById('active-filters').appendChild(activeFilterAnchor);
       })
