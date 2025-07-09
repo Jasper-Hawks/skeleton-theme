@@ -29,7 +29,6 @@
                   <a href="{{ filter.url_to_remove }}" class="filter-group-display__header-reset">Reset</a>
                 {%- endif -%}
               </div>
-              <hr>
               {%- case filter.type -%}
                 {%- when 'boolean', 'list' -%}
                   <ul class="filter-group-display__list">
@@ -53,6 +52,7 @@
                       </li>
                     {%- endfor -%}
                   </ul>
+                  <hr>
 
                   <div class="filter-group-display__submit">
                     <input type="submit" value="Apply">
