@@ -191,7 +191,7 @@
     const checkedBoxes = filterForm.querySelectorAll('input[type=checkbox]:checked');
     let activeFilters = []
 
-    activeFilters = checkedBoxes.foreach((item){
+    activeFilters = checkedBoxes.foreach( function (item){
 
       console.log(item.nextString);
       
