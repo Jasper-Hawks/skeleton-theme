@@ -193,7 +193,7 @@
     console.log(checkedBoxes)
 
     for (let i = 0; i < checkedBoxes.length; i++){
-      let activeFilter = checkedBoxes[i].nextSibling;
+      let activeFilter = checkedBoxes[i].nextSibling.textContent;
       console.log(activeFilter);
     }
 
