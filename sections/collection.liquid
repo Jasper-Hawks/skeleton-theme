@@ -195,7 +195,8 @@
 
     for (let i = 0; i < checkedBoxes.length; i++){
       let activeFilter = checkedBoxes[i].nextSibling.textContent.trim();
-      activeFilters.push(activeFilter);
+      let nodeID = checkedBoxes[i].id;
+      activeFilters.push(activeFilter,ids);
     }
 
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
@@ -213,7 +214,7 @@
   function updateActiveFilters(aF){
 
     for (let i = 0; i < aF.length; i++){
-        document.getElementById('active-filters').innerHTML += '<a class="active-filters__remove-filter bg-dark" onclick="removeFilter()" id="toggle-filter">'+ aF[i] + '</a>';
+        document.getElementById('active-filters').innerHTML += '<a class="active-filters__remove-filter bg-dark" onclick="removeFilter('')" id="toggle-filter">'+ aF[i] + '</a>';
     }
     
   }
