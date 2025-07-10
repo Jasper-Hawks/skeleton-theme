@@ -196,12 +196,7 @@
       .then(data => {
         // Update the filtered results section with the new content
         document.getElementById('filtered-results').innerHTML = data;
-        const activeFilterAnchor = document.createElement("a");
-        let urlToRemove = '{{filter_value.url_to_remove}}';
-        console.log(urlToRemove)
-        activeFilterAnchor.setAttribute('class',"active-filters__remove-filter bg-dark");
-                activeFilterAnchor.setAttribute('href',urlToRemove);
-      activeFilterAnchor.innerText = '{{ filter.label }}: {{ filter_value.label }} X'
+        updateActiveFilters(formData)
 
        // document.getElementById('active-filters').appendChild(activeFilterAnchor);
       })
@@ -213,7 +208,7 @@
     activeFilters.push(`${key}: ${value}`);
   }
   document.getElementById('active-filters').innerHTML = activeFilters.join(', ');
-}
+}u
 </script>
 
 {% schema %}
