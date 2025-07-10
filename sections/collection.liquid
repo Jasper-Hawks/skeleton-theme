@@ -194,7 +194,7 @@
 
     for (let i = 0; i < checkedBoxes.length; i++){
       let activeFilter = checkedBoxes[i].nextSibling.textContent.trim();
-      console.log(activeFilter);
+      activeFilters.push(activeFilter);
     }
 
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
