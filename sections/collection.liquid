@@ -207,6 +207,13 @@
       })
       .catch(error => console.error('Error:', error));
   });
+  function updateActiveFilters(formData) {
+  const activeFilters = [];
+  for (const [key, value] of formData.entries()) {
+    activeFilters.push(`${key}: ${value}`);
+  }
+  document.getElementById('active-filters').innerHTML = activeFilters.join(', ');
+}
 </script>
 
 {% schema %}
