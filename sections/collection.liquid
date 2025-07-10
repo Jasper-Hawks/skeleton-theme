@@ -207,13 +207,13 @@
         // Update the filtered results section with the new content
         document.getElementById('filtered-results').innerHTML = data;
         clearActiveFilters();
-        updateActiveFilters(activeFilters);
+        updateActiveFilters(activeFilters,nodeIds);
 
        // document.getElementById('active-filters').appendChild(activeFilterAnchor);
       })
       .catch(error => console.error('Error:', error));
   });
-  function updateActiveFilters(aF,ids){
+  function updateActiveFilters(aF){
 
     for (let i = 0; i < aF.length; i++){
         document.getElementById('active-filters').innerHTML += '<a class="active-filters__remove-filter bg-dark" onclick="removeFilter('+ ids[i] +')" id="toggle-filter">'+ aF[i] + '</a>';
