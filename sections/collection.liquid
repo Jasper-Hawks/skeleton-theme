@@ -189,6 +189,13 @@
 
     const filterForm = document.getElementById('filter-form');
     const checkedBoxes = filterForm.querySelectorAll('input[type=checkbox]:checked');
+    let activeFilters = []
+
+    activeFilters = checkedBoxes.foreach((item){
+
+      console.log(item.nextString);
+      
+    })
     console.log(checkedBoxes[0].nextSibling)
 
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
@@ -202,14 +209,18 @@
       })
       .catch(error => console.error('Error:', error));
   });
-  function updateActiveFilters(formData) {
+  function updateActiveFilters(formData){
+
+    
+  }
+  /*function updateActiveFilters(formData) {
   const activeFilters = [];
   for (const [key, value] of formData.entries()) {
     activeFilters.push(`${key}: ${value}`);
   }
     console.log(activeFilters)
   document.getElementById('active-filters').innerHTML = activeFilters.join(', ');
-}u
+}*/
 </script>
 
 {% schema %}
