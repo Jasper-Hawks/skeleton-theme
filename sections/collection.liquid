@@ -189,7 +189,7 @@
 
     const filterForm = document.getElementById('filter-form');
     const checkedBoxes = filterForm.querySelectorAll('input[type=checkbox]:checked');
-    console.log(checkedBoxes)
+    console.log(checkedBoxes[0].nextSibling)
 
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
       .then(response => response.text())
