@@ -226,9 +226,10 @@
 
   function removeFilter(id){
 
-      const form = document.getElementById('filter-form');
+    const form = document.getElementById('filter-form');
     document.getElementById(id).checked = false;
-    console.log("submit form")
+    this.remove();
+    console.log("submit form");
     //form.submit();
     
   }
