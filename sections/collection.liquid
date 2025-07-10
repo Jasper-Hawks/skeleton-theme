@@ -188,7 +188,7 @@
     const queryString = new URLSearchParams(formData).toString();
 
     const filterForm = document.getElementById('filter-form');
-    const checkedBoxes = filterForm.querySelectorAll('input[type=checkbox]:checked').nextSibling;
+    const checkedBoxes = filterForm.querySelectorAll('input[type=checkbox]:checked');
     console.log(checkedBoxes)
 
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
