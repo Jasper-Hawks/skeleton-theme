@@ -264,3 +264,9 @@ position:relative;
   font-weight: 400;
   font-style: normal;
 }
+.filter-btn{
+
+  width:100%;
+  background-color:black;
+  color:white;
+}
