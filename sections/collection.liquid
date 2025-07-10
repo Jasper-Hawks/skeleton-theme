@@ -191,12 +191,14 @@
     const filterForm = document.getElementById('filter-form');
     const checkedBoxes = filterForm.querySelectorAll('input[type=checkbox]:checked');
     let activeFilters = []
+    let nodeIds = []
     console.log(checkedBoxes)
 
     for (let i = 0; i < checkedBoxes.length; i++){
       let activeFilter = checkedBoxes[i].nextSibling.textContent.trim();
       let nodeID = checkedBoxes[i].id;
-      activeFilters.push(activeFilter,nodeID);
+      activeFilters.push(activeFilter);
+      nodeIds.push(nodeID)
     }
 
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
