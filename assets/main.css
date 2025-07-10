@@ -266,6 +266,8 @@ position:relative;
 }
 .filter-btn{
 
+  padding-top:10px;
+  padding-bottom:10px;
   width:100%;
   background-color:black;
   color:white;
