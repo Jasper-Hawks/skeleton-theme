@@ -211,7 +211,7 @@
   function updateActiveFilters(aF){
 
     for (let i = 0; i < aF.length; i++){
-        document.getElementById('active-filters').appendChild(aF[i])
+        document.getElementById('active-filters').innerHTML= aF[i];
     }
     
   }
