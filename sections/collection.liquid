@@ -202,13 +202,13 @@
       .then(data => {
         // Update the filtered results section with the new content
         document.getElementById('filtered-results').innerHTML = data;
-        updateActiveFilters(formData)
+        updateActiveFilters(activeFilters)
 
        // document.getElementById('active-filters').appendChild(activeFilterAnchor);
       })
       .catch(error => console.error('Error:', error));
   });
-  function updateActiveFilters(formData){
+  function updateActiveFilters(aF){
 
     
   }
