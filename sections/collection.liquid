@@ -196,7 +196,7 @@
     for (let i = 0; i < checkedBoxes.length; i++){
       let activeFilter = checkedBoxes[i].nextSibling.textContent.trim();
       let nodeID = checkedBoxes[i].id;
-      activeFilters.push(activeFilter,ids);
+      activeFilters.push(activeFilter,nodeID);
     }
 
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
