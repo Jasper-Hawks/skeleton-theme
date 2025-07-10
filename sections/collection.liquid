@@ -214,7 +214,7 @@
   function updateActiveFilters(aF,ids){
 
     for (let i = 0; i < aF.length; i++){
-        document.getElementById('active-filters').innerHTML += '<a class="active-filters__remove-filter bg-dark" onclick="removeFilter('+ ids[i]')" id="toggle-filter">'+ aF[i] + '</a>';
+        document.getElementById('active-filters').innerHTML += '<a class="active-filters__remove-filter bg-dark" onclick="removeFilter('+ ids[i] +')" id="toggle-filter">'+ aF[i] + '</a>';
     }
     
   }
@@ -222,9 +222,10 @@
     document.getElementById('active-filters').innerHTML = "";
   }
 
-  function removeFilter(){
+  function removeFilter(id){
 
       const form = document.getElementById('filter-form');
+    document.getElementById(id).checked = false;
     console.log("submit form")
     //form.submit();
     
