@@ -192,12 +192,10 @@
     let activeFilters = []
     console.log(checkedBoxes)
 
-    activeFilters = checkedBoxes.foreach( function (item){
-
-      console.log(item.nextString);
+    for (let i = 0; i < checkedBoxes.length; i++){
+      console.log(checkedBoxes.nextString);
       
-    })
-    console.log(checkedBoxes[0].nextSibling)
+    }
 
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
       .then(response => response.text())
