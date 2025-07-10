@@ -193,7 +193,7 @@
     console.log(checkedBoxes)
 
     for (let i = 0; i < checkedBoxes.length; i++){
-      console.log(checkedBoxes[i].nextString);
+      console.log(checkedBoxes[i].nextSibling);
     }
 
     fetch(`/collections/{{ collection.title }}?view=ajax&${queryString}`)
