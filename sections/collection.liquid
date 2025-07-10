@@ -220,14 +220,15 @@
   function clearActiveFilters(){
     document.getElementById('active-filters').innerHTML = ""
   }
-  /*function updateActiveFilters(formData) {
-  const activeFilters = [];
-  for (const [key, value] of formData.entries()) {
-    activeFilters.push(`${key}: ${value}`);
-  }
-    console.log(activeFilters)
-  document.getElementById('active-filters').innerHTML = activeFilters.join(', ');
-}*/
+document.getElementById('toggle-filter').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default anchor behavior
+
+    // Get the form element
+    var form = document.getElementById('myForm');
+
+    // Submit the form
+    form.submit();
+});
 </script>
 
 {% schema %}
