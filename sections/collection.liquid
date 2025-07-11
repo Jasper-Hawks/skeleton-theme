@@ -212,7 +212,8 @@ if(location.search.length) {
 document.querySelector('.sort-by').addEventListener('change', function(e) {
   var value = e.currentTarget.value;
   Shopify.queryParams.sort_by = value;
-  location.search = new URLSearchParams(Shopify.queryParams).toString();
+  console.log(Shopify.queryParams.toString())
+//  location.search = new URLSearchParams(Shopify.queryParams).toString();
 });
 
   
