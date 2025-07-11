@@ -14,9 +14,9 @@
           <td style="width:20%;">
             {% render 'image', image: item.image, url: item.url %}
           </td>
-          <td class="product-title-table">
-            <p class="inconsolata-expanded">{{ item.quantity }}x {{ item.product.title }}</p>
-            <p class="inconsolata-expanded">{{ item.product.price | money }}</p>
+          <td class="product-title-table inconsolata-expanded">
+            <p class="">{{ item.quantity }}x {{ item.product.title }}</p>
+            <p class="">{{ item.product.price | money }}</p>
             {{ 'cart.remove' | t | link_to: item.url_to_remove }}
           </td>
           <td class="quantity-table">
