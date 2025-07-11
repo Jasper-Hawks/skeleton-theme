@@ -339,3 +339,6 @@ position:relative;
 .quantity-table{
   vertical-align:middle;
 }
+a:hover{
+  text-decoration:underline;
+}
