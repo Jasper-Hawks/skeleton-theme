@@ -146,7 +146,7 @@
     <div class="col">
       <h5 class="text-center pt-serif-regular">{{ collection.description }}</h5>
       <hr>
-      <div class="collection-products" id="filtered-results">
+      <div class="collection-products ajax-load" id="filtered-results">
         {% paginate collection.products by 20 %}
           <div class="row">
             {% for product in collection.products %}
