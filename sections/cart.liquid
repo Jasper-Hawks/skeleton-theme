@@ -19,7 +19,7 @@
             <p class="inconsolata-expanded">{{ item.product.price | money }}</p>
             {{ 'cart.remove' | t | link_to: item.url_to_remove }}
           </td>
-          <td>
+          <td class="quantity-table">
             <input type="text" name="updates[]" value="{{ item.quantity }}">
             <input type="submit" value="{{ 'cart.update' | t }}">
           </td>
