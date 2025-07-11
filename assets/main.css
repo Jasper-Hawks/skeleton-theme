@@ -286,3 +286,8 @@ position:relative;
   display:inline-block;
   text-align:center;
 }
+active-filters__remove-filter{
+
+  margin-right:3px;
+  
+}
