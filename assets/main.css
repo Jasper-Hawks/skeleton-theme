@@ -276,3 +276,10 @@ position:relative;
 
       transition: opacity 0.5s ease;
 }
+.active-filters__clear{
+    padding-top:10px;
+  padding-bottom:10px;
+  width:100%;
+  background-color:black;
+  color:white;
+}
