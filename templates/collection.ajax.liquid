@@ -17,7 +17,8 @@
                 %}
               {% endif %}
               <div class="collection-product__content ">
-                <p class="black-text inconsolata-expanded">{{ product.title | escape | link_to: product.url }}</p>
+                <!-- TEST COMMENT -->
+                <p class="black-text">{{ product.title | escape | link_to: product.url }}</p>
                 <p>{{ product.price | money }}</p>
               </div>
             </div>
