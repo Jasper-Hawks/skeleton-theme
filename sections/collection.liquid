@@ -116,12 +116,13 @@
           value="Apply"
         >
         <a
-          href="{{ collection.url }}?sort_by={{ collection.sort_by }}"
+          onclick="clearAll()"
           class="inconsolata-expanded bg-dark active-filters__clear"
           >Clear all</a
         >
         <div class="active-filters" id="active-filters">
           <br>
+          s
           <br>
 
           <!-- Fallback incase AJAX fails -->
@@ -247,7 +248,6 @@ document.querySelector('.sort-by').addEventListener('change', function(e) {
     const checkedBoxes = filterForm.querySelectorAll('input[type=checkbox]:checked');
     let activeFilters = []
     let nodeIds = []
-    console.log(checkedBoxes)
 
     for (let i = 0; i < checkedBoxes.length; i++){
       let activeFilter = checkedBoxes[i].nextSibling.textContent.trim();
@@ -282,12 +282,18 @@ document.querySelector('.sort-by').addEventListener('change', function(e) {
 
   function removeFilter(id){
 
-    const form = document.getElementById('filter-form');
     document.getElementById(id).checked = false;
     console.log("submit form");
     document.getElementById("main-apply-filter-btn").click();
     //form.submit();
     
+  }
+  function clearAll(){
+    const checkedBoxes = filterForm.querySelectorAll('input[type=checkbox]:checked');
+    for (let i = 0; i < checkedBoxes.length; i++){
+      checkedBoxes[i].checked = false;
+    }
+    document.getElementById("main-apply-filter-btn").click();
   }
 document.getElementById('toggle-filter').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default anchor behavior
