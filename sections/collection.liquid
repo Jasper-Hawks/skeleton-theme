@@ -135,10 +135,10 @@
                 <p class="black-text product-title">{{ product.title | escape | link_to: product.url }}</p>
                 <p style="text-decoration:none;margin-bottom:0;">{{ product.price | money }}</p>
               </div>
-              <input type="button submit" class="ATCBtn bg-dark inconsolata-expanded" value="Add To Cart">
               <form method="post" action="/cart/add">
               <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-              <button type="submit">Add to Cart</button>
+              <input type="button submit" class="ATCBtn bg-dark inconsolata-expanded" value="Add To Cart">
+              <!--<button type="submit">Add to Cart</button> -->
               </form>
             </div>
           </div>
