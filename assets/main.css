@@ -317,11 +317,15 @@ position:relative;
 .sort-by{
 
     border: none;
-  padding: 3px;
-  margin-bottom: 10px;
+
   display: inline;
   text-align: right;
   width: 50%;
   float: right;
   background: transparent;
+}
+.sort-by--container{
+  padding: 3px;
+  margin-bottom: 10px;
+  
 }
