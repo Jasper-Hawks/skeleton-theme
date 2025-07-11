@@ -112,35 +112,38 @@
     <div class="col">
       <h5 class="text-center pt-serif-regular">{{ collection.description }}</h5>
       <hr>
-      <div class="collection-products ajax-load" id="filtered-results">
-        {% paginate collection.products by 20 %}
-          <div class="row">
-            {% for product in collection.products %}
-              <div class="col-sm-4 product-listing">
-                <div class="collection-product">
-                  {% if product.featured_image %}
-                    {% render 'image',
-                      class: 'collection-product__image',
-                      image: product.featured_image,
-                      url: product.url,
-                      width: 400,
-                      height: 400,
-                      crop: 'center'
-                    %}
-                  {% endif %}
-                  <div class="collection-product__content pt-serif-regular">
-                    <p class="black-text">{{ product.title | escape | link_to: product.url }}</p>
-                    <p>{{ product.price | money }}</p>
-                  </div>
-                </div>
+      <div class="col">
+  <div class="collection-products" id="filtered-results">
+    {% paginate collection.products by 20 %}
+      <div class="row">
+        {% for product in collection.products %}
+          <div class="col-sm-4 product-listing">
+            <div class="collection-product">
+              {% if product.featured_image %}
+                {% render 'image',
+                  class: 'collection-product__image',
+                  image: product.featured_image,
+                  url: product.url,
+                  width: 400,
+                  height: 400,
+                  crop: 'center'
+                %}
+              {% endif %}
+              <div class="collection-product__content inconsolata-expanded">
+                <!-- TEST COMMENT -->
+                <p class="black-text">{{ product.title | escape | link_to: product.url }}</p>
+                <p>{{ product.price | money }}</p>
               </div>
-            {% endfor %}
-
-            {{ paginate | default_pagination }}
+            </div>
           </div>
-        {% endpaginate %}
+        {% endfor %}
+
+        {{ paginate | default_pagination }}
       </div>
-    </div>
+    {% endpaginate %}
+  </div>
+</div>
+
   </div>
 </div>
 {% stylesheet %}
