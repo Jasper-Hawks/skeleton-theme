@@ -10,21 +10,6 @@
   <div class="row">
     <div class="col-sm-3">
       <h5 class="pt-serif-regular text-center">Filter</h5>
-      <div class="sort-by--container">
-        <label for="sort-by">Sort by</label>
-        <select id="sort-by" class="sort-by">
-          {% for option in collection.sort_options %}
-            <option
-              value="{{ option.value }}"
-              {% if option.value == collection.sort_by %}
-                selected
-              {% endif %}
-            >
-              {{ option.name }}
-            </option>
-          {% endfor %}
-        </select>
-      </div>
       <hr>
       <form id="filter-form" class="filter-form" method="get" action="/collections/{{ collection.handle }}">
         {%- for filter in collection.filters -%}
@@ -77,6 +62,22 @@
           type="submit"
           value="Apply"
         >
+              <div class="sort-by--container">
+        <label for="sort-by">Sort by</label>
+        <select id="sort-by" class="sort-by">
+          {% for option in collection.sort_options %}
+            <option
+              value="{{ option.value }}"
+              {% if option.value == collection.sort_by %}
+                selected
+              {% endif %}
+            >
+              {{ option.name }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+
         <a
           onclick="clearAll()"
           class="inconsolata-expanded bg-dark active-filters__clear"
