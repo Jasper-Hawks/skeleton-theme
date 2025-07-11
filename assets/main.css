@@ -56,6 +56,9 @@ filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(7%) hue-r
   width:100%;
   height:100%;
 }
+.navbar-brand{
+  float:center;
+}
 .overlay{
 
     background-color: black;
