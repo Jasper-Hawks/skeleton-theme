@@ -288,6 +288,7 @@ position:relative;
 }
 .active-filters__remove-filter{
 
+  cursor:pointer;
   margin-right:3px;
   
 }
