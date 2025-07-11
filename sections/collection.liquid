@@ -136,6 +136,10 @@
                 <p style="text-decoration:none;margin-bottom:0;">{{ product.price | money }}</p>
               </div>
               <input type="button" class="ATCBtn bg-dark inconsolata-expanded" value="Add To Cart">
+              <form method="post" action="/cart/add">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <button type="submit">Add to Cart</button>
+              </form>
             </div>
           </div>
         {% endfor %}
