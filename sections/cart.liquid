@@ -22,7 +22,9 @@
           <td class="quantity-table">
             <input type="text" name="updates[]" value="{{ item.quantity }}">
             <input type="submit" value="{{ 'cart.update' | t }}">
-            <p class="inconsolata-expanded">Subtotal {{ item.quantity | times: item.product.price | money }}</p>
+            <p class="inconsolata-expanded">
+              Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
+            </p>
           </td>
         </tr>
       {% endfor %}
