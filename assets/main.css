@@ -297,3 +297,13 @@ position:relative;
 .hover-underline:hover{
     text-decoration-line: underline;
 }
+.ATCBtn{
+      padding-top:10px;
+  padding-bottom:10px;
+  width:100%;
+  color:white !important;
+  border-radius:3px;
+  display:inline-block;
+  text-align:center;
+    cursor:pointer;
+}
