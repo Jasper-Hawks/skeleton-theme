@@ -121,7 +121,7 @@ filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(7%) hue-r
     top: 100vh;
 }
 body{
-    background-color: #f2f2f2
+    background-color: #f2f2f2;
     overflow-x:hidden;
 
 }
