@@ -16,7 +16,7 @@
           </td>
           <td class="product-title-table">
             <p class="inconsolata-expanded">{{ item.product.title }}</p>
-            <p class="inconsolata-expanded">{{ product.price }}</p>
+            <p class="inconsolata-expanded">{{ item.product.price | money }}</p>
             {{ 'cart.remove' | t | link_to: item.url_to_remove }}
           </td>
           <td>
