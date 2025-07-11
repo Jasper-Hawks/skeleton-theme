@@ -287,10 +287,12 @@ position:relative;
   text-align:center;
     cursor:pointer;
 }
+.active-filters{
+  color:white;
+}
 .active-filters__remove-filter{
 
   cursor:pointer;
   margin-right:3px;
-  color:white;
   
 }
