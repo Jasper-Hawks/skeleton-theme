@@ -209,8 +209,9 @@ if(location.search.length) {
 }
 
 // Add existing sort parameters to current URL
+  var value;
 document.querySelector('.sort-by').addEventListener('change', function(e) {
-  var value = e.currentTarget.value;
+  value = e.currentTarget.value;
   Shopify.queryParams.sort_by = value;
   console.log(Shopify.queryParams)
   document.getElementById("main-apply-filter-btn").click();
