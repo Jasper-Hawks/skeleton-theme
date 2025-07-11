@@ -110,7 +110,13 @@
           <hr>
         {%- endfor -%}
 
-        <input id="main-apply-filter-btn" class="filter-btn inconsolata-expanded" type="submit" value="Apply">
+        <input
+          id="main-apply-filter-btn"
+          class="filter-btn inconsolata-expanded"
+          style="display:none;"
+          type="submit"
+          value="Apply"
+        >
         <div class="active-filters" id="active-filters">
           <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">Clear all</a>
           <br>
