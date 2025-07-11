@@ -280,7 +280,7 @@ position:relative;
     padding-top:10px;
   padding-bottom:10px;
   width:100%;
-  color:white;
+  color:white !important;
   border-radius:3px;
   margin-bottom:3px;
   display:inline-block;
