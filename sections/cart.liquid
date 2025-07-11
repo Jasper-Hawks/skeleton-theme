@@ -11,7 +11,7 @@
     <table class="table">
       {% for item in cart.items %}
         <tr>
-          <td>
+          <td class="table-image">
             {% render 'image', image: item.image, url: item.url %}
           </td>
           <td>
