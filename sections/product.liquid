@@ -9,7 +9,7 @@
     <div class="col">
       <div class="slideshow-container">
         <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
+        <div class="mySlides fade" style="display:block;">
           {% for image in product.images %}
             {% render 'image', class: 'product-image', image: image %}
           {% endfor %}
