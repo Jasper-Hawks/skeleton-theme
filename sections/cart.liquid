@@ -20,7 +20,7 @@
             {{ 'cart.remove' | t | link_to: item.url_to_remove }}
           </td>
           <td class="quantity-table">
-            <input type="text" name="updates[]" value="{{ item.quantity }}">
+            <input type="text" name="updates[]" value="{{ item.quantity }}" onchange="updateQuantity();">
             <p class="inconsolata-expanded">
               Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
             </p>
@@ -32,6 +32,11 @@
     <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
   </form>
 </div>
+<script>
+  function updateQuantity(){
+
+  }
+</script>
 {% schema %}
 {
   "name": "t:general.cart",
