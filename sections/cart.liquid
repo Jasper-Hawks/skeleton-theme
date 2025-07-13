@@ -63,7 +63,7 @@
     console.log(totals[0])
     for (let i = 0; i < totals.length; i++){
       totals[i] = totals[i].substring(1);
-      total += totals[i];
+      total = total + totals[i];
     }
     document.getElementById("total").innerHTML = "$" + total;
   }
