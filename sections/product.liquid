@@ -40,18 +40,20 @@
         {% form 'product', product %}
           {% assign current_variant = product.selected_or_first_available_variant %}
 
-          <select name="id" class="sort-by">
-            {% for variant in product.variants %}
-              <option
-                value="{{ variant.id }}"
-                {% if variant == current_variant %}
-                  selected="selected"
-                {% endif %}
-              >
-                {{ variant.title }} - {{ variant.price | money }}
-              </option>
-            {% endfor %}
-          </select>
+          {% if product.variants.size > 1 %}
+            <select name="id" class="sort-by">
+              {% for variant in product.variants %}
+                <option
+                  value="{{ variant.id }}"
+                  {% if variant == current_variant %}
+                    selected="selected"
+                  {% endif %}
+                >
+                  {{ variant.title }} - {{ variant.price | money }}
+                </option>
+              {% endfor %}
+            </select>
+          {% endif %}
 
           <input type="text" name="quantity" min="1" value="1">
 
