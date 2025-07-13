@@ -45,6 +45,7 @@
     let price = document.getElementById("price").innerText;
     price = price.substring(1)
 
+    document.getElementById("subtotal").innerText = "$" + quantity*price
     console.log(quantity*price)
 
   }
