@@ -437,4 +437,5 @@ a:hover{
 .quantity-input{
   border:none;
   width:5%;
+      box-shadow: 0 0 10px 10px #666;
 }
