@@ -440,3 +440,8 @@ a:hover{
 border-width: 1px;
 border-style: solid;
 }
+.sidebar-container{
+  height:100vh;
+  position:sticky;
+  top:0;
+}
