@@ -42,8 +42,9 @@
   function updateQuantity(){
 
     const quantity = document.getElementById("quantity").value;
-    const price = document.getElementById("price").innerText;
+    let price = document.getElementById("price").innerText;
 
+    price[0] = ''
     console.log(quantity*price)
 
   }
