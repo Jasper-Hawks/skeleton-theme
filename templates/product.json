@@ -25,7 +25,7 @@
           "settings": {
             "is_hide_detail": false,
             "is_display_questions": false,
-            "class_name": "container",
+            "class_name": ".container",
             "is_hide_if_no_reviews": false,
             "is_use_shopify_font": false,
             "shopify_font": "helvetica_n4"
