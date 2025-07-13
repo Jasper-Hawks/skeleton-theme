@@ -9,10 +9,7 @@
  */
 {
   "sections": {
-    "cart-sidebar": {
-      "type": "cart-sidebar",
-      "settings": {}
-    },
+
     "main": {
       "type": "cart",
       "settings": {}
@@ -20,6 +17,5 @@
   },
   "order": [
     "main",
-    "cart-sidebar"
   ]
 }
