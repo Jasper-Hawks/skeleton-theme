@@ -34,7 +34,7 @@
         </tr>
       {% endfor %}
     </table>
-    <p class="inconsolata-expanded">Total:</p>
+    <p class="inconsolata-expanded">Total:<span id="total"></span></p>
     <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
   </form>
 </div>
@@ -48,6 +48,16 @@
     document.getElementById("subtotal").innerText = "$" + quantity*price
     console.log(quantity*price)
 
+  }
+  function updateTotal(){
+    const totals = document.querySelectorAll("#subtotal");
+    let total = 0;
+
+    for (let i = 0; i < totals.length; i++){
+      totals[i] = totals[i].substring(1);
+      total += totals[i];
+    }
+    document.getElementById("total").innerHTML = total;
   }
 </script>
 {% schema %}
