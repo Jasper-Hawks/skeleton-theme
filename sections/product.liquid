@@ -10,11 +10,11 @@
   var productReview = {
     reviewsCount: {{ product.metafields.doran.prReviewCount }},
     averageRating: {{ product.metafields.doran.prAvgRating }},
-    stars1: 0,
-    stars2: 0,
-    stars3: 0,
-    stars4: 0,
-    stars5: 3,
+    stars1: {{ product.metafields.doran.prStar1 }},
+    stars2: {{ product.metafields.doran.prStar2 }},
+    stars3: {{ product.metafields.doran.prStar3 }},
+    stars4: {{ product.metafields.doran.prStar4 }},
+    stars5: {{ product.metafields.doran.prStar5 }},
     questionsCount: 0,
     isDarkMode: false
   };
