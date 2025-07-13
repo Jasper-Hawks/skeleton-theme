@@ -18,7 +18,7 @@
           "isJSONLD": true,
           "isPopup": false,
           "isPop": false,
-          "customCSS": "body{\n--bs-gutter-x: 1.5rem;\n  --bs-gutter-y: 0;\n  width: 100%;\n  padding-right: calc(var(--bs-gutter-x) * .5);\n  padding-left: calc(var(--bs-gutter-x) * .5);\n  margin-right: auto;\n  margin-left: auto;\n}",
+          "customCSS": "*{\n@extend .container\n}",
           "is_use_shopify_font": false,
           "pop_shopify_font": "inconsolata_n4"
         }
