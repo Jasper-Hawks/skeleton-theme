@@ -90,7 +90,10 @@
           {% endif %}
 
           <label>Quantity:</label>
-          <input type="text" name="quantity" class="quantity-input" placeholder="Quantity" min="1" value="1">
+          <select min="1" class="quantity-input" name="quantity">
+            <option value="1"></option>
+          </select>
+          <!-- <input type="text" name="quantity" class="quantity-input" placeholder="Quantity" min="1" value="1"> -->
 
           <input type="submit" class="ATCBtn bg-dark mt-4" value="Add to cart">
           {{ form | payment_button }}
