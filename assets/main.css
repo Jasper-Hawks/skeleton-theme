@@ -26,8 +26,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-      position:sticky;
-  top:0;
   }
   header a {
     position: relative;
@@ -52,7 +50,13 @@ svg{
 
 filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(7%) hue-rotate(127deg) brightness(102%) contrast(101%);
 }
-
+.sticky {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 0;
+  align-self: flex-start; /* <-- this is the fix */
+  background-color: red;  /* Not necessary -- for example only */
+}
 .navbar{
   z-index: 5;
   width:100%;
