@@ -55,6 +55,7 @@
     const totals = document.querySelectorAll("#subtotal");
     let total = 0;
 
+    console.log(totals[0])
     for (let i = 0; i < totals.length; i++){
       totals[i] = totals[i].substring(1);
       total += totals[i];
