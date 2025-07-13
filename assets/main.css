@@ -434,3 +434,7 @@ a:hover{
 .product-image{
   width:100%;
 }
+.quantity-input{
+  border:none;
+  
+}
