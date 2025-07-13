@@ -4,6 +4,39 @@
 
   https://shopify.dev/docs/storefronts/themes/architecture/templates/product
 {% endcomment %}
+<script type="text/javascript">
+  window.$prDoranInit = window.$prDoranInit || {};
+  window.$prDoranInit.ratingWidgetReview = window.$prDoranInit.ratingWidgetReview || {};
+  var productReview = {
+    reviewsCount: 3,
+    averageRating: 5.0,
+    stars1: 0,
+    stars2: 0,
+    stars3: 0,
+    stars4: 0,
+    stars5: 3,
+    questionsCount: 0,
+    isDarkMode: false
+  };
+  if (typeof window.$prDoranInit.ratingWidgetReview['14739581337972'] === 'undefined') {
+    window.$prDoranInit.ratingWidgetReview['14739581337972'] = productReview;
+  } else {
+    var existingProductReview = window.$prDoranInit.ratingWidgetReview['14739581337972'];
+    window.$prDoranInit.ratingWidgetReview['14739581337972'] = Object.assign(existingProductReview, productReview);
+  }
+</script>
+
+<div data-dr="rating-widget" data-product-id="14739581337972" data-class-name=".container">
+  <div class="dr-relative">
+    <iframe
+      name="Overview Rating"
+      title="Overview Rating"
+      class="dr-w-full dr-h-full dr-border-0"
+      style="height: 20px; width: 100%;"
+      srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;frame-root&quot;&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
+    ></iframe>
+  </div>
+</div>
 <div class="container">
   <div class="row gx-5 mt-4">
     <div class="col">
