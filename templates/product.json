@@ -36,6 +36,10 @@
       ],
       "settings": {}
     },
+    "17524191579bb662fb": {
+      "type": "apps",
+      "settings": {}
+    },
     "1752368549331fbfca": {
       "type": "apps",
       "blocks": {
@@ -59,6 +63,7 @@
     "mini-cover",
     "main",
     "1752368359612c0dae",
+    "17524191579bb662fb",
     "1752368549331fbfca"
   ]
 }
