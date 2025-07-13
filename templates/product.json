@@ -9,12 +9,33 @@
  */
 {
   "sections": {
+
     "mini-cover": {
       "type": "mini-cover",
       "settings": {}
     },
     "main": {
       "type": "product",
+      "settings": {}
+    },
+    "1752368259c568a195": {
+      "type": "apps",
+      "blocks": {
+        "doran_product_reviews_rating_widget_jCkWR3": {
+          "type": "shopify://apps/doran-product-reviews/blocks/rating-widget/ca90c3ee-bc39-4c25-90cd-fdf0519c6d11",
+          "settings": {
+            "is_hide_detail": false,
+            "is_display_questions": false,
+            "class_name": ".container",
+            "is_hide_if_no_reviews": false,
+            "is_use_shopify_font": false,
+            "shopify_font": "helvetica_n4"
+          }
+        }
+      },
+      "block_order": [
+        "doran_product_reviews_rating_widget_jCkWR3"
+      ],
       "settings": {}
     },
     "1752368359612c0dae": {
@@ -27,17 +48,13 @@
             "bottomPadding": 36,
             "is_hide_if_no_reviews": false,
             "is_use_shopify_font": false,
-            "shopify_font": "inconsolata_n4"
+            "shopify_font": "helvetica_n4"
           }
         }
       },
       "block_order": [
         "doran_product_reviews_product_widget_BtwHHR"
       ],
-      "settings": {}
-    },
-    "17524191579bb662fb": {
-      "type": "apps",
       "settings": {}
     },
     "1752368549331fbfca": {
@@ -49,7 +66,7 @@
             "topPadding": 36,
             "bottomPadding": 36,
             "is_use_shopify_font": false,
-            "shopify_font": "inconsolata_n4"
+            "shopify_font": "helvetica_n4"
           }
         }
       },
@@ -62,8 +79,8 @@
   "order": [
     "mini-cover",
     "main",
+    "1752368259c568a195",
     "1752368359612c0dae",
-    "17524191579bb662fb",
     "1752368549331fbfca"
   ]
 }
