@@ -39,6 +39,7 @@
   </form>
 </div>
 <script>
+  updateTotal();
   function updateQuantity(){
 
     const quantity = document.getElementById("quantity").value;
@@ -47,6 +48,7 @@
 
     document.getElementById("subtotal").innerText = "$" + quantity*price
     console.log(quantity*price)
+    updateTotal();
 
   }
   function updateTotal(){
