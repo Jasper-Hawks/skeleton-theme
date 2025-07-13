@@ -46,10 +46,8 @@
       <!-- The dots/circles -->
       <div style="text-align:center">
         {% for image in product.images %}
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        {% endfor -%}
+          <span class="dot" onclick="currentSlide({{ forloop.index0 }})"></span>
+        {% endfor %}
         }
       </div>
     </div>
