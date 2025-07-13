@@ -62,7 +62,7 @@
                 name="Overview Rating"
                 title="Overview Rating"
                 class="dr-w-full dr-h-full dr-border-0"
-                style="height: 20px; width: 100%;"
+                style="height: 20px; width:1 100%;"
               ></iframe>
             </span>
           </span>
@@ -90,10 +90,7 @@
           {% endif %}
 
           <label>Quantity:</label>
-          <select min="1" class="quantity-input" name="quantity">
-            <option value="1">1</option>
-          </select>
-          <!-- <input type="text" name="quantity" class="quantity-input" placeholder="Quantity" min="1" value="1"> -->
+          <input type="text" name="quantity" class="quantity-input" placeholder="Quantity" min="1" value="1">
 
           <input type="submit" class="ATCBtn bg-dark mt-4" value="Add to cart">
           {{ form | payment_button }}
