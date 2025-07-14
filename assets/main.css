@@ -591,8 +591,11 @@ border-style: solid;
 #collections-menu{
   
 }
+.submenu.active{
+    transform:translateX(0)
+
+}
 #collections-menu.active{
-  transform:translateX(0)
 }
 .submenu{
   min-width:auto;
