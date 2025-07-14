@@ -565,6 +565,7 @@ border-style: solid;
   transform: translateX(-100%); /* Start hidden off-screen */
   transition: transform 0.3s ease; /* Smooth transition */
   z-index: 999; /* Ensure it appears above other content */
+  border-right: 2px;
 }
 
 #menu-sidebar.active {
