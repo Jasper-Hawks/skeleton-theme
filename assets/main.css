@@ -536,7 +536,7 @@ border-width: 1px;
 border-style: solid;
 }
 .sidebar-container{
-  height:100vh;
+  height:100%;
   position:sticky;
   top:0;
   overflow-y:auto;
