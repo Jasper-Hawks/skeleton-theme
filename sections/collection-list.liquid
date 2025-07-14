@@ -1,9 +1,5 @@
 <div>
-  <table>
-    <tbody>
-      <tr>
         {% for collection in collections %}
-          <td>
       <div class="row align-items-center inconsolata-expanded justify-content-center">
       <div class="carousel-img-1 col-sm row align-items-center mx-2 p-0 my-1">
         <div class="carousel-animation text-center">
@@ -16,15 +12,8 @@
           </a>
         </div>
       </div>
-            <a href="{{ collection.url }}">{{ collection.title }}</a>
-            {% if collection.description %}
-              <p>{{ collection.description | truncatewords: 20 }}</p>
-            {% endif %}
-          </td>
         {% endfor %}
-      </tr>
-    </tbody>
-  </table>
+
 </div>
 {% schema %}
 {
