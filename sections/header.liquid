@@ -26,13 +26,20 @@
           {{ 'icon-account.svg' | inline_asset_content | link_to: routes.account_url }}
         {% endif %}
 
-        <a id="cart-toggle">
+        <button
+          id="cart-toggle"
+          data-toggle="collapse"
+          data-toggle="collapse"
+          data-target="#menu-sidebar"
+          aria-controls="menu-sidebar"
+          aria-expanded="false"
+        >
           {% if cart.item_count > 0 %}
             <sup>{{ cart.item_count }}</sup>
           {% endif %}
 
           {{ 'icon-cart.svg' | inline_asset_content }}
-        </a>
+        </button>
       </div>
     </div>
   </div>
