@@ -595,11 +595,15 @@ border-style: solid;
   
 }
 .submenu{
-  position:sticky;
-  left:0;
-  width:50vw;
   min-width:auto;
   height:100vh;
+    position: fixed; /* Keep the sidebar fixed */
+  left: 250px; /* Align to the left */
+  top: 5rem; /* Align to the top */
+  width: 50vw; /* Set the width of the sidebar */
+  transform: translateX(-100%); /* Start hidden off-screen */
+  transition: transform 0.3s ease; /* Smooth transition */
+  z-index: 999; /* Ensure it appears above other content */
 }
 .collection-display-img{
   width: 300px;
