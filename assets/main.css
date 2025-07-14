@@ -572,7 +572,7 @@ border-style: solid;
 }
 #cart-sidebar {
   position: fixed; /* Keep the sidebar fixed */
-  left: 0; /* Align to the left */
+  right: 0; /* Align to the left */
   top: 0; /* Align to the top */
   width: 250px; /* Set the width of the sidebar */
   height: 100%; /* Full height */
