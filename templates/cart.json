@@ -9,13 +9,17 @@
  */
 {
   "sections": {
-
+  "menu-sidebar":{
+    "type": "menu-sidebar",
+    "settings":{}
+  },
     "main": {
       "type": "cart",
       "settings": {}
     }
   },
   "order": [
+    "menu-sidebar",
     "main",
   ]
 }
