@@ -27,6 +27,46 @@
 </header>
 <div
   class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar-content"
+  style="width: 280px; height: 100vw; float:left;"
+>
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+    <span class="fs-4">Add To Cart</span>
+  </a>
+  <hr>
+  <form action="{{ routes.cart_url }}" method="post">
+    <table class="table">
+      {% for item in cart.items %}
+        <tr>
+          <td style="width:20%;">
+            {% render 'image', image: item.image, url: item.url %}
+          </td>
+          <td class="product-title-table inconsolata-expanded">
+            <p class="">{{ item.quantity }}x {{ item.product.title }}</p>
+            <p id="price" class="">{{ item.product.price | money }}</p>
+            <input
+              style="width:5%"
+              type="text"
+              name="updates[]"
+              value="{{ item.quantity }}"
+              id="quantity"
+              onchange="updateQuantity();"
+            >
+            <p class="inconsolata-expanded">
+              Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
+            </p>
+            {{ 'cart.remove' | t | link_to: item.url_to_remove }}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+    <p class="inconsolata-expanded">Total: $<span id="total"></span></p>
+    <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
+  </form>
+
+  <hr>
+</div>
+<div
+  class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar-content"
   style="width: 280px; height: 100vw; float:right;"
 >
   <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
