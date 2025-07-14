@@ -7,10 +7,35 @@
     <span class="fs-4">Cart</span>
   </a>
   <hr>
+  <table class="table">
+    {% for item in cart.items %}
+      <tr>
+        <td style="width:20%;">
+          {% render 'image', image: item.image, url: item.url %}
+        </td>
+        <td class="product-title-table inconsolata-expanded">
+          <p class="">{{ item.quantity }}x {{ item.product.title }}</p>
+          <p id="price" class="">{{ item.product.price | money }}</p>
+          <input
+            style="width:5%"
+            type="text"
+            name="updates[]"
+            value="{{ item.quantity }}"
+            id="quantity"
+            onchange="updateQuantity();"
+          >
+          <p class="inconsolata-expanded">
+            Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
+          </p>
+          {{ 'cart.remove' | t | link_to: item.url_to_remove }}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
 </aside>
 <script>
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-    const sidebar = document.getElementById('menu-sidebar');
+    document.getElementById('cart-toggle').addEventListener('click', function() {
+    const sidebar = document.getElementById('cart-sidebar');
     sidebar.classList.toggle('active'); // Toggle the 'active' class
   });
 </script>
