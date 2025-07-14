@@ -1,14 +1,16 @@
 <div>
   <table>
     <tbody>
-      {% for collection in collections %}
-        <li>
-          <a href="{{ collection.url }}">{{ collection.title }}</a>
-          {% if collection.description %}
-            <p>{{ collection.description | truncatewords: 20 }}</p>
-          {% endif %}
-        </li>
-      {% endfor %}
+      <tr>
+        {% for collection in collections %}
+          <td>
+            <a href="{{ collection.url }}">{{ collection.title }}</a>
+            {% if collection.description %}
+              <p>{{ collection.description | truncatewords: 20 }}</p>
+            {% endif %}
+          </td>
+        {% endfor %}
+      </tr>
     </tbody>
   </table>
 </div>
