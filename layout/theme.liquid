@@ -48,9 +48,9 @@
     {{ content_for_header }}
   </head>
 
-  {% sections 'menu-sidebar' %}
-
   <body>
+    {% section 'menu-sidebar' %}
+
     {% sections 'header-group' %}
 
     {{ content_for_layout }}
