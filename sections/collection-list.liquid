@@ -4,7 +4,7 @@
       <div class="row align-items-center inconsolata-expanded justify-content-center collection-display">
         <div
           class="collection-display-image col-sm row align-items-center mx-2 p-0 my-1"
-          style="background-image: url('{{ collection.image }}')"
+          style="background-image: url('{{ collection.image | img_url: 'large' }}')"
         >
           <div class="carousel-animation text-center">
             <a href="/collections/drinkware" class="row text-white h-100">
