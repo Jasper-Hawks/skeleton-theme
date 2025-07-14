@@ -595,5 +595,8 @@ border-style: solid;
   
 }
 .submenu{
+  position:sticky;
+  left:0;
+  width:50vw;
   
 }
