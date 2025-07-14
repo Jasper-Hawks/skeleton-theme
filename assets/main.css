@@ -600,3 +600,7 @@ border-style: solid;
   width:50vw;
   height:100vh;
 }
+.collection-display{
+  width:30%;
+  height:auto;
+}
