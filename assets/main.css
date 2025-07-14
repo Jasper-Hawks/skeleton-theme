@@ -606,7 +606,7 @@ border-style: solid;
   left: 250px; /* Align to the left */
   top: 5rem; /* Align to the top */
   width: 50vw; /* Set the width of the sidebar */
-    background-color:rgba(255,255,255,0.2);
+    background-color:rgba(0,0,0,0.2);
 
   transform: translateX(-200%); /* Start hidden off-screen */
   transition: transform 0.3s ease; /* Smooth transition */
