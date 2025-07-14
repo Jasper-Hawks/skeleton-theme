@@ -1,17 +1,19 @@
 <div class="submenu bg-dark">
-  {% for collection in collections %}
-    <div class="row align-items-center inconsolata-expanded justify-content-center collection-display">
-      <div class="carousel-img-1 col-sm row align-items-center mx-2 p-0 my-1">
-        <div class="carousel-animation text-center">
-          <a href="/collections/drinkware" class="row text-white h-100">
-            <div class="col-md-12 align-self-center py-2">
-              <h1 class="mld">{{ collection.title }}</h1>
-            </div>
-          </a>
+  <div class="m-3">
+    {% for collection in collections %}
+      <div class="row align-items-center inconsolata-expanded justify-content-center collection-display">
+        <div class="carousel-img-1 col-sm row align-items-center mx-2 p-0 my-1">
+          <div class="carousel-animation text-center">
+            <a href="/collections/drinkware" class="row text-white h-100">
+              <div class="col-md-12 align-self-center py-2">
+                <h1 class="mld">{{ collection.title }}</h1>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 {% schema %}
 {
