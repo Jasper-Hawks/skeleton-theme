@@ -598,6 +598,7 @@ border-style: solid;
   position:sticky;
   left:0;
   width:50vw;
+  max-width:auto;
   height:100vh;
 }
 .collection-display-img{
