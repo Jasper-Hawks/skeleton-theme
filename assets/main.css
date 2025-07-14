@@ -537,10 +537,10 @@ border-style: solid;
 }
 .sidebar-container{
   height:100vh;
-  position:sticky;
-  top:0;
-  right:0;
-  float:right;
+  /* position:sticky;
+  top:0; */
+  /* right:0;
+  float:right; */
 }
 .shopify-section-group-header-group{
   position:sticky;
