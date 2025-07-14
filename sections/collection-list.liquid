@@ -1,6 +1,20 @@
+<div>
+  <table>
+    <tbody>
+      {% for collection in collections %}
+        <li>
+          <a href="{{ collection.url }}">{{ collection.title }}</a>
+          {% if collection.description %}
+            <p>{{ collection.description | truncatewords: 20 }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "collection-list",
+  "settings": []
+}
 {% endschema %}
