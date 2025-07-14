@@ -556,3 +556,17 @@ border-style: solid;
   top:0;
   z-index:999;
 }
+#menu-sidebar {
+  position: fixed; /* Keep the sidebar fixed */
+  left: 0; /* Align to the left */
+  top: 0; /* Align to the top */
+  width: 250px; /* Set the width of the sidebar */
+  height: 100%; /* Full height */
+  transform: translateX(-100%); /* Start hidden off-screen */
+  transition: transform 0.3s ease; /* Smooth transition */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+#menu-sidebar.active {
+  transform: translateX(0); /* Slide in */
+}
