@@ -546,13 +546,12 @@ border-style: solid;
   float:right; */
 }
 .shopify-section-group-header-group{
-  position:sticky;
+  position:fixed;
   top:0;
   z-index:1000;
 }
 #shopify-section-template--24904701837684__menu-sidebar{
-  float:left;
   height:100vh;
-  position:sticky;
-  top:5rem;
+  position:fixed;
+  top:0;
 }
