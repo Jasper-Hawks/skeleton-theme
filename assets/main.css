@@ -570,3 +570,7 @@ border-style: solid;
 #menu-sidebar.active {
   transform: translateX(0); /* Slide in */
 }
+.navbar-toggler-icon::before {
+  content: ''; /* Add your custom icon or use a white SVG */
+  background-color: white; /* Set background color to white */
+}
