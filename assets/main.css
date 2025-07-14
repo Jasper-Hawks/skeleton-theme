@@ -592,7 +592,7 @@ border-style: solid;
   
 }
 #collections-menu:hover{
-  
+  transform:translateX(0)
 }
 .submenu{
   min-width:auto;
