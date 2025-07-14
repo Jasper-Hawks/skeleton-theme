@@ -603,7 +603,7 @@ border-style: solid;
   min-width:auto;
   height:100vh;
     position: fixed; /* Keep the sidebar fixed */
-  left: 250px; /* Align to the left */
+  left: 150px; /* Align to the left */
   top: 5rem; /* Align to the top */
   width: 50vw; /* Set the width of the sidebar */
     background-color:rgba(0,0,0,0.7);
