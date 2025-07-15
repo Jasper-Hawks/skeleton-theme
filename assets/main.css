@@ -531,9 +531,8 @@ a:hover{
 }
 .quantity-input{
   width:10%;
-   border-color: #808080;
-border-width: 1px;
-border-style: solid;
+border:none;
+  background:transparent;
 }
 .sidebar-container{
   height:100%;
