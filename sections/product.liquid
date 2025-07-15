@@ -124,7 +124,7 @@
       form.addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent the default form submission
         const productId = document.getElementById('variant-id');
-        const quantity = form.querySelector('input[name="quantity"]').value;
+        const quantity = form.querySelector('select[name="quantity"]').value;
         fetch('/cart/add.js', {
             method: 'POST',
             headers: {
