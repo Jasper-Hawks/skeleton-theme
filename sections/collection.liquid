@@ -227,7 +227,11 @@ document.querySelector('.sort-by').addEventListener('change', function(e) {
     }
     console.log("/collections/{{ collection.title }}?view=ajax&" + queryString)
 
-    fetch(`/collections/{{ collection.title }}?sort_by=${value}&view=ajax&${queryString}`)
+    let title = {{collection.title}};
+    if ({{ collection.title}} == "Shop All"){
+      title = "shop-all"
+    }
+    fetch(`/collections/${title}?sort_by=${value}&view=ajax&${queryString}`)
       .then(response => response.text())
       .then(data => {
         // Update the filtered results section with the new content
