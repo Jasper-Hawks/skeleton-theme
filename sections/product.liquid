@@ -70,7 +70,7 @@
         <p>{{ product.description }}</p>
       </div>
 
-      <div class="product-form">
+      <div id="product-form" class="product-form">
         {% form 'product', product %}
           {% assign current_variant = product.selected_or_first_available_variant %}
 
@@ -119,6 +119,39 @@
 <div class="container inconsolata-expanded" id="expanded-description-container"></div>
 
 <script>
+    const form = document.getElementById('product-form');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(form);
+        const data = {
+            id: formData.get('id'),
+            quantity: formData.get('quantity')
+        };
+
+        fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert('Product added to cart!');
+            updateCartCount();
+        })
+        .catch(error => {
+            alert('There was an error adding the product to the cart: ' + error.message);
+        });
+    });
+
   document.getElementById("expanded-description").style.display = 'none';
   document.getElementById("expanded-description-container").innerHTML = document.getElementById("expanded-description").innerHTML;
     let slideIndex = 1;
