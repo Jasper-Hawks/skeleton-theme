@@ -83,6 +83,7 @@
           >
             {% for variant in product.variants %}
               <option
+                id="variant-id"
                 value="{{ variant.id }}"
                 {% if variant == current_variant %}
                   selected="selected"
@@ -122,13 +123,8 @@
     const form = document.getElementById('product-form');
       form.addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent the default form submission
-
-        const formData = new FormData(form);
-        const data = {
-            id: formData.get('id'),
-            quantity: formData.get('quantity')
-        };
-
+        const productId = document.getElementById('variant-id');
+        const quantity = form.querySelector('input[name="quantity"]').value;
         fetch('/cart/add.js', {
             method: 'POST',
             headers: {
