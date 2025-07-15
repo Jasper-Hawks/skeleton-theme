@@ -227,7 +227,7 @@ document.querySelector('.sort-by').addEventListener('change', function(e) {
     }
     console.log("/collections/{{ collection.title }}?view=ajax&" + queryString)
 
-    let title = {{collection.title}};
+    let title = '{{collection.title}}';
     if ({{ collection.title}} == "Shop All"){
       title = "shop-all"
     }
