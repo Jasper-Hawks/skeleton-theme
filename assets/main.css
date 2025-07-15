@@ -600,7 +600,7 @@ border-style: solid;
 #collections-menu.active{
 }
 .submenu{
-  min-width:auto;
+  min-width:340px;
   height:100vh;
     position: fixed; /* Keep the sidebar fixed */
   left: 150px; /* Align to the left */
