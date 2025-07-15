@@ -123,7 +123,7 @@
     const form = document.getElementById('product-form');
       form.addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent the default form submission
-        const productId = document.getElementById('variant-id');
+        const productId = document.getElementById('variant-id').value;
         const quantity = form.querySelector('select[name="quantity"]').value;
 
                 const data = {
