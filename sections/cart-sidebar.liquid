@@ -30,12 +30,12 @@
             Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
           </p>
           {{ 'cart.remove' | t | link_to: item.url_to_remove }}
-          <hr>
         </div>
+        <hr>
       </div>
     {% endfor %}
-    <hr>
   </div>
+  <hr>
   <h1>Total:</h1>
   <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
 </aside>
