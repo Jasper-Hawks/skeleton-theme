@@ -125,12 +125,13 @@
          // document.getElementById('add-to-cart-button').addEventListener('click', fetchCartItems());
           //})
           //document.addEventListener('DOMContentLoaded', fetchCartItems);
- var t = document.getElementById('product-form');
+
+  /*var t = document.getElementById('product-form');
       t.addEventListener('submit', function(e) {
     e.preventDefault();
         console.log("FORM SUBMIT DETECTED")
     fetchCartItems();
-  });
+  }); */
 
         function renderCartItems(cart) {
             const cartItemsContainer = document.getElementById('ajax-cart-sidebar');
@@ -239,7 +240,7 @@
         .then(data => {
             alert('Product added to cart!');
             updateCartCount();
-                 // fetchCartItems();
+                  fetchCartItems();
         })
         .catch(error => {
             alert('There was an error adding the product to the cart: ' + error.message);
