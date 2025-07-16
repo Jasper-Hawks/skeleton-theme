@@ -143,7 +143,7 @@
             // Loop through each item in the cart
 
             const itemHtml =  `  <div style="overflow-y: auto; overflow-x:hidden;">
-        {% for i in  (1..cart.item_count) %}
+        {% for item in  (1..cart.item_count) %}
           <div class="row mb-1">
             <div class="col-md-1 cart-image">
               {% render 'image', image: item.image, url: item.url %}
