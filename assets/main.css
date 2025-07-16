@@ -414,7 +414,7 @@ position:relative;
   background-color:white !important;
 }
 @keyframes ATCButtonHover{
-  from {background-color: initial}
+  from {background-color: black}
   to {background-color:white !important;}
 }
 .collection-product__content{
