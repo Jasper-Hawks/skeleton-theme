@@ -14,16 +14,15 @@
   <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
 </aside>
 <script>
-  let productForm = document.getElementById('product-form');
-  //fetchCartItems();
+  crystal  fetchCartItems();
 
 
 
-    document.getElementById('cart-toggle').addEventListener('click', function() {
-    const sidebar = document.getElementById('cart-sidebar');
-      console.log("cart button click")
-    sidebar.classList.toggle('active'); // Toggle the 'active' class
-  });
+      document.getElementById('cart-toggle').addEventListener('click', function() {
+      const sidebar = document.getElementById('cart-sidebar');
+        console.log("cart button click")
+      sidebar.classList.toggle('active'); // Toggle the 'active' class
+    });
 </script>
 
 {% schema %}
