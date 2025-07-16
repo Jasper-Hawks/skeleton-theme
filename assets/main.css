@@ -646,6 +646,9 @@ border:none;
     width: 20% !important;
     margin:0 auto;
   }
+  .product-title-table{
+    text-align:center;
+  }
   #quantity{
     margin-bottom:1rem;
   }
