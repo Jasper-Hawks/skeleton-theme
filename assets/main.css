@@ -646,6 +646,7 @@ border:none;
     width: 20% !important;
   }
 }
-html{
-  overflow-x:hidden !important;
+html,body {
+    margin:0;
+    padding:0;
 }
