@@ -10,7 +10,7 @@
   <div style="overflow-y: auto; overflow-x:hidden;">
     {% for item in cart.items %}
       <div class="row mb-1">
-        <div class="col-sm-1">
+        <div class="col-sm-1 cart-image">
           {% render 'image', image: item.image, url: item.url %}
         </div>
         <div class="col-sm-5 product-title-table inconsolata-expanded">
