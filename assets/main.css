@@ -408,8 +408,10 @@ position:relative;
     cursor:pointer;
 }
 .ATCBtn:hover{
+  animation-name: ATCButtonHover
   color:black !important;
-  transition:   ATCButtonHover .3 linear !important;
+   animation-duration: 1.5s;
+  opacity:1;
 }
 @keyframes ATCButtonHover{
   from {background-color: initial}
