@@ -129,6 +129,7 @@
             .then(response => response.json())
             .then(cart => {
                 document.querySelector('#cart-count').textContent = cart.item_count; // Update the cart count display
+              fetchCartItems();
             });
       }
     const form = document.getElementById('product-form');
@@ -160,7 +161,7 @@
         .then(data => {
             alert('Product added to cart!');
             updateCartCount();
-                  fetchCartItems();
+                  //fetchCartItems();
         })
         .catch(error => {
             alert('There was an error adding the product to the cart: ' + error.message);
