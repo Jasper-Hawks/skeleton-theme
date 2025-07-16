@@ -646,6 +646,9 @@ border:none;
     width: 20% !important;
     margin:0 auto;
   }
+  #quantity{
+    margin-bottom:1rem;
+  }
 }
 html,body{
     overflow-x: hidden;
