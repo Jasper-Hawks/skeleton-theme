@@ -647,5 +647,5 @@ border:none;
   }
 }
 html{
-  overflow-x:hidden;
+  overflow-x:hidden !important;
 }
