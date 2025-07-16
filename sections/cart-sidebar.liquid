@@ -13,6 +13,7 @@
   <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
 </aside>
 <script>
+  {% comment %}
   fetchCartItems();
 
             document.addEventListener('DOMContentLoaded', fetchCartItems);
@@ -81,7 +82,7 @@
                     renderCartItems(cart);
                 });
         }
-
+{% endcomment %}
 
       document.getElementById('cart-toggle').addEventListener('click', function() {
       const sidebar = document.getElementById('cart-sidebar');
