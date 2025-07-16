@@ -30,6 +30,7 @@
             Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
           </p>
           {{ 'cart.remove' | t | link_to: item.url_to_remove }}
+          <hr>
         </div>
       </div>
     {% endfor %}
