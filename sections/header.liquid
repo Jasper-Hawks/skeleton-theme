@@ -35,9 +35,7 @@
           aria-controls="menu-sidebar"
           aria-expanded="false"
         >
-          {% if cart.item_count > 0 %}
-            <span id="cart-count">{{ cart.item_count }}</span>
-          {% endif %}
+          <span id="cart-count">{{ cart.item_count }}</span>
 
           {{ 'icon-cart.svg' | inline_asset_content }}
         </button>
