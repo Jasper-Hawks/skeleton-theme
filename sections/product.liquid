@@ -141,9 +141,10 @@
            //h cartItemsContainer.innerHTML = ''; // Clear existing items
 
             // Loop through each item in the cart
-
+//(1 ..cart.item_count)
             const itemHtml =  `  <div style="overflow-y: auto; overflow-x:hidden;">
-        {% for item in  (1..cart.item_count) %}
+             
+        {% for item in  cart%}
           <div class="row mb-1">
             <div class="col-md-1 cart-image">
               {% render 'image', image: item.image, url: item.url %}
