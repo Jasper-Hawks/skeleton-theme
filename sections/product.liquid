@@ -124,13 +124,17 @@
        //   document.addEventListener('DOMContentLoaded', function() {
          // document.getElementById('add-to-cart-button').addEventListener('click', fetchCartItems());
           //})
+  function update(){
+    fetchCartItems();
+  }
       function updateCartCount() {
-                      fetchCartItems();
+                     // fetchCartItems();
 
         fetch('/cart.js')
             .then(response => response.json())
             .then(cart => {
                 document.querySelector('#cart-count').textContent = cart.item_count; // Update the cart count display
+              update();
             });
       }
     const form = document.getElementById('product-form');
