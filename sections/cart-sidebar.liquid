@@ -7,13 +7,13 @@
     <span class="fs-4">Cart</span>
   </a>
   <hr>
-  <table>
+  <div>
     {% for item in cart.items %}
-      <tr>
-        <td style="width:10%;">
+      <div class="row">
+        <div class="col" style="width:10%;">
           {% render 'image', image: item.image, url: item.url %}
-        </td>
-        <td class="product-title-table inconsolata-expanded">
+        </div>
+        <div class="col product-title-table inconsolata-expanded">
           <p class="">{{ item.quantity }}x {{ item.product.title }}</p>
           <p id="price" class="">{{ item.product.price | money }}</p>
           <input
@@ -28,10 +28,10 @@
             Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
           </p>
           {{ 'cart.remove' | t | link_to: item.url_to_remove }}
-        </td>
-      </tr>
+        </div>
+      </div>
     {% endfor %}
-  </table>
+  </div>
 </aside>
 <script>
     document.getElementById('cart-toggle').addEventListener('click', function() {
