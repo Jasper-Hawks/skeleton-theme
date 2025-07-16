@@ -18,18 +18,9 @@
           <p id="price" class="">{{ item.product.price | money }}</p>
 
           <label>Quantity:</label>
-          <select id="quantity" class="quantity-input" name="quantity">
-            {% for num in (1..10) %}
-              {% if num == item.quantity %}
-                <option value="{{ num }}" selected>{{ num }}</option>
-              {% else %}
-                <option value="{{ num }}">{{ num }}</option>
-              {% endif %}
-            {% endfor %}
-          </select>
           <input
             style="width:5%"
-            type="text"
+            type="number"
             name="updates[]"
             value="{{ item.quantity }}"
             id="quantity"
