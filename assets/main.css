@@ -410,6 +410,7 @@ position:relative;
 .ATCBtn:hover{
   background-color:white !important;
   color:black !important;
+  transition: background-color .3 linear;
 }
 .collection-product__content{
   min-height:88px;
