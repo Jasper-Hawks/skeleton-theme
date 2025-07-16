@@ -635,3 +635,6 @@ border:none;
   width:20%;
   flex: 0 0 0 !important;
 }
+#cart-sidebar{
+  background-color: rgba(0,0,0,.2)
+}
