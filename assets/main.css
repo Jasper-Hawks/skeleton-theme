@@ -412,10 +412,6 @@ position:relative;
   background-color:white !important;
   transition: 0.2s;
 }
-@keyframes ATCButtonHover{
-  from {background-color: black}
-  to {background-color:white !important;}
-}
 .collection-product__content{
   min-height:88px;
   max-height:88px;
