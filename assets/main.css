@@ -646,3 +646,6 @@ border:none;
     width: 20% !important;
   }
 }
+html{
+  overflow-x:hidden;
+}
