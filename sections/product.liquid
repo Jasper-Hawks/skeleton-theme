@@ -104,7 +104,7 @@
             value="1"
           >
 
-          <input type="submit" class="ATCBtn bg-dark mt-4" value="Add to cart">
+          <input type="submit" class="ATCBtn bg-dark mt-4" value="Add to cart" onclick="fetchCartItems">
           {{ form | payment_button }}
         {% endform %}
       </div>
@@ -115,71 +115,6 @@
 <div class="container inconsolata-expanded" id="expanded-description-container"></div>
 
 <script>
-  //let productForm = document.getElementById('product-form');
-  //fetchCartItems();
-          document.addEventListener('DOMContentLoaded', fetchCartItems);
-
-        function renderCartItems(cart) {
-            const cartItemsContainer = document.getElementById('ajax-cart-sidebar');
-            cartItemsContainer.innerHTML = ''; // Clear existing items
-
-            // Loop through each item in the cart
-
-            const itemHtml =  `  <div style="overflow-y: auto; overflow-x:hidden;">
-        {% for item in cart.items %}
-          <div class="row mb-1">
-            <div class="col-md-1 cart-image">
-              {% render 'image', image: item.image, url: item.url %}
-            </div>
-            <div class="col-md-5 product-title-table inconsolata-expanded">
-              <p class="">{{ item.quantity }}x {{ item.product.title }}</p>
-              <p id="price" class="">{{ item.product.price | money }}</p>
-
-              <label>Quantity:</label>
-              <input
-                style="width:5rem;"
-                type="number"
-                name="updates[]"
-                value="{{ item.quantity }}"
-                id="quantity"
-                onchange="updateQuantity();"
-              >
-              <p class="inconsolata-expanded">
-                Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
-              </p>
-              {{ 'cart.remove' | t | link_to: item.url_to_remove }}
-            </div>
-            <hr>
-          </div>
-        {% endfor %}
-      </div>`
-
-          
-            //cart.items.forEach(item => {
-
-                cartItemsContainer.innerHTML += itemHtml;
-            
-            //});
-        }
-          function fetchCartItems() {
-            fetch('/cart.js')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                  //console.log(response.json())
-                                     // renderCartItems(cart);
-                    return response.json();
-                })
-                .then(cart => {
-                  //console.log(response.json())
-                    renderCartItems(cart);
-                });
-        }
-
-
-
-  
       function updateCartCount() {
         fetch('/cart.js')
             .then(response => response.json())
