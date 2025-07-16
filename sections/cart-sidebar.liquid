@@ -41,7 +41,8 @@
 </aside>
 <script>
   let productForm = document.getElementById('product-form');
-  fetchCartItems();
+  //fetchCartItems();
+          document.addEventListener('DOMContentLoaded', fetchCartItems);
 
           function fetchCartItems() {
             fetch('/cart.js')
