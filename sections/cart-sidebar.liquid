@@ -7,33 +7,37 @@
     <span class="fs-4">Cart</span>
   </a>
   <hr>
-  <div style="overflow-y: auto; overflow-x:hidden;">
-    {% for item in cart.items %}
-      <div class="row mb-1">
-        <div class="col-md-1 cart-image">
-          {% render 'image', image: item.image, url: item.url %}
-        </div>
-        <div class="col-md-5 product-title-table inconsolata-expanded">
-          <p class="">{{ item.quantity }}x {{ item.product.title }}</p>
-          <p id="price" class="">{{ item.product.price | money }}</p>
+  <div id="ajax-cart-sidebar">
+    {% comment %}
+      <div style="overflow-y: auto; overflow-x:hidden;">
+        {% for item in cart.items %}
+          <div class="row mb-1">
+            <div class="col-md-1 cart-image">
+              {% render 'image', image: item.image, url: item.url %}
+            </div>
+            <div class="col-md-5 product-title-table inconsolata-expanded">
+              <p class="">{{ item.quantity }}x {{ item.product.title }}</p>
+              <p id="price" class="">{{ item.product.price | money }}</p>
 
-          <label>Quantity:</label>
-          <input
-            style="width:5rem;"
-            type="number"
-            name="updates[]"
-            value="{{ item.quantity }}"
-            id="quantity"
-            onchange="updateQuantity();"
-          >
-          <p class="inconsolata-expanded">
-            Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
-          </p>
-          {{ 'cart.remove' | t | link_to: item.url_to_remove }}
-        </div>
-        <hr>
+              <label>Quantity:</label>
+              <input
+                style="width:5rem;"
+                type="number"
+                name="updates[]"
+                value="{{ item.quantity }}"
+                id="quantity"
+                onchange="updateQuantity();"
+              >
+              <p class="inconsolata-expanded">
+                Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
+              </p>
+              {{ 'cart.remove' | t | link_to: item.url_to_remove }}
+            </div>
+            <hr>
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
+    {% endcomment %}
   </div>
   <hr>
   <h1>Total: {{ cart.total_price | money }}</h1>
@@ -50,13 +54,13 @@
 
             // Loop through each item in the cart
             cart.items.forEach(item => {
-                const itemHtml = `
+                const itemHtml = ```
                     <div class="cart-item">
                         <h4>${item.product_title}</h4>
                         <p>Quantity: ${item.quantity}</p>
                         <p>Price: ${(item.price / 100).toFixed(2)}</p>
                     </div>
-                `;
+                ```;
                 cartItemsContainer.innerHTML += itemHtml;
             
             });
