@@ -53,11 +53,9 @@
 
     {% section 'collection-list' %}
     {{ content_for_layout }}
-    {% comment %}
-      }
-      {% section 'menu-sidebar' %}
-      {% section 'cart-sidebar' %}
-    {% endcomment %}
+
+    {% section 'menu-sidebar' %}
+    {% section 'cart-sidebar' %}
 
     {% sections 'footer-group' %}
   </body>
