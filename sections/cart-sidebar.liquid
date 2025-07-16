@@ -54,13 +54,13 @@
 
             // Loop through each item in the cart
             cart.items.forEach(item => {
-                const itemHtml = ```
+                const itemHtml = `
                     <div class="cart-item">
                         <h4>${item.product_title}</h4>
                         <p>Quantity: ${item.quantity}</p>
                         <p>Price: ${(item.price / 100).toFixed(2)}</p>
                     </div>
-                ```;
+                `;
                 cartItemsContainer.innerHTML += itemHtml;
             
             });
