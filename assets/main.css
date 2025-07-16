@@ -409,7 +409,7 @@ position:relative;
 }
 .ATCBtn:hover{
   background-color:white !important;
-  color:black;
+  color:black !important;
 }
 .collection-product__content{
   min-height:88px;
