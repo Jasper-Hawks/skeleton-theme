@@ -123,7 +123,7 @@
 <script>
           document.addEventListener('DOMContentLoaded', function() {
           document.getElementById('add-to-cart-button').addEventListener('click', fetchCartItems());
-          }
+          })
       function updateCartCount() {
         fetch('/cart.js')
             .then(response => response.json())
