@@ -138,12 +138,11 @@
           console.log("RENDERING CART")
           console.log(cart)
 
-          //{{ cart }} = cart
            //h cartItemsContainer.innerHTML = ''; // Clear existing items
 
             // Loop through each item in the cart
 //(1 ..cart.item_count)
-          console.log("items" + cart.items)
+          console.log(cart.items)
             const itemHtml =  `  <div style="overflow-y: auto; overflow-x:hidden;">
         {% for item in cart.items %}
           <div class="row mb-1">
