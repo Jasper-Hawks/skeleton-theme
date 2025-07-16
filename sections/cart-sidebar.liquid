@@ -7,7 +7,7 @@
     <span class="fs-4">Cart</span>
   </a>
   <hr>
-  <div style="overflow-y: auto;">
+  <div style="overflow-y: auto; overflow-x:hidden;">
     {% for item in cart.items %}
       <div class="row mb-1">
         <div class="col-1">
@@ -34,6 +34,7 @@
       </div>
     {% endfor %}
   </div>
+  <hr>
 </aside>
 <script>
     document.getElementById('cart-toggle').addEventListener('click', function() {
