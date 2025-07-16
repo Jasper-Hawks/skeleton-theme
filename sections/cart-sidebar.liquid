@@ -36,10 +36,45 @@
     {% endfor %}
   </div>
   <hr>
-  <h1>Total:</h1>
+  <h1>Total: {{ cart.total_price }}</h1>
   <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
 </aside>
 <script>
+  document.getElementById('product-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this);
+    const queryString = new URLSearchParams(formData).toString();
+    {% comment %}
+    const filterForm = document.getElementById('filter-form');
+    const checkedBoxes = filterForm.querySelectorAll('input[type=checkbox]:checked');
+    let activeFilters = []
+    let nodeIds = []
+    
+
+    for (let i = 0; i < checkedBoxes.length; i++){
+      let activeFilter = checkedBoxes[i].nextSibling.textContent.trim();
+      let nodeID = checkedBoxes[i].id;
+      activeFilters.push(activeFilter);
+      nodeIds.push(nodeID)
+    }
+    {% endcomment %}
+    console.log("/collections/{{ collection.title }}?view=ajax&" + queryString)
+
+    fetch(`/collections/{{ collection.title }}?sort_by=${value}&view=ajax&${queryString}`)
+      .then(response => response.text())
+      .then(data => {
+        // Update the filtered results section with the new content
+        document.getElementById('filtered-results').innerHTML = data;
+        clearActiveFilters();
+        updateActiveFilters(activeFilters,nodeIds);
+
+       // document.getElementById('active-filters').appendChild(activeFilterAnchor);
+      })
+      .catch(error => console.error('Error:', error));
+  });
+
+  
     document.getElementById('cart-toggle').addEventListener('click', function() {
     const sidebar = document.getElementById('cart-sidebar');
     sidebar.classList.toggle('active'); // Toggle the 'active' class
