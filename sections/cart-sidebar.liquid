@@ -58,9 +58,9 @@
                     </div>
                 `;
                 cartItemsContainer.innerHTML += itemHtml;
-            }
+            
             });
-  
+        }
           function fetchCartItems() {
             fetch('/cart.js')
                 .then(response => {
