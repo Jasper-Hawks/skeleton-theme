@@ -1,5 +1,9 @@
 <script>
           document.addEventListener('DOMContentLoaded', fetchCartItems);
+  document.querySelectorById('product-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    fetchCartItems();
+  }
 
         function renderCartItems(cart) {
             const cartItemsContainer = document.getElementById('ajax-cart-sidebar');
