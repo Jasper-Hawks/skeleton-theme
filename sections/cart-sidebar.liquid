@@ -36,7 +36,7 @@
     {% endfor %}
   </div>
   <hr>
-  <h1>Total: {{ cart.total_price }}</h1>
+  <h1>Total: {{ cart.total_price | money }}</h1>
   <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
 </aside>
 <script>
