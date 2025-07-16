@@ -125,9 +125,7 @@
        //   document.addEventListener('DOMContentLoaded', function() {
          // document.getElementById('add-to-cart-button').addEventListener('click', fetchCartItems());
           //})
-  function update(){
-    fetchCartItems();
-  }
+
       function updateCartCount() {
                      // fetchCartItems();
 
@@ -168,6 +166,8 @@
             alert('Product added to cart!');
             updateCartCount();
                   //fetchCartItems();
+        }).then(response => {
+          fetchCartItems()
         })
         .catch(error => {
             alert('There was an error adding the product to the cart: ' + error.message);
