@@ -1,6 +1,8 @@
 <script>
           document.addEventListener('DOMContentLoaded', fetchCartItems);
-  document.getElementById('product-form').addEventListener('submit', function(e) {
+      const productForm = document.getElementById('product-form');
+
+ productForm.addEventListener('submit', function(e) {
     e.preventDefault();
     fetchCartItems();
   });
