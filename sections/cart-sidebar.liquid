@@ -40,7 +40,7 @@
   <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
 </aside>
 <script>
-  let form = document.getElementById('product-form');
+  let productForm = document.getElementById('product-form');
   form.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
