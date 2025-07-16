@@ -638,3 +638,8 @@ border:none;
 #cart-sidebar{
   background-color: rgba(0,0,0,.9)
 }
+@include media-breakpoint-down(md) {
+  .cart-image {
+    width: 20%;
+  }
+}
