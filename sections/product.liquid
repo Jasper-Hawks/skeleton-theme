@@ -124,7 +124,6 @@
       }
     const form = document.getElementById('product-form');
       form.addEventListener('submit', function(e) {
-        fetchCartItems();
         e.preventDefault(); // Prevent the default form submission
         const productId = document.getElementById('variant-id').value;
         const quantity = form.querySelector('input[name="quantity"]').value;
@@ -152,6 +151,7 @@
         .then(data => {
             alert('Product added to cart!');
             updateCartCount();
+                  fetchCartItems();
         })
         .catch(error => {
             alert('There was an error adding the product to the cart: ' + error.message);
