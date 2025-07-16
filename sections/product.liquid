@@ -104,7 +104,13 @@
             value="1"
           >
 
-          <input type="submit" class="ATCBtn bg-dark mt-4" value="Add to cart" onclick="fetchCartItems">
+          <input
+            id="add-to-cart-button"
+            type="submit"
+            class="ATCBtn bg-dark mt-4"
+            value="Add to cart"
+            onclick="fetchCartItems"
+          >
           {{ form | payment_button }}
         {% endform %}
       </div>
@@ -115,6 +121,7 @@
 <div class="container inconsolata-expanded" id="expanded-description-container"></div>
 
 <script>
+          document.getElementById('add-to-cart-button').addEventListener('click', fetchCartItems);
       function updateCartCount() {
         fetch('/cart.js')
             .then(response => response.json())
