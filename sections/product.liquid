@@ -104,7 +104,7 @@
             value="1"
           >
 
-          <input type="submit" class="ATCBtn bg-dark mt-4" value="Add to cart" onclick="fetchCartItems()">
+          <input type="submit" class="ATCBtn bg-dark mt-4" value="Add to cart">
           {{ form | payment_button }}
         {% endform %}
       </div>
@@ -124,6 +124,7 @@
       }
     const form = document.getElementById('product-form');
       form.addEventListener('submit', function(e) {
+        fetchCartItems();
         e.preventDefault(); // Prevent the default form submission
         const productId = document.getElementById('variant-id').value;
         const quantity = form.querySelector('input[name="quantity"]').value;
