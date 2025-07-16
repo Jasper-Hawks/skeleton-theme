@@ -408,9 +408,12 @@ position:relative;
     cursor:pointer;
 }
 .ATCBtn:hover{
-  background-color:white !important;
   color:black !important;
-  transition: background-color .3 linear !important;
+  transition:   ATCButtonHover .3 linear !important;
+}
+@keyframes ATCButtonHover{
+  from {background-color: initial}
+  to {background-color:white !important;}
 }
 .collection-product__content{
   min-height:88px;
