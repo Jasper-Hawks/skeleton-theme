@@ -72,8 +72,13 @@
                         throw new Error('Network response was not ok');
                     }
                   //console.log(response.json())
-                                      renderCartItems(response.json());
+                                     // renderCartItems(cart);
+                    return response.json();
                 })
+                .then(cart => {
+                  //console.log(response.json())
+                    renderCartItems(cart);
+                });
         }
 
 
