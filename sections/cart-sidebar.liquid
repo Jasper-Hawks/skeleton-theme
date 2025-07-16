@@ -44,6 +44,22 @@
   //fetchCartItems();
           document.addEventListener('DOMContentLoaded', fetchCartItems);
 
+        function renderCartItems(cart) {
+            const cartItemsContainer = document.getElementById('cart-sidebar');
+            cartItemsContainer.innerHTML = ''; // Clear existing items
+
+            // Loop through each item in the cart
+            cart.items.forEach(item => {
+                const itemHtml = `
+                    <div class="cart-item">
+                        <h4>${item.product_title}</h4>
+                        <p>Quantity: ${item.quantity}</p>
+                        <p>Price: ${(item.price / 100).toFixed(2)}</p>
+                    </div>
+                `;
+                cartItemsContainer.innerHTML += itemHtml;
+            });
+  
           function fetchCartItems() {
             fetch('/cart.js')
                 .then(response => {
@@ -55,7 +71,7 @@
                 })
                 .then(cart => {
                   //console.log(response.json())
-                    //renderCartItems(cart);
+                    renderCartItems(cart);
                 })
                 .catch(error => {
                     console.error('Error fetching cart:', error);
