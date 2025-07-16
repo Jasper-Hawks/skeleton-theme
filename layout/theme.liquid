@@ -53,8 +53,11 @@
 
     {% section 'collection-list' %}
     {{ content_for_layout }}
-    {% section 'menu-sidebar' %}
-    {% section 'cart-sidebar' %}
+    {% comment %}
+      }
+      {% section 'menu-sidebar' %}
+      {% section 'cart-sidebar' %}
+    {% endcomment %}
 
     {% sections 'footer-group' %}
   </body>
