@@ -41,41 +41,26 @@
 </aside>
 <script>
   let productForm = document.getElementById('product-form');
-  form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
+  fetchCartItems();
 
-    const formData = new FormData(this);
-    const queryString = new URLSearchParams(formData).toString();
-    {% comment %}
-    const filterForm = document.getElementById('filter-form');
-    const checkedBoxes = filterForm.querySelectorAll('input[type=checkbox]:checked');
-    let activeFilters = []
-    let nodeIds = []
-    
+          function fetchCartItems() {
+            fetch('/cart.js')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(cart => {
+                    renderCartItems(cart);
+                })
+                .catch(error => {
+                    console.error('Error fetching cart:', error);
+                });
+        }
 
-    for (let i = 0; i < checkedBoxes.length; i++){
-      let activeFilter = checkedBoxes[i].nextSibling.textContent.trim();
-      let nodeID = checkedBoxes[i].id;
-      activeFilters.push(activeFilter);
-      nodeIds.push(nodeID)
-    }
-    {% endcomment %}
-    console.log("/collections/{{ collection.title }}?view=ajax&" + queryString)
 
-    fetch(`/collections/{{ collection.title }}?sort_by=${value}&view=ajax&${queryString}`)
-      .then(response => response.text())
-      .then(data => {
-        // Update the filtered results section with the new content
-        document.getElementById('filtered-results').innerHTML = data;
-        clearActiveFilters();
-        updateActiveFilters(activeFilters,nodeIds);
 
-       // document.getElementById('active-filters').appendChild(activeFilterAnchor);
-      })
-      .catch(error => console.error('Error:', error));
-  });
-
-  
     document.getElementById('cart-toggle').addEventListener('click', function() {
     const sidebar = document.getElementById('cart-sidebar');
       console.log("cart button click")
