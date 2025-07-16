@@ -133,10 +133,10 @@
     fetchCartItems();
   }); */
 
-        function renderCartItems(cart) {
+        function renderCartItems(updatedCart) {
             const cartItemsContainer = document.getElementById('ajax-cart-sidebar');
           console.log("RENDERING CART")
-          console.log(cart)
+          console.log(updatedCart.items)
 
            //h cartItemsContainer.innerHTML = ''; // Clear existing items
 
