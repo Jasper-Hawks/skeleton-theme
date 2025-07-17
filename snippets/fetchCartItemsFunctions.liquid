@@ -1,4 +1,13 @@
 <script>
+       function updateCartCount() {
+                     // fetchCartItems();
+
+        fetch('/cart.js')
+            .then(response => response.json())
+            .then(cart => {
+                document.querySelector('#cart-count').textContent = cart.item_count; // Update the cart count display
+            });
+      }
         function renderCartItems(updatedCart) {
             const cartItemsContainer = document.getElementById('ajax-cart-sidebar');
           console.log("RENDERING CART")
