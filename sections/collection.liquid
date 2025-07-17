@@ -139,7 +139,7 @@
               <input type="hidden" id="variant-id" name="id" value="{{ product.variants.first.id }}" />
                           <input
             id="add-to-cart-button"
-            type="submit"
+            onClick="addToCartCollection({{ product.variants.first.id }})"
             class="ATCBtn bg-dark mt-4"
             value="Add to cart"
           >
