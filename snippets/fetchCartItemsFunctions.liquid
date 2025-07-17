@@ -1,6 +1,11 @@
 <script>
   fetchCartItems();
 
+  function testFunction(){
+            fetchCartItems(); // Refresh the cart items
+        updateCartCount(); // Update the cart count
+
+  }
   function updateQuantity(id) {
     //console.log(this)
     const value = document.getElementById('quantity-'+id).value;
@@ -26,8 +31,7 @@
     })
     .then(cart => {
         console.log("Cart updated successfully", cart);
-        fetchCartItems(); // Refresh the cart items
-        updateCartCount(); // Update the cart count
+      testFunction();
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation', error);
