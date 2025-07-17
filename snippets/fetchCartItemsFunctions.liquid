@@ -22,14 +22,14 @@
     }).then(cart => {
       //console.log("Item removed successfully",cart);
       console.log(value);
-                      fetchCartItems();
-      updateCartCount();
+
 
     })
       .catch(error =>{
       console.error('There was a problem with the fetch operation', error)
     })
-    
+                          fetchCartItems();
+      updateCartCount();
 
   }
        function updateCartCount() {
