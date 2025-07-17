@@ -1,56 +1,59 @@
 <script>
-          document.addEventListener('DOMContentLoaded', fetchCartItems);
- var t = document.getElementById('product-form');
-      t.addEventListener('submit', function(e) {
-    e.preventDefault();
-    fetchCartItems();
-  });
-
-        function renderCartItems(cart) {
+        function renderCartItems(updatedCart) {
             const cartItemsContainer = document.getElementById('ajax-cart-sidebar');
-          console.log(cart)
+          console.log("RENDERING CART")
+          console.log(updatedCart.items)
+
            //h cartItemsContainer.innerHTML = ''; // Clear existing items
 
             // Loop through each item in the cart
-
-            const itemHtml =  `  <div style="overflow-y: auto; overflow-x:hidden;">
-        {% for item in cart.items %}
-          <div class="row mb-1">
+//(1 ..cart.item_count)
+          for (let i = 0; i < updatedCart.items.length; i++){
+            console.log("in for loop")
+                        let itemHtml =  `
+              <div class="row mb-1">
             <div class="col-md-1 cart-image">
-              {% render 'image', image: item.image, url: item.url %}
+            <img style="width:100%;" src="${updatedCart.items[i].image}">
             </div>
             <div class="col-md-5 product-title-table inconsolata-expanded">
-              <p class="">{{ item.quantity }}x {{ item.product.title }}</p>
-              <p id="price" class="">{{ item.product.price | money }}</p>
+              <p class="">${ updatedCart.items[i].quantity }x ${ updatedCart.items[i].title }</p>
+              <p id="price" class="">${updatedCart.items[i].presentment_price}</p>
 
               <label>Quantity:</label>
               <input
                 style="width:5rem;"
                 type="number"
                 name="updates[]"
-                value="{{ item.quantity }}"
+                value="${ updatedCart.items[i].quantity }"
                 id="quantity"
                 onchange="updateQuantity();"
               >
               <p class="inconsolata-expanded">
-                Subtotal <span id="subtotal">{{ item.quantity | times: item.product.price | money }}</span>
+                Subtotal <span id="subtotal">${updatedCart.items[i].final_line_price}</span>
               </p>
               {{ 'cart.remove' | t | link_to: item.url_to_remove }}
             </div>
             <hr>
-          </div>
-        {% endfor %}
-      </div>`
+          </div>`
+                cartItemsContainer.innerHTML += itemHtml;
+
+          }
+
 
           
             //cart.items.forEach(item => {
 
-                cartItemsContainer.innerHTML = itemHtml;
             
             //});
         }
           function fetchCartItems() {
-            fetch('/cart.js')
+            fetch('/cart.js',{
+             method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+  }
+            })
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
