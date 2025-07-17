@@ -667,3 +667,6 @@ html,body{
     overflow-x: hidden;
   height:fit-content;
 }
+html{
+    overflow-x: initial !important;
+}
