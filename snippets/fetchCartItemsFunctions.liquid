@@ -3,13 +3,12 @@
 
   function updateQuantity(id) {
     //console.log(this)
-            const productId = id;
-    const value = document.getElementById('quantity-'+productId).value;
+    const value = document.getElementById('quantity-'+id).value;
 
     console.log(value);
-    console.log(productId)
+    console.log(id)
                 const data = {
-            id: productId,
+            id: id,
             quantity: value
         };
     fetch('/cart/change.js',{
