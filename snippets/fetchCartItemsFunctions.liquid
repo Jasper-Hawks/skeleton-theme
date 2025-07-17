@@ -11,6 +11,7 @@
       }
         function renderCartItems(updatedCart) {
             const cartItemsContainer = document.getElementById('ajax-cart-sidebar');
+          const total = document.getElementById('total-text');
           console.log("RENDERING CART")
           console.log(updatedCart.items)
           let itemHtml = ``;
@@ -54,11 +55,6 @@
           }
 
 
-          
-            //cart.items.forEach(item => {
-
-            
-            //});
         }
           function fetchCartItems() {
             fetch('/cart.js',{
