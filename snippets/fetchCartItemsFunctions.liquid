@@ -41,7 +41,7 @@
                 onchange="updateQuantity();"
               >
               <p class="inconsolata-expanded">
-                Subtotal <span id="subtotal">${updatedCart.items[i].final_line_price}</span>
+                Subtotal <span id="subtotal">${updatedCart.items[i].final_line_price.slice(0,updatedCart.items[i].final_line_price.slice.length - 1)}</span>
               </p>
               <a onclick="removeItemFromCart(${updatedCart.items[i].id})">Test Remove</a>
             </div>
