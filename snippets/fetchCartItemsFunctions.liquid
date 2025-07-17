@@ -82,6 +82,11 @@
                 'Accept': 'application/json'
   },
       body: JSON.stringify(data)
+    }).then(cart => {
+      console.log("Item removed successfully",cart);
+      fetchCartItems();
+    }).catch(error =>{
+      console.error('There was a problem with the fetch operation', error)
     })
   }
 </script>
