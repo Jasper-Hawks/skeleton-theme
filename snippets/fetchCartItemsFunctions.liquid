@@ -18,13 +18,7 @@
                 'Accept': 'application/json'
   },
       body: JSON.stringify(data)
-    }) .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-      .then(cart => {
+    }).then(cart => {
       //console.log("Item removed successfully",cart);
      // console.log(value);
                           fetchCartItems();
