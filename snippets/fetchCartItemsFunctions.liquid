@@ -21,7 +21,7 @@
             // Loop through each item in the cart
 //(1 ..cart.item_count)
           for (let i = 0; i < updatedCart.items.length; i++){
-            let subtotal = String(updatedCart.items[i].final_line_price).slice(0,-1)
+            let subtotal = String(updatedCart.items[i].final_line_price).slice(0,-2)
             console.log("in for loop")
                          itemHtml =  `
               <div class="row mb-1">
