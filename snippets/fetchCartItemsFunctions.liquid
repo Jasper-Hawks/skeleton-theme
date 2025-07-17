@@ -79,8 +79,9 @@
             // Loop through each item in the cart
 //(1 ..cart.item_count)
           let sum = 0;
-          let subtotal = formatNumber(updatedCart.items[i].final_line_price);
           for (let i = 0; i < updatedCart.items.length; i++){
+                      let subtotal = formatNumber(updatedCart.items[i].final_line_price);
+
             sum += subtotal;
             console.log("in for loop")
             //console.log(updatedCart.items[i].id)
