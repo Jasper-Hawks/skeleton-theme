@@ -667,6 +667,6 @@ html,body{
     overflow-x: hidden;
   height:fit-content;
 }
-body{
+html{
   overflow-y: hidden;
 }
