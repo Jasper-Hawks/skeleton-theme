@@ -121,28 +121,7 @@
 <div class="container inconsolata-expanded" id="expanded-description-container"></div>
 
 <script>
-       //   document.addEventListener('DOMContentLoaded', function() {
-         // document.getElementById('add-to-cart-button').addEventListener('click', fetchCartItems());
-          //})
-          //document.addEventListener('DOMContentLoaded', fetchCartItems);
 
-  /*var t = document.getElementById('product-form');
-      t.addEventListener('submit', function(e) {
-    e.preventDefault();
-        console.log("FORM SUBMIT DETECTED")
-    fetchCartItems();
-  }); */
-
-
-      function updateCartCount() {
-                     // fetchCartItems();
-
-        fetch('/cart.js')
-            .then(response => response.json())
-            .then(cart => {
-                document.querySelector('#cart-count').textContent = cart.item_count; // Update the cart count display
-            });
-      }
     const form = document.getElementById('product-form');
       form.addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent the default form submission
