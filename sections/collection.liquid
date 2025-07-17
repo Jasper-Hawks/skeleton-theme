@@ -176,7 +176,10 @@
 {% endstylesheet %}
 
 <script>
-  //document.getElementById
+  document.getElementById('add-to-cart-button').addEventListener("click", function(){
+     document.getElementById('add-to-cart-button').style.color = "green";
+     document.getElementById('add-to-cart-button').innerText = "Added to Cart"
+  });
   function addToCartCollection(id){
         const productId = id;
         const quantity = 1;
