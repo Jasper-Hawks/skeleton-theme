@@ -417,6 +417,7 @@ position:relative;
   color:white !important;
   background-color: green !important;
   transition: 0.2s;
+  animation-fill-mode: forwards;
 }
 .collection-product__content{
   min-height:88px;
