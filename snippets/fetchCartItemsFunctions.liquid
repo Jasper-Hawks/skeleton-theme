@@ -5,30 +5,33 @@
     //console.log(this)
     const value = document.getElementById('quantity-'+id).value;
 
-    console.log(value);
-    console.log("updateQuantity" + id)
-                const data = {
-            id: id,
-            quantity: parseInt(value)
-        };
-    fetch('/cart/update.js',{
-      method: 'POST',
-  headers: {
-                'Content-Type': 'application/json'
-           //     'Accept': 'application/json'
-  },
-      body: JSON.stringify(data)
-    }).then(cart => {
-      //console.log("Item removed successfully",cart);
-     // console.log(value);
-                          fetchCartItems();
-    updateCartCount();
 
-    })
-      .catch(error =>{
-      console.error('There was a problem with the fetch operation', error)
-    })
+    const data = {
+        id: id,
+        quantity: parseInt(value) // Ensure the quantity is an integer
+    };
 
+    fetch('/cart/update.js', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok: ' + response.statusText);
+        }
+        return response.json(); // Parse the JSON response
+    })
+    .then(cart => {
+        console.log("Cart updated successfully", cart);
+        fetchCartItems(); // Refresh the cart items
+        updateCartCount(); // Update the cart count
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation', error);
+    });
   }
        function updateCartCount() {
                      // fetchCartItems();
