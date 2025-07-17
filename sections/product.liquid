@@ -133,77 +133,7 @@
     fetchCartItems();
   }); */
 
-        function renderCartItems(updatedCart) {
-            const cartItemsContainer = document.getElementById('ajax-cart-sidebar');
-          console.log("RENDERING CART")
-          console.log(updatedCart.items)
 
-           //h cartItemsContainer.innerHTML = ''; // Clear existing items
-
-            // Loop through each item in the cart
-//(1 ..cart.item_count)
-          for (let i = 0; i < updatedCart.items.length; i++){
-            console.log("in for loop")
-                        let itemHtml =  `
-              <div class="row mb-1">
-            <div class="col-md-1 cart-image">
-            <img style="width:100%;" src="${updatedCart.items[i].image}">
-            </div>
-            <div class="col-md-5 product-title-table inconsolata-expanded">
-              <p class="">${ updatedCart.items[i].quantity }x ${ updatedCart.items[i].title }</p>
-              <p id="price" class="">${updatedCart.items[i].presentment_price}</p>
-
-              <label>Quantity:</label>
-              <input
-                style="width:5rem;"
-                type="number"
-                name="updates[]"
-                value="${ updatedCart.items[i].quantity }"
-                id="quantity"
-                onchange="updateQuantity();"
-              >
-              <p class="inconsolata-expanded">
-                Subtotal <span id="subtotal">${updatedCart.items[i].final_line_price}</span>
-              </p>
-              {{ 'cart.remove' | t | link_to: item.url_to_remove }}
-            </div>
-            <hr>
-          </div>`
-                cartItemsContainer.innerHTML += itemHtml;
-
-          }
-
-
-          
-            //cart.items.forEach(item => {
-
-            
-            //});
-        }
-          function fetchCartItems() {
-            fetch('/cart.js',{
-             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-  }
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                  //console.log(response.json())
-                                     // renderCartItems(cart);
-                    return response.json();
-                })
-                .then(cart => {
-                  //console.log(response.json())
-                  console.log("init cart" + cart)
-                    renderCartItems(cart);
-                });
-        }
-
-  
       function updateCartCount() {
                      // fetchCartItems();
 
