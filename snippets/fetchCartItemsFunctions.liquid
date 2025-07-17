@@ -11,11 +11,11 @@
             id: id,
             quantity: value
         };
-    fetch('/cart/change.js',{
+    fetch('/cart/update.js',{
       method: 'POST',
   headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Content-Type': 'application/json'
+           //     'Accept': 'application/json'
   },
       body: JSON.stringify(data)
     }).then(cart => {
