@@ -624,7 +624,7 @@ border:none;
   top: 5rem; /* Align to the top */
   width: 50vw; /* Set the width of the sidebar */
     background-color:rgba(0,0,0,0.7);
-
+overflow-y:auto;
   transform: translateX(-200%); /* Start hidden off-screen */
   transition: transform 0.3s ease; /* Smooth transition */
   z-index: 999; /* Ensure it appears above other content */
