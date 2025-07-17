@@ -25,7 +25,7 @@
           for (let i = 0; i < updatedCart.items.length; i++){
             let subtotalDollars = String(updatedCart.items[i].final_line_price).slice(0,-2)
             let subtotalCents = String(updatedCart.items[i].final_line_price).slice(String(updatedCart.items[i].final_line_price).length-3,String(updatedCart.items[i].final_line_price).length-1)
-            sum += Number(subtotalDollars + "."+ subtotalCents)
+            sum += Math.floor((Number(subtotalDollars + "."+ subtotalCents) * 100)/100)
             console.log("in for loop")
                          itemHtml =  `
               <div class="row mb-1">
