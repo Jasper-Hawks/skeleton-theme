@@ -1,9 +1,9 @@
 <script>
   fetchCartItems();
 
-  function updateQuantity() {
-    console.log(this)
-            const productId = this.aKeyValue[1];
+  function updateQuantity(id) {
+    //console.log(this)
+            const productId = id;
     const value = document.getElementById('quantity-'+productId).value;
 
     console.log(value);
@@ -82,7 +82,7 @@
                 name="updates[]"
                 value="${ updatedCart.items[i].quantity }"
                 id="quantity-${updatedCart.items[i].id}"
-                onchange="updateQuantity();"
+                onchange="updateQuantity(${updatedCart.items[i].id});"
               >
               <p class="inconsolata-expanded">
                 Subtotal <span id="subtotal">${subtotalDollars + "."+ subtotalCents}</span>
