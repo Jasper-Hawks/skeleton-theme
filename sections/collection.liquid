@@ -237,15 +237,7 @@ document.querySelector('.sort-by').addEventListener('change', function(e) {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach(checkbox => {
       checkbox.onclick = function(event) {
-       /* if (checkbox.checked == true){
-
-          checkbox.checked = false;
-        }else{
-          checkbox.checked = true;
-        } */
       document.getElementById("main-apply-filter-btn").click();
-
-
       };
   });
 
@@ -269,7 +261,9 @@ document.querySelector('.sort-by').addEventListener('change', function(e) {
     console.log("/collections/{{ collection.title }}?view=ajax&" + queryString)
 
     fetch(`/collections/{{ collection.title }}?sort_by=${value}&view=ajax&${queryString}`)
-      .then(response => response.text())
+      .then(response => {
+        
+      })
       .then(data => {
         // Update the filtered results section with the new content
         document.getElementById('filtered-results').innerHTML = data;
