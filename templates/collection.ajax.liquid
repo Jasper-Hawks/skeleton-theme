@@ -21,9 +21,14 @@
                 <p class="black-text product-title">{{ product.title | escape | link_to: product.url }}</p>
                 <p style="text-decoration:none;margin-bottom:0;">{{ product.price | money }}</p>
               </div>
-              <form method="post" action="/cart/add">
-                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-                <button type="submit" class="ATCBtn bg-dark inconsolata-expanded">Add to Cart</button>
+              <form id="collection-product">
+                <input type="hidden" id="variant-id" name="id" value="{{ product.variants.first.id }}">
+                <input
+                  id="add-to-cart-button"
+                  type="submit"
+                  class="ATCBtn bg-dark mt-4"
+                  value="Add to cart"
+                >
               </form>
             </div>
           </div>
