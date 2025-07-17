@@ -1,9 +1,9 @@
 <script>
   fetchCartItems();
-const quantity = document.querySelector('[id^="quantity"]');
-      console.log(quantity);
-  quantity.addEventListener('change',function() {
-        const productId = quantity.id;
+
+  function updateQuantity() {
+    console.log(this)
+            const productId = this.id;
         const quantity = quantity.value;
 
                 const data = {
@@ -27,8 +27,8 @@ const quantity = document.querySelector('[id^="quantity"]');
       console.error('There was a problem with the fetch operation', error)
     })
     
-  })
 
+  }
        function updateCartCount() {
                      // fetchCartItems();
 
@@ -72,6 +72,7 @@ const quantity = document.querySelector('[id^="quantity"]');
                 name="updates[]"
                 value="${ updatedCart.items[i].quantity }"
                 id="quantity-${updatedCart.items[i].id}"
+                onClick="updateQuantity();"
               >
               <p class="inconsolata-expanded">
                 Subtotal <span id="subtotal">${subtotalDollars + "."+ subtotalCents}</span>
