@@ -652,6 +652,9 @@ overflow-y:auto !important;
 }
 @media (max-width: 575.98px) {
   .submenu{
+        position: fixed; /* Keep the sidebar fixed */
+left: 0;
+    top:0;
     width:100vw;
     overflow-y:auto !important;
     transform: translateY(-200%);
