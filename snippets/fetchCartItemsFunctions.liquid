@@ -43,7 +43,7 @@
                 name="updates[]"
                 value="${ updatedCart.items[i].quantity }"
                 id="quantity"
-                onchange="updateQuantity();"
+                onchange="fetchCartItems();"
               >
               <p class="inconsolata-expanded">
                 Subtotal <span id="subtotal">${subtotalDollars + "."+ subtotalCents}</span>
