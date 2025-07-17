@@ -3,7 +3,7 @@
 const quantity = document.querySelector('[id^="quantity"]');
   quantity.addEventListener('change',function() {
         const productId = quantity.id;
-        const quantity = 1;
+        const quantity = quantity.value;
 
                 const data = {
             id: productId,
