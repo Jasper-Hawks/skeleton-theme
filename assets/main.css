@@ -661,6 +661,7 @@ left: 0;
     transition: transform 0.3s ease;
         background-color:rgba(0,0,0,0.7);
 height:100vh;
+    z-index:999;
 
   }
 }
