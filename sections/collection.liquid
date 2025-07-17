@@ -209,43 +209,7 @@
             alert('There was an error adding the product to the cart: ' + error.message);
         });
   }
-/*
-      form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent the default form submission
-        console.log("form submit")
-        const productId = document.getElementById('variant-id').value;
-        const quantity = 1;
 
-                const data = {
-            id: productId,
-            quantity: quantity
-        };
-
-        console.log(data)
-        fetch('/cart/add.js', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            alert('Product added to cart!');
-            updateCartCount();
-                  fetchCartItems();
-        })
-        .catch(error => {
-            alert('There was an error adding the product to the cart: ' + error.message);
-        });
-    });
-*/
 
   
   Shopify.queryParams = {};
