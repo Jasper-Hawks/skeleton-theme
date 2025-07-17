@@ -4,11 +4,11 @@
   function updateQuantity() {
     console.log(this)
             const productId = this.aKeyValue[1];
-        const quantity = quantity.value;
+    const value = document.getElementById('quantity-'+productId).value;
 
                 const data = {
             id: productId,
-            quantity: quantity
+            quantity: value
         };
     fetch('/cart/update.js',{
       method: 'POST',
