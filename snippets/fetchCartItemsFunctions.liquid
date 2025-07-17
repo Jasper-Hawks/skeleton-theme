@@ -43,7 +43,7 @@
                 onchange="updateQuantity();"
               >
               <p class="inconsolata-expanded">
-                Subtotal <span id="subtotal">${subtotal}</span>
+                Subtotal <span id="subtotal">${subtotalDollars + subtotalCents}</span>
               </p>
               <a onclick="removeItemFromCart(${updatedCart.items[i].id})">Remove</a>
             </div>
