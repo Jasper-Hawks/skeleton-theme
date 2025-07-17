@@ -180,6 +180,7 @@
   const form = document.getElementById('collection-product');
       form.addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent the default form submission
+        console.log("form submit")
         const productId = document.getElementById('variant-id').value;
         const quantity = 1;
 
