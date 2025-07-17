@@ -1,41 +1,62 @@
-<footer class="page-content">
-  <div class="footer__copyright">
-    &copy;
-    {{ 'now' | date: '%Y' }}
-    {{ shop.name | link_to: routes.root_url }}, {{ powered_by_link }}
-  </div>
-
-  <div class="footer__links">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
-  </div>
-
-  <div class="footer__payment">
-    {% if section.settings.show_payment_icons %}
-      {% for type in shop.enabled_payment_types %}
-        {{ type | payment_type_svg_tag }}
-      {% endfor %}
-    {% endif %}
-  </div>
+<footer class="container">
+  <p class="col-md-4 mb-0 text-body-secondary">© 2025 Company, Inc</p>
+  <a
+    href="/"
+    class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+    aria-label="Bootstrap"
+  >
+    <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+      <use xlink:href="#bootstrap"></use>
+    </svg>
+  </a>
+  <ul class="nav col-md-4 justify-content-end">
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+  </ul>
 </footer>
+{% comment %}
+  <footer class="page-content">
+    <div class="footer__copyright">
+      &copy;
+      {{ 'now' | date: '%Y' }}
+      {{ shop.name | link_to: routes.root_url }}, {{ powered_by_link }}
+    </div>
 
-{% stylesheet %}
-  footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-  }
-  footer a {
-    text-decoration: none;
-    color: var(--color-foreground);
-  }
-  footer .footer__links,
-  footer .footer__payment {
-    display: flex;
-    gap: 1rem;
-  }
-{% endstylesheet %}
+    <div class="footer__links">
+      {% for link in section.settings.menu.links %}
+        {{ link.title | link_to: link.url }}
+      {% endfor %}
+    </div>
+
+    <div class="footer__payment">
+      {% if section.settings.show_payment_icons %}
+        {% for type in shop.enabled_payment_types %}
+          {{ type | payment_type_svg_tag }}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </footer>
+
+  {% stylesheet %}
+    footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    footer a {
+      text-decoration: none;
+      color: var(--color-foreground);
+    }
+    footer .footer__links,
+    footer .footer__payment {
+      display: flex;
+      gap: 1rem;
+    }
+  {% endstylesheet %}
+{% endcomment %}
 {% schema %}
 {
   "name": "t:general.footer",
