@@ -136,7 +136,7 @@
                 <p style="text-decoration:none;margin-bottom:0;">{{ product.price | money }}</p>
               </div>
               <form id="collection-product">
-              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <input type="hidden" id="variant-id" name="id" value="{{ product.variants.first.id }}" />
                           <input
             id="add-to-cart-button"
             type="submit"
@@ -177,11 +177,44 @@
 
 <script>
 
-    document.getElementById('collection-product').addEventListener('submit', function(event) {
-      event.preventDefault();
-      fetchCartItems();
+  const form = document.getElementById('collection-product');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        const productId = document.getElementById('variant-id').value;
+        const quantity = 1;
+
+                const data = {
+            id: productId,
+            quantity: quantity
+        };
+
+        console.log(data)
+        fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert('Product added to cart!');
+            updateCartCount();
+                  fetchCartItems();
+        })
+        .catch(error => {
+            alert('There was an error adding the product to the cart: ' + error.message);
+        });
     });
 
+
+  
   Shopify.queryParams = {};
 if(location.search.length) {
   for(var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
