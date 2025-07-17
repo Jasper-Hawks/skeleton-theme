@@ -26,7 +26,7 @@
         })
       .then(cart => {
       //console.log("Item removed successfully",cart);
-      console.log(value);
+     // console.log(value);
                           fetchCartItems();
     updateCartCount();
 
@@ -64,7 +64,7 @@
             let subtotalCents = String(updatedCart.items[i].final_line_price).slice(String(updatedCart.items[i].final_line_price).length-3,String(updatedCart.items[i].final_line_price).length-1)
             sum += Number(subtotalDollars + "."+ subtotalCents)
             console.log("in for loop")
-            console.log(updatedCart.items[i].id)
+            //console.log(updatedCart.items[i].id)
                          itemHtml =  `
               <div class="row mb-1">
             <div class="col-md-1 cart-image">
