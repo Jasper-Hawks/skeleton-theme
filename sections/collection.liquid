@@ -8,7 +8,7 @@
 
 <div class="container my-2">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-md-3">
       <h5 class="pt-serif-regular text-center">Filter</h5>
       <hr>
       <form id="filter-form" class="filter-form" method="get" action="/collections/{{ collection.handle }}">
@@ -118,7 +118,7 @@
     {% paginate collection.products by 20 %}
       <div class="row">
         {% for product in collection.products %}
-          <div class="col-sm-4 product-listing hover-underline">
+          <div class="col-md-4 product-listing hover-underline">
             <div class="collection-product">
               {% if product.featured_image %}
                 {% render 'image',
