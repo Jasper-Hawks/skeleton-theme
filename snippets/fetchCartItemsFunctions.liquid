@@ -68,4 +68,20 @@
                     renderCartItems(cart);
                 });
         }
+  function removeItemFromCart(id){
+
+    const data = {
+      updates:{
+        [id]: 0
+      }
+    };
+    fetch('/cart/update.js',{
+      method: 'POST',
+  headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+  }
+    })
+  }
+  }
 </script>
