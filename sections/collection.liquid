@@ -137,13 +137,15 @@
               </div>
               <form method="post" action="/cart/add">
               <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-          <input
+                          <input
             id="add-to-cart-button"
             type="submit"
             class="ATCBtn bg-dark mt-4"
             value="Add to cart"
-            onclick="fetchCartItems"
-          >              <!--<button type="submit">Add to Cart</button> -->
+            onclick="fetchCartItems()"
+          >
+              <!--<button type="submit" class="ATCBtn bg-dark inconsolata-expanded">Add to Cart</button>-->
+              <!--<button type="submit">Add to Cart</button> -->
               </form>
             </div>
           </div>
