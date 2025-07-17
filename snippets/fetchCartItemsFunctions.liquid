@@ -2,7 +2,6 @@
   fetchCartItems();
 
   function updateQuantity() {
-    console.log(this)
             const productId = this.aKeyValue[1];
     const value = document.getElementById('quantity-'+productId).value;
 
@@ -10,7 +9,7 @@
     console.log(productId)
                 const data = {
             id: productId,
-            quantity: value
+            quantity: Number(value)
         };
     fetch('/cart/update.js',{
       method: 'POST',
