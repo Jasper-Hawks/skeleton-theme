@@ -135,14 +135,13 @@
                 <p class="black-text product-title">{{ product.title | escape | link_to: product.url }}</p>
                 <p style="text-decoration:none;margin-bottom:0;">{{ product.price | money }}</p>
               </div>
-              <form>
+              <form id="collection-product">
               <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
                           <input
             id="add-to-cart-button"
             type="submit"
             class="ATCBtn bg-dark mt-4"
             value="Add to cart"
-            onclick="fetchCartItems()"
           >
               <!--<button type="submit" class="ATCBtn bg-dark inconsolata-expanded">Add to Cart</button>-->
               <!--<button type="submit">Add to Cart</button> -->
@@ -177,6 +176,11 @@
 {% endstylesheet %}
 
 <script>
+
+    document.getElementById('collection-product').addEventListener('submit', function(event) {
+      event.preventDefault();
+      fetchCartItems();
+    }
 
   Shopify.queryParams = {};
 if(location.search.length) {
