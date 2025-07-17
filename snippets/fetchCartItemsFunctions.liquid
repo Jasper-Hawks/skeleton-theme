@@ -3,6 +3,8 @@
             const cartItemsContainer = document.getElementById('ajax-cart-sidebar');
           console.log("RENDERING CART")
           console.log(updatedCart.items)
+          let itemHtml = ``;
+          cartItemsContainer.innerHTML = ''
 
            //h cartItemsContainer.innerHTML = ''; // Clear existing items
 
@@ -10,7 +12,7 @@
 //(1 ..cart.item_count)
           for (let i = 0; i < updatedCart.items.length; i++){
             console.log("in for loop")
-                        let itemHtml =  `
+                         itemHtml =  `
               <div class="row mb-1">
             <div class="col-md-1 cart-image">
             <img style="width:100%;" src="${updatedCart.items[i].image}">
