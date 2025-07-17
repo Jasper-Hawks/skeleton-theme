@@ -1,5 +1,5 @@
 <div id="submenu" class="submenu p-3">
-  <a>X</a>
+  <a onclick="closeMenu" class="close-button">X</a>
   <div class="row justify-content-center">
     {% for collection in collections %}
       <div class="col inconsolata-expanded collection-display">
@@ -19,6 +19,13 @@
     {% endfor %}
   </div>
 </div>
+
+{% style %}
+  .close-button{
+    text-color:white;
+    text-align:right;
+  }
+{% endstyle %}
 {% schema %}
 {
   "name": "collection-list",
