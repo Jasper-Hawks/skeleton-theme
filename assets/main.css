@@ -666,3 +666,6 @@ border:none;
 html,body{
     overflow-x: hidden;
 }
+body{
+  overflow-y: hidden;
+}
