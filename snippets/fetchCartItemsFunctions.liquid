@@ -1,5 +1,6 @@
 <script>
   fetchCartItems();
+const 
        function updateCartCount() {
                      // fetchCartItems();
 
@@ -42,7 +43,7 @@
                 type="number"
                 name="updates[]"
                 value="${ updatedCart.items[i].quantity }"
-                id="quantity"
+                id="quantity-${updatedCart.items[i].id}"
                 onchange="updateQuantity();"
               >
               <p class="inconsolata-expanded">
