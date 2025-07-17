@@ -402,6 +402,7 @@ position:relative;
       padding-top:10px;
   padding-bottom:10px;
   width:100%;
+      caret-color: rgba(0,0,0,0);
   color:white !important;
   border-radius:3px;
   display:inline-block;
