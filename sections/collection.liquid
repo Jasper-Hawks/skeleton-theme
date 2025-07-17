@@ -176,10 +176,17 @@
 {% endstylesheet %}
 
 <script>
-  document.getElementsByClassName('ATCBtn').addEventListener("click", function(){
+  let buttons = document.getElementsByClassName('ATCBtn')
+
+    for (let i = 0; i < buttons.length; i++){
+
+    buttons[i].addEventListener("click", function(){
      document.getElementById('add-to-cart-button').style.color = "green";
      document.getElementById('add-to-cart-button').value = "Added to Cart"
-  });
+    });
+
+    }
+  
   function addToCartCollection(id){
         const productId = id;
         const quantity = 1;
