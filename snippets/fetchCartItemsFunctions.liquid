@@ -31,8 +31,7 @@
               <p class="inconsolata-expanded">
                 Subtotal <span id="subtotal">${updatedCart.items[i].final_line_price}</span>
               </p>
-              <a onclick="removeItemFromCart(${updatedCart.items[i].id})">
-              {{ 'cart.remove' | t | link_to: item.url_to_remove }}
+              <a onclick="removeItemFromCart(${updatedCart.items[i].id})">Remove</a>
             </div>
             <hr>
           </div>`
