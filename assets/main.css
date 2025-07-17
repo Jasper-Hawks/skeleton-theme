@@ -413,6 +413,11 @@ position:relative;
   background-color:white !important;
   transition: 0.2s;
 }
+.ATCBtn:active{
+  color:white !important;
+  background-color: green !important;
+  transition: 0.2s;
+}
 .collection-product__content{
   min-height:88px;
   max-height:88px;
