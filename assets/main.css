@@ -665,6 +665,7 @@ border:none;
 }
 html,body{
     overflow-x: hidden;
+  height:fit-content;
 }
 body{
   overflow-y: hidden;
