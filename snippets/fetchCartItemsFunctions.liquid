@@ -2,6 +2,29 @@
   fetchCartItems();
 const quantity = document.querySelector('[id^="quantity"]');
   quantity.addEventListener('change',function() {
+        const productId = quantity.id;
+        const quantity = 1;
+
+                const data = {
+            id: productId,
+            quantity: quantity
+        };
+    fetch('/cart/update.js',{
+      method: 'POST',
+  headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+  },
+      body: JSON.stringify(data)
+    }).then(cart => {
+      console.log("Item removed successfully",cart);
+                      fetchCartItems();
+      updateCartCount();
+
+    })
+      .catch(error =>{
+      console.error('There was a problem with the fetch operation', error)
+    })
     
   })
        function updateCartCount() {
