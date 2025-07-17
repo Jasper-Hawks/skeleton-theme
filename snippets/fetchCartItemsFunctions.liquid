@@ -9,7 +9,7 @@
     console.log("updateQuantity" + id)
                 const data = {
             id: id,
-            quantity: Number(value)
+            quantity: parseInt(value)
         };
     fetch('/cart/update.js',{
       method: 'POST',
