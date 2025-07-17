@@ -121,7 +121,6 @@
 <div class="container inconsolata-expanded" id="expanded-description-container"></div>
 
 <script>
-
     const form = document.getElementById('product-form');
       form.addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent the default form submission
@@ -149,7 +148,7 @@
             return response.json();
         })
         .then(data => {
-            alert('Product added to cart!');
+          //  alert('Product added to cart!');
             updateCartCount();
                   fetchCartItems();
         })
