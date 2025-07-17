@@ -10,7 +10,7 @@
   <hr>
   <div id="ajax-cart-sidebar" style="overflow-y:auto;"></div>
   <hr>
-  <h1>Total: {{ cart.total_price | money }}</h1>
+  <h1>Total: <span id="total-text"></span></h1>
   <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
 </aside>
 <script>
