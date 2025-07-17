@@ -10,7 +10,7 @@
     console.log(productId)
                 const data = {
             id: productId,
-            quantity: Number(value)
+            quantity: value
         };
     fetch('/cart/change.js',{
       method: 'POST',
