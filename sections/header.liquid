@@ -36,22 +36,23 @@
           aria-expanded="false"
         >
           <span id="cart-count">{{ cart.item_count }}</span>
+          {{ 'icon-cart.svg' | inline_asset_content }}
 
-          <div style="text-align: center;">
-            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="80" fill="transparent">
-                <animate
-                  attributeName="fill"
-                  from="transparent"
-                  to="red"
-                  dur="2s"
-                  begin="0s"
-                  fill="freeze" />
-              </circle>
-            </svg>
-          </div>
           {% comment %}
-            {{ 'icon-cart.svg' | inline_asset_content }}
+
+            <div style="text-align: center;">
+              <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" fill="transparent">
+                  <animate
+                    attributeName="fill"
+                    from="transparent"
+                    to="red"
+                    dur="2s"
+                    begin="0s"
+                    fill="freeze" />
+                </circle>
+              </svg>
+            </div>
           {% endcomment %}
         </button>
       </div>
