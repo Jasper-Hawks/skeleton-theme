@@ -45,22 +45,20 @@
             });
       }
   function formatNumber(num) {
-    // Convert the number to a string
+      // Convert the number to a string
     let numStr = num.toString();
     
-    // Check if the number has a decimal point
-    if (numStr.includes('.')) {
-        // Split the number into whole and decimal parts
-        let parts = numStr.split('.');
-        let wholePart = parts[0];
-        let decimalPart = parts[1];
-        
-        // Combine the whole part with the last two digits of the decimal part
-        return wholePart + '.' + (decimalPart + '00').slice(0, 2);
-    } else {
-        // If no decimal point, just add '.00' at the end
-        return numStr + '.00';
+    // Check the length of the string
+    let length = numStr.length;
+
+    // If the number has less than two digits, prepend zeros
+    if (length < 3) {
+        numStr = '0'.repeat(3 - length) + numStr;
+        length = 3; // Update length after padding
     }
+
+    // Insert the decimal point before the last two digits
+    return numStr.slice(0, length - 2) + '.' + numStr.slice(length - 2);
 }
 
         function renderCartItems(updatedCart) {
