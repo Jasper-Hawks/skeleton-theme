@@ -80,7 +80,7 @@
           for (let i = 0; i < updatedCart.items.length; i++){
                       let subtotal = formatNumber(updatedCart.items[i].final_line_price);
 
-            sum += subtotal;
+            sum += Number(subtotal);
             console.log("in for loop")
             //console.log(updatedCart.items[i].id)
                          itemHtml =  `
