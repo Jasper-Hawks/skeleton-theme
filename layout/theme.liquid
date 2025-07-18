@@ -52,7 +52,9 @@
     {% sections 'header-group' %}
 
     {% section 'collection-list' %}
-    {{ content_for_layout }}
+    <div style="height:auto;">
+      {{ content_for_layout }}
+    </div>
 
     {% section 'menu-sidebar' %}
     {% section 'cart-sidebar' %}
