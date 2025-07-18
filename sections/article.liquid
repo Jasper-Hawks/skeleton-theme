@@ -15,35 +15,13 @@
           {{ article.image | image_url: width: 1000 | image_tag }}
         {% endif %}
 
-        <!-- /.blog-sidebar -->
-      </div>
-      <!-- /.row -->
-    </div>
-  </div>
-</div>
+          {{ article.content }}
 
-{% comment %}
-    This section is used in the article template to render the article page, which
-    displays the full content of the blog post and can optionally include a
-    comments section for customers (not shown in this example).
 
-    https://shopify.dev/docs/storefronts/themes/architecture/templates/article
-
-  {% if article.image %}
-    {{ article.image | image_url: width: 1000 | image_tag }}
-  {% endif %}
-
-  <h1>{{ article.title }}</h1>
-
-  {% assign date = article.published_at | time_tag: format: 'date' %}
-  <p>{{ 'blog.article_metadata_html' | t: date: date, author: article.author }}</p>
-
-  {{ article.content }}
-
-  {% if blog.comments_enabled? %}
+        {% if blog.comments_enabled? %}
     <h2>{{ 'blog.article_comments' | t }}</h2>
 
-    <div id="comments">
+   < div id="comments">
       {% paginate article.comments by 10 %}
         {% for comment in article.comments %}
           <div>
@@ -82,7 +60,12 @@
       <input type="submit" value="{{ 'blog.comment_form_submit' | t }}">
     {% endform %}
   {% endif %}
-{% endcomment %}
+        <!-- /.blog-sidebar -->
+      </div>
+      <!-- /.row -->
+    </div>
+  </div>
+</div>
 
 {% schema %}
 {
