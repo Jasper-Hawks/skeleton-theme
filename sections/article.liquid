@@ -6,7 +6,7 @@
         {% assign date = article.published_at | time_tag: format: 'date' %}
         <p class="blog-post-meta">
           {{ 'blog.article_metadata_html' | t: date: date -}}
-          <a href="#">{{ 'blog.article_metadata_html' | t: author: article.author }}</a>
+          <a href="#">{{ article.author }}</a>
         </p>
 
         {% if article.image %}
