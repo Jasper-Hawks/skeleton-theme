@@ -5,7 +5,7 @@
         <h2 class="blog-post-title">{{ article.title }}</h2>
         {% assign date = article.published_at | time_tag: format: 'date' %}
         <p class="blog-post-meta">
-          {{ 'blog.article_metadata_html' | t: date: date -}}
+          {{ 'blog.article_metadata_html' | t: date: date }}
           <a href="#">{{ article.author }}</a>
         </p>
 
