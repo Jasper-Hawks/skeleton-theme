@@ -9,9 +9,11 @@
         </p>
 
         {% if article.image %}
+          <hr>
           {{ article.image | image_url: width: 1000 | image_tag }}
         {% endif %}
 
+        <hr>
         {{ article.content }}
 
         {% if blog.comments_enabled? %}
