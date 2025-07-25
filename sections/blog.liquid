@@ -10,7 +10,8 @@
 
 {% paginate blog.articles by 5 %}
   {% for article in blog.articles %}
-    <div>
+    
+    <div class="blog-post">
       {% if article.image %}
         {{ article.image | image_url: width: 1000 | image_tag }}
       {% endif %}
@@ -28,6 +29,13 @@
   {%- endif -%}
 {% endpaginate %}
 </div>
+
+{% stylesheet %}
+  .blog-post{
+    border: 3px;
+    
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
