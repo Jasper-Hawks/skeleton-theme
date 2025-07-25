@@ -5,7 +5,7 @@
   https://shopify.dev/docs/storefronts/themes/architecture/templates/blog
 {% endcomment %}
 
-<div class="container">
+<div class="container radley-regular">
 <h1>{{ blog.title }}</h1>
 
 {% paginate blog.articles by 5 %}
@@ -33,7 +33,7 @@
 {% stylesheet %}
   .blog-post{
     border: 3px;
-    
+
   }
 {% endstylesheet %}
 
