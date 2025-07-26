@@ -16,11 +16,6 @@
         class="blog-post row"
         style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 10px;"
       >
-        <div class="col-sm-1">
-          {% if article.image %}
-            {{ article.image | image_url: width: 100 | image_tag }}
-          {% endif %}
-        </div>
         <div class="col">
           <h2>
             {{ article.title | link_to: article.url }}
