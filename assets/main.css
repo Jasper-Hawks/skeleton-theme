@@ -695,3 +695,8 @@ html{
   font-weight: 400;
   font-style: italic;
 }
+.page-container{
+  color:black;
+  position:none;
+  
+}
