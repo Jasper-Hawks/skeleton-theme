@@ -132,44 +132,42 @@
   </div>
 </div>
 {% stylesheet %}
-  .page-container{
-
-      .next:hover{
-      background-color:none !important;
-        text-decoration:underline !important;
-    }
-    .page-current{
-      text-decoration: underline !important;
-    }
-    .prev:hover{
-      background-color:none !important;
+    .page-container .next:hover{
+    background-color:none !important;
       text-decoration:underline !important;
-    }
-    .next{
-      position: unset !important;
-        color:black !important;
-      padding: 0;
+  }
+  .page-container .page-current{
+    text-decoration: underline !important;
+  }
+  .page-container .prev:hover{
+    background-color:none !important;
+    text-decoration:underline !important;
+  }
+  .page-container .next{
+    position: unset !important;
+      color:black !important;
+    padding: 0;
 
-    }
-    .prev{
-      position: unset !important;
-        color:black !important;
-      padding: 0;
+  }
+  .page-container .prev{
+    position: unset !important;
+      color:black !important;
+    padding: 0;
 
-    }
   }
 
-      .text-content{
-        a{
-              text-decoration: underline !important;
-        }
+
+    .text-content{
+      a{
+            text-decoration: underline !important;
       }
-      img{
-          display: block;
-       margin-left: auto;
-       margin-right: auto;
-        width:100%;
-      }
+    }
+    img{
+        display: block;
+     margin-left: auto;
+     margin-right: auto;
+      width:100%;
+    }
 {% endstylesheet %}
 {% schema %}
 {
