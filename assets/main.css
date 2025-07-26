@@ -695,29 +695,3 @@ html{
   font-weight: 400;
   font-style: italic;
 }
-.page-container{
-  text-align:center !important;
-}
-.next:hover{
-  background-color:none !important;
-    text-decoration:underline !important;
-}
-.page-current{
-  text-decoration: underline !important;
-}
-.prev:hover{
-  background-color:none !important;
-  text-decoration:underline !important;
-}
-.next{
-  position: unset !important;
-    color:black !important;  
-  padding: 0;
-
-}
-.prev{
-  position: unset !important;
-    color:black !important;  
-  padding: 0;
-
-}
