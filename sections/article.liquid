@@ -9,7 +9,7 @@
         </p>
 
         {% if article.image %}
-          <div style="float:right;">
+          <div style="float:right; max-width: 300px;">
             {{ article.image | image_url: width: 1000 | image_tag }}
           </div>
         {% endif %}
