@@ -699,7 +699,9 @@ html{
 next:hover{
   background-color:none !important;
     text-decoration:underline !important;
-
+}
+.page-current{
+  text-decoration: underline !important;
 }
 prev:hover{
   background-color:none !important;
