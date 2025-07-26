@@ -89,7 +89,7 @@
       <hr>
 
       {% assign cat = collections[article.tags[0]] %}
-      {% paginate product by 2 %}
+      {% paginate cat.products by 2 %}
         {% for product in cat.products %}
           <div class="row">
             <div class="col product-listing hover-underline">
