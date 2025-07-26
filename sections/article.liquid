@@ -28,7 +28,7 @@
                   <p>
                     {{- comment.created_at | time_tag: format: 'date' -}}
                   </p>
-                  <p class="quantity-input">{{ comment.content }}</p>
+                  <p>{{ comment.content }}</p>
                 </div>
               {% endfor %}
 
@@ -54,7 +54,13 @@
 
             <div>
               <label for="body">{{ 'blog.comment_form_body' | t }}</label>
-              <textarea style="width:100%;" name="comment[body]" id="body" required>{{ form.body }}</textarea>
+              <textarea
+                class="quantity-input"
+                style="width:100%;"
+                name="comment[body]"
+                id="body"
+                required
+              >{{ form.body }}</textarea>
             </div>
 
             <input type="submit" value="{{ 'blog.comment_form_submit' | t }}">
