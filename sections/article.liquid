@@ -5,14 +5,8 @@
         <h2 class="blog-post-title">{{ article.title }}</h2>
         <p class="blog-post-meta">
           <span>{{ article.updated_at | date: '%B %d, %Y' }}</span>
-          <a href="#">{{ article.author }}</a>
+          <a>{{ article.author }}</a>
         </p>
-
-        {% if article.image %}
-          <div style=" max-width: 300px; margin-left: 20px; margin-top: 20px;">
-            {{ article.image | image_url: width: 300 | image_tag }}
-          </div>
-        {% endif %}
 
         <hr>
         {{ article.content }}
