@@ -91,7 +91,7 @@
       <hr>
 
       {% assign cat = collections[article.tags[0]] %}
-      {% for product in cat.products limit: 5 %}
+      {% for product in cat.products limit: 4 %}
         <div class="row">
           <div class="col product-listing hover-underline">
             <div class="collection-product">
