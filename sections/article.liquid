@@ -28,7 +28,7 @@
                   <p>
                     {{- comment.created_at | time_tag: format: 'date' -}}
                   </p>
-                  <p>{{ comment.content }}</p>
+                  <p class="quantity-input">{{ comment.content }}</p>
                 </div>
               {% endfor %}
 
