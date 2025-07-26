@@ -696,11 +696,11 @@ html{
   font-style: italic;
 }
 .page-container{
-  color:black;  
+  color:black !important;  
 }
 .next{
-  position: none !important;
+  position: unset !important;
 }
 .prev{
-  position: none !important;
+  position: unset !important;
 }
