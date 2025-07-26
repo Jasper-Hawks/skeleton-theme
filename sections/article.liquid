@@ -85,9 +85,9 @@
       <!-- /.row -->
     </div>
     <div class="col blog-side">
-      {{ max }}
+      {{ article.tags[0] }}
       <div class="row">
-        {% for product in collection.products %}
+        {% for product in article.tags[0] %}
           <div class="col-sm-4 product-listing hover-underline">
             <div class="collection-product">
               {% if product.featured_image %}
