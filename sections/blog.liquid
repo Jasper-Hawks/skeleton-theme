@@ -12,7 +12,10 @@
   <hr>
   {% paginate blog.articles by 5 %}
     {% for article in blog.articles %}
-      <div class="blog-post" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <div
+        class="blog-post"
+        style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 10px;"
+      >
         {% if article.image %}
           {{ article.image | image_url: width: 1000 | image_tag }}
         {% endif %}
