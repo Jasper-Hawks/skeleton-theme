@@ -697,10 +697,13 @@ html{
 }
 
 next:hover{
-  background-color:none;
+  background-color:none !important;
+    text-decoration:underline !important;
+
 }
 prev:hover{
-  background-color:none;
+  background-color:none !important;
+  text-decoration:underline !important;
 }
 .next{
   position: unset !important;
