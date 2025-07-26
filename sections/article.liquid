@@ -9,7 +9,9 @@
         </p>
 
         <hr>
-        {{ article.content }}
+        <span class="text-content">
+          {{ article.content }}
+        </span>
 
         <hr>
         {% if blog.comments_enabled? %}
