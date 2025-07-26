@@ -86,8 +86,8 @@
     </div>
     <div class="col blog-side">
       {% assign cat = collections[article.tags[0]] %}
-      <div class="row">
-        {% for product in cat.products %}
+      {% for product in cat.products %}
+        <div class="row">
           <div class="col-sm-4 product-listing hover-underline">
             <div class="collection-product">
               {% if product.featured_image %}
@@ -116,10 +116,8 @@
               </form>
             </div>
           </div>
-        {% endfor %}
-
-        {{ paginate | default_pagination }}
-      </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </div>
