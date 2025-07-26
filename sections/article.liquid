@@ -89,38 +89,41 @@
       <hr>
 
       {% assign cat = collections[article.tags[0]] %}
-      {% for product in cat.products %}
-        <div class="row">
-          <div class="col product-listing hover-underline">
-            <div class="collection-product">
-              {% if product.featured_image %}
-                {% render 'image',
-                  class: 'collection-product__image',
-                  image: product.featured_image,
-                  url: product.url,
-                  width: 400,
-                  height: 400,
-                  crop: 'center'
-                %}
-              {% endif %}
-              <div class="collection-product__content inconsolata-expanded">
-                <!-- TEST COMMENT -->
-                <p class="black-text product-title">{{ product.title | escape | link_to: product.url }}</p>
-                <p style="text-decoration:none;margin-bottom:0;">{{ product.price | money }}</p>
+      {% paginate product by 2 %}
+        {% for product in cat.products %}
+          <div class="row">
+            <div class="col product-listing hover-underline">
+              <div class="collection-product">
+                {% if product.featured_image %}
+                  {% render 'image',
+                    class: 'collection-product__image',
+                    image: product.featured_image,
+                    url: product.url,
+                    width: 400,
+                    height: 400,
+                    crop: 'center'
+                  %}
+                {% endif %}
+                <div class="collection-product__content inconsolata-expanded">
+                  <!-- TEST COMMENT -->
+                  <p class="black-text product-title">{{ product.title | escape | link_to: product.url }}</p>
+                  <p style="text-decoration:none;margin-bottom:0;">{{ product.price | money }}</p>
+                </div>
+                <form id="collection-product">
+                  <input type="hidden" id="variant-id" name="id" value="{{ product.variants.first.id }}">
+                  <input
+                    id="add-to-cart-button"
+                    onClick="addToCartCollection({{ product.variants.first.id }})"
+                    class="ATCBtn bg-dark mt-4"
+                    value="Add to cart"
+                  >
+                </form>
               </div>
-              <form id="collection-product">
-                <input type="hidden" id="variant-id" name="id" value="{{ product.variants.first.id }}">
-                <input
-                  id="add-to-cart-button"
-                  onClick="addToCartCollection({{ product.variants.first.id }})"
-                  class="ATCBtn bg-dark mt-4"
-                  value="Add to cart"
-                >
-              </form>
             </div>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+        {{ paginate | default_pagination }}
+      {% endpaginate %}
     </div>
   </div>
 </div>
