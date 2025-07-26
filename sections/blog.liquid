@@ -12,19 +12,23 @@
   <hr>
   {% paginate blog.articles by 5 %}
     {% for article in blog.articles %}
-      {% if article.image %}
-        {{ article.image | image_url: width: 100 | image_tag }}
-      {% endif %}
       <div
-        class="blog-post"
+        class="blog-post row"
         style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 10px;"
       >
-        <h2>
-          {{ article.title | link_to: article.url }}
-        </h2>
-        {% assign date = article.published_at | time_tag: format: 'date' %}
-        <p>{{ 'blog.article_metadata_html' | t: date: date, author: article.author }}</p>
-        <p>{{ article.excerpt }}</p>
+        <div class="col-sm-1">
+          {% if article.image %}
+            {{ article.image | image_url: width: 100 | image_tag }}
+          {% endif %}
+        </div>
+        <div class="col">
+          <h2>
+            {{ article.title | link_to: article.url }}
+          </h2>
+          {% assign date = article.published_at | time_tag: format: 'date' %}
+          <p>{{ 'blog.article_metadata_html' | t: date: date, author: article.author }}</p>
+          <p>{{ article.excerpt }}</p>
+        </div>
       </div>
     {% endfor %}
 
