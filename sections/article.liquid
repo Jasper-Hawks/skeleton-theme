@@ -56,8 +56,9 @@
               <label for="body">{{ 'blog.comment_form_body' | t }}</label>
               <textarea
                 class="quantity-input"
-                style="width:100%;"
+                style="width:100%; resize:none;"
                 name="comment[body]"
+                placeholder="Enter Comment"
                 id="body"
                 required
               >{{ form.body }}</textarea>
