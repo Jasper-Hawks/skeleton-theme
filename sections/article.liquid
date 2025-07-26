@@ -125,7 +125,7 @@
           </div>
         {% endfor %}
         <div class="page-container" style="text-align: center !important;">
-          {{ paginate | default_pagination }}
+          {{ paginate | default_pagination: anchor: 'pagination' }}
         </div>
       {% endpaginate %}
     </div>
