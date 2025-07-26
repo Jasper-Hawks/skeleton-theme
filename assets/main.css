@@ -705,10 +705,12 @@ prev:hover{
 .next{
   position: unset !important;
     color:black !important;  
+  padding: 0;
 
 }
 .prev{
   position: unset !important;
     color:black !important;  
+  padding: 0;
 
 }
