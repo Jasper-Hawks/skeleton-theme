@@ -696,6 +696,12 @@ html{
   font-style: italic;
 }
 
+next:hover{
+  background-color:none;
+}
+prev:hover{
+  background-color:none;
+}
 .next{
   position: unset !important;
     color:black !important;  
