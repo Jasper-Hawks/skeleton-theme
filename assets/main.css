@@ -695,12 +695,14 @@ html{
   font-weight: 400;
   font-style: italic;
 }
-.page-container{
-  color:black !important;  
-}
+
 .next{
   position: unset !important;
+    color:black !important;  
+
 }
 .prev{
   position: unset !important;
+    color:black !important;  
+
 }
