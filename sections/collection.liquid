@@ -142,6 +142,7 @@
             onClick="addToCartCollection({{ product.variants.first.id }})"
             class="ATCBtn bg-dark mt-4"
             value="Add to cart"
+            data-toggle="modal" data-target="#exampleModal"
           >
               <!--<button type="submit" class="ATCBtn bg-dark inconsolata-expanded">Add to Cart</button>-->
               <!--<button type="submit">Add to Cart</button> -->
@@ -207,8 +208,6 @@
            // alert('Product added to cart!');
             updateCartCount();
                   fetchCartItems();
-                      document.getElementById("add-to-cart-button").style.backgroundColor="green";
-            document.getElementById("add-to-cart-button").value="Added to Cart";
 
         })
         .catch(error => {
