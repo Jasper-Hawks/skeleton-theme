@@ -178,8 +178,6 @@
 <script>
 
   function addToCartCollection(id){
-    document.getElementById("add-to-cart-button").style.backgroundColor="green";
-            document.getElementById("add-to-cart-button").value="Added to Cart";
 
 
         const productId = id;
@@ -209,6 +207,9 @@
            // alert('Product added to cart!');
             updateCartCount();
                   fetchCartItems();
+                      document.getElementById("add-to-cart-button").style.backgroundColor="green";
+            document.getElementById("add-to-cart-button").value="Added to Cart";
+
         })
         .catch(error => {
             alert('There was an error adding the product to the cart: ' + error.message);
