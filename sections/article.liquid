@@ -1,3 +1,5 @@
+ {% render 'modal' %}
+
 <div class="container " style="margin-top:10px;">
   <div class="row">
     <div class="col-md-8 blog-main radley-regular">
@@ -117,7 +119,8 @@
                   onClick="addToCartCollection({{ product.variants.first.id }})"
                   class="ATCBtn bg-dark mt-4"
                   value="Add to cart"
-                >
+                  data-toggle="modal" data-target="#exampleModalCenter"          >
+
               </form>
             </div>
           </div>
