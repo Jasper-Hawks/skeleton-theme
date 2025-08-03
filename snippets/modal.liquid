@@ -6,10 +6,14 @@
 
       </div>
       <div class="modal-body">
-        Sign up for our newsletter for 15% off. 
-                    <label for="newsletter1" class="visually-hidden">Email address</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-            <button class="btn btn-primary" type="button">Subscribe</button>
+  <form action="{{ routes.cart_url }}" method="post">
+    <input
+      class="ATCBtn bg-dark border-0 inconsolata-expanded"
+      type="submit"
+      name="checkout"
+      value="{{ 'cart.checkout' | t }}"
+    >
+  </form>
 
     </div>
       <div class="modal-footer">
