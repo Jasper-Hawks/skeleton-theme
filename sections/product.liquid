@@ -74,7 +74,7 @@
 
       <div id="product-form" class="product-form">
         {% form 'product', product %}
-          {% comment %}{% assign current_variant = product.selected_or_first_available_variant %}{% endcomment %}
+          {% assign current_variant = product.selected_or_first_available_variant %}
 
           <select
             name="id"
@@ -125,6 +125,11 @@
 <div class="container inconsolata-expanded" id="expanded-description-container"></div>
 
 <script>
+  const variantDropDown = document.getElementById("variant-id");
+  variantDropDown.addEventListener('change',function(){
+    var selectedValue = this.value; // Get the selected value
+    console.log('Selected:', selectedValue); // Optional: Log the selected value
+    })
 
     const form = document.getElementById('product-form');
       form.addEventListener('submit', function(e) {
