@@ -86,7 +86,7 @@
             {% for variant in product.variants %}
               <option
                 id="variant-id"
-                value="{{ variant.id }}"
+                value="{{ product.selected_variant }}"
                 {% if variant == current_variant %}
                   selected="selected"
                 {% endif %}
