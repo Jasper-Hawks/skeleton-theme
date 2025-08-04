@@ -74,7 +74,7 @@
 
       <div id="product-form" class="product-form">
         {% form 'product', product %}
-          {% assign current_variant = product.selected_variant %}
+          {% assign current_variant = product.selected_or_first_available_variant %}
 
           <select
             name="id"
@@ -87,9 +87,9 @@
               <option
                 id="variant-id"
                 value="{{ variant.id }}"
-                {% if variant == current_variant %}
+               {% comment %} {% if variant == current_variant %}
                   selected="selected"
-                {% endif %}
+                {% endif %} {% endcomment %}
               >
                 {{ variant.title }} - {{ variant.price | money }}
               </option>
