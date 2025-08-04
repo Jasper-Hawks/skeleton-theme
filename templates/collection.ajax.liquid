@@ -21,7 +21,7 @@
               <div class="collection-product__content inconsolata-expanded">
                 <!-- TEST COMMENT -->
                 <p class="black-text product-title">{{ product.title | escape | link_to: product.url }}</p>
-                <p style="text-decoration:none;margin-bottom:0;"><s>{{ product.compare_at_price | money }}</s>{{ product.price | money }}</p>
+                <p style="text-decoration:none;margin-bottom:0;"><s>{{ product.compare_at_price | money }}</s> {{ product.price | money }}</p>
               </div>
               <form id="collection-product">
                 <input type="hidden" id="variant-id" name="id" value="{{ product.variants.first.id }}">
