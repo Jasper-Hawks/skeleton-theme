@@ -112,7 +112,7 @@ filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(7%) hue-r
   z-index: -6;
   position: absolute;
   top: 0;
-  background-image: url(../assets/IMG_8635.jpg);
+  background-image: url(../assets/IMG_8635_11zon.webp);
 
  /*   -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
     filter: grayscale(100%);*/
