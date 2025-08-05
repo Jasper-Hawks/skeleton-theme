@@ -688,10 +688,10 @@ html{
   font-family: "Radley-Regular";
   src: url({{ "Radley-Regular" | asset_url }}) format("ttf");
 }
-/* @font-face{
-  font-family: "Radley-Regular";
-  src: url({{ "Radley-Regular" | asset_url }}) format("ttf");
-} */
+ @font-face{
+  font-family: "PinyonScript-Regular";
+  src: url({{ "PinyonScript-Regular" | asset_url }}) format("ttf");
+} 
 .radley-regular {
   font-family: "Radley", serif;
   font-weight: 400;
