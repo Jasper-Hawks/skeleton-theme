@@ -694,12 +694,12 @@ html{
   font-style: italic;
 }
 .pt-serif-regular {
-  font-family: "PinyonScript-Regular", cursive;
+  font-family: "PinyonScript-Regular", serif;
   font-weight: 400;
   font-style: normal;
 }
 .pinyon-script-regular {
-  font-family: "Pinyon Script", cursive;
+  font-family: "Pinyon Script", serif;
   font-weight: 400;
   font-style: normal;
 }
