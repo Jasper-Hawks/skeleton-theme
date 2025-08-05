@@ -352,11 +352,7 @@ position:relative;
     top: 0;
     z-index: 1;
 }
-.pt-serif-regular {
-  font-family: "PT Serif", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 .filter-btn{
 
   padding-top:10px;
@@ -697,7 +693,11 @@ html{
   font-weight: 400;
   font-style: italic;
 }
-
+.pt-serif-regular {
+  font-family: "Pinyon Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 .pinyon-script-regular {
   font-family: "Pinyon Script", cursive;
   font-weight: 400;
