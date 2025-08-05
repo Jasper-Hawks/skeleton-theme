@@ -692,6 +692,10 @@ html{
   font-family: "PinyonScript-Regular";
   src: url({{ "PinyonScript-Regular" | asset_url }}) format("ttf");
 } 
+ @font-face{
+  font-family: "MonsieurLaDoulaise-Regular";
+  src: url({{ "MonsieurLaDoulaise-Regular" | asset_url }}) format("ttf");
+} 
 .radley-regular {
   font-family: "Radley", serif;
   font-weight: 400;
