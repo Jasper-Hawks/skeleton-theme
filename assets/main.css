@@ -679,7 +679,7 @@ html{
   src: url({{ "PinyonScript-Regular" | asset_url }}) format("ttf");
 } 
 .radley-regular {
-  font-family: "Radley", serif;
+  font-family: "Radley-Regular", serif;
   font-weight: 400;
   font-style: normal;
 }
