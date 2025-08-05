@@ -684,6 +684,10 @@ html,body{
 html{
     overflow-x: initial !important;
 }
+@font-face{
+  font-family: "Radley-Regular";
+  src: url({{ "Radley-Regular" | asset_url }}) format("ttf");
+}
 .radley-regular {
   font-family: "Radley", serif;
   font-weight: 400;
