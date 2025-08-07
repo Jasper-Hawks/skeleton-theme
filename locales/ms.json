@@ -1,0 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "shopify": {
+    "checkout": {
+      "order_summary": {
+        "for_add_on": "Untuk: %{group_title}"
+      },
+      "field_errors": {
+        "must_use_available_delivery_address": "Alamat penghantaran mesti dipilih daripada alamat penghantaran yang tersedia.",
+        "must_use_available_shipping_rate": "Kadar penghantaran mesti dipilih daripada kadar penghantaran yang tersedia."
+      }
+    }
+  },
+  "404": {
+    "not_found": "Halaman tidak ditemui.",
+    "back_to_shopping": "Kembali membeli-belah"
+  },
+  "blog": {
+    "article_comments": "Komen",
+    "comment_form_body": "Komen",
+    "comment_form_email": "E-mel",
+    "comment_form_name": "Nama",
+    "comment_form_submit": "Pos",
+    "comment_form_title": "Tambah ulasan"
+  },
+  "cart": {
+    "title": "Troli",
+    "update": "Kemas kini",
+    "remove": "Alih keluar"
+  },
+  "customers": {
+    "login": {
+      "email": "E-mel",
+      "password": "Kata laluan",
+      "submit": "Log masuk",
+      "title": "Log masuk"
+    }
+  },
+  "collections": {
+    "title": "Koleksi"
+  },
+  "gift_card": {
+    "add_to_apple_wallet": "Tambahkan pada Apple Wallet",
+    "card": "Kad hadiah",
+    "expired": "Kad hadiah ini telah tamat tempoh",
+    "expires_on": "Tamat tempoh pada {{ expires_on }}",
+    "use_at_checkout": "Gunakan kad hadiah ini semasa membuat pembayaran"
+  },
+  "password": {
+    "title": "Kedai ini adalah peribadi",
+    "password": "Kata laluan",
+    "enter": "Masuk"
+  },
+  "search": {
+    "title": "Cari",
+    "placeholder": "Cari artikel, halaman atau produk",
+    "submit": "Cari",
+    "no_results_html": "Tiada hasil ditemui untuk {{ terms }}"
+  }
+}
