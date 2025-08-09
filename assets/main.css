@@ -677,7 +677,7 @@ html{
 }
 @font-face{
   font-family: "MonsieurLaDoulaise-Regular";
-  src: url({{ "MonsieurLaDoulaise-Regular.woff" | asset_url }}) format("woff");
+  src: url( "MonsieurLaDoulaise-Regular.woff") format("woff");
   font-style: normal;
 }
 @font-face{
