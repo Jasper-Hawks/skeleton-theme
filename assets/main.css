@@ -671,12 +671,20 @@ html{
     overflow-x: initial !important;
 }
 @font-face{
+  font-family: "Radley-Italic";
+  src: url({{ "Radley-Italic" | asset_url }}) format("woff");
+}
+@font-face{
+  font-family: "MonsieurLaDoulaise-Regular";
+  src: url({{ "MonsieurLaDoulaise-Regular" | asset_url }}) format("woff");
+}
+@font-face{
   font-family: "Radley-Regular";
-  src: url({{ "Radley-Regular" | asset_url }}) format("ttf");
+  src: url({{ "Radley-Regular" | asset_url }}) format("woff");
 }
  @font-face{
   font-family: "PinyonScript-Regular";
-  src: url({{ "PinyonScript-Regular" | asset_url }}) format("ttf");
+  src: url({{ "PinyonScript-Regular" | asset_url }}) format("woff");
 } 
 .radley-regular {
   font-family: "Radley-Regular", serif;
