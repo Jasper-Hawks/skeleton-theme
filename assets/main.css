@@ -673,18 +673,22 @@ html{
 @font-face{
   font-family: "Radley-Italic";
   src: url({{ "Radley-Italic.woff" | asset_url }}) format("woff");
+  font-style: normal;
 }
 @font-face{
   font-family: "MonsieurLaDoulaise-Regular";
   src: url({{ "MonsieurLaDoulaise-Regular.woff" | asset_url }}) format("woff");
+  font-style: normal;
 }
 @font-face{
   font-family: "Radley-Regular";
   src: url({{ "Radley-Regular.woff" | asset_url }}) format("woff");
+  font-style: normal;
 }
  @font-face{
   font-family: "PinyonScript-Regular";
   src: url({{ "PinyonScript-Regular.woff" | asset_url }}) format("woff");
+  font-style: normal;
 } 
 .radley-regular {
   font-family: "Radley-Regular", serif;
