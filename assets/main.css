@@ -672,7 +672,7 @@ html{
 }
 @font-face{
   font-family: "Radley-Italic";
-  src: url({{ "Radley-Italic.woff" | asset_url }}) format("woff");
+  src: url( "Radley-Italic.woff") format("woff");
   font-style: normal;
 }
 @font-face{
@@ -682,12 +682,12 @@ html{
 }
 @font-face{
   font-family: "Radley-Regular";
-  src: url({{ "Radley-Regular.woff" | asset_url }}) format("woff");
+  src: url( "Radley-Regular.woff" ) format("woff");
   font-style: normal;
 }
  @font-face{
   font-family: "PinyonScript-Regular";
-  src: url({{ "PinyonScript-Regular.woff" | asset_url }}) format("woff");
+  src: url( "PinyonScript-Regular.woff" ) format("woff");
   font-style: normal;
 } 
 .radley-regular {
