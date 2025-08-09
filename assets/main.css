@@ -697,8 +697,8 @@ html{
 }
 .mld{
     font-family: "MonsieurLaDoulaise-Regular", serif;
-  font-weight: 400;
-  font-style: normal;
+  /* font-weight: 400;
+  font-style: normal; */
 }
 .radley-regular-italic {
   font-family: "Radley-Italic", serif;
