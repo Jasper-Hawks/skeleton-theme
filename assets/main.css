@@ -1,9 +1,5 @@
 /*
  * Image optimization through a CDN?
- * Make shopify id selectors catch all and only use the id name
-* Remove from cart ajax
-* Make x button on submenu
-* Make submenu appear as standalone menu on smaller screens
  */
 
 
@@ -415,7 +411,11 @@ position:relative;
   max-height:88px;
 }
 .product-title{
-  height:48px;
+line-height: 1.5em;
+height: 3em;
+overflow: hidden;
+text-overflow: ellipsis;
+
 }
 .sort-by{
 
@@ -636,7 +636,7 @@ overflow-y:auto !important;
 #cart-sidebar{
   background-color: rgba(0,0,0,.9)
 }
-@media (max-width: 575.98px) {
+@media (max-width: 768.98px) {
   .submenu{
         position: fixed; /* Keep the sidebar fixed */
 left: 0;
