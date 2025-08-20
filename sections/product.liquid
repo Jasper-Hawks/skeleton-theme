@@ -112,7 +112,7 @@
             class="ATCBtn bg-dark mt-4"
             value="Add to cart"
             onclick="fetchCartItems"
-            data-toggle="modal" data-target="#exampleModalCenter"          >
+            data-bs-toggle="modal" data-bs-target="#exampleModalCenter"          >
 
           
           {{ form | payment_button }}
@@ -124,17 +124,21 @@
 </div>
 <div class="container radley-regular" id="expanded-description-container"></div>
 
+
+
 <script>
-  const variantDropDown = document.getElementById("variant-id");
-  variantDropDown.addEventListener('change',function(){
-    var selectedValue = this.value; // Get the selected value
-    console.log('Selected:', selectedValue); // Optional: Log the selected value
-    })
+//	const variantDropDown = document.getElementById("variant-id");
+//variantDropDown.addEventListener('change',function(){
+//	  console.log("change");
+//    var selectedValue = this.value; // Get the selected value
+//  riantDropDown.selected = true
+    //console.log('Selected:', selectedValue); // Optional: Log the selected value
+ //   })
 
     const form = document.getElementById('product-form');
       form.addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent the default form submission
-        const productId = document.getElementById('variant-id').value;
+        let productId = document.querySelector('select[name="id"]').value;
         const quantity = form.querySelector('input[name="quantity"]').value;
 
                 const data = {
@@ -158,9 +162,9 @@
             return response.json();
         })
         .then(data => {
-          //  alert('Product added to cart!');
             updateCartCount();
                   fetchCartItems();
+
         })
         .catch(error => {
             alert('There was an error adding the product to the cart: ' + error.message);
