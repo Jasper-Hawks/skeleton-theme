@@ -9,10 +9,7 @@
  */
 {
   "sections": {
-    "mini-cover": {
-      "type": "mini-cover",
-      "settings": {}
-    },
+
     "main": {
       "type": "product",
       "settings": {}
@@ -56,7 +53,6 @@
     }
   },
   "order": [
-    "mini-cover",
     "main",
     "1752368359612c0dae",
     "1752368549331fbfca"
