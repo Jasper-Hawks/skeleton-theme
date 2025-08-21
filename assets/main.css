@@ -279,7 +279,6 @@ position:relative;
 .mini-cover-overlay{
 
     background-color: black;
-    opacity: .5;
     height: 5rem;
     position: absolute;
     width: 100vw;
