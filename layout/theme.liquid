@@ -52,8 +52,11 @@
  </script>
 
 <script>
-    document.getElementById('doran-product-widget').className = "container radley-regular";
-    document.getElementById('doran-product-question-widget').className = "container radley-regular";
+	function moveDoran(){
+	    document.getElementById('doran-product-widget').className = "container radley-regular";
+	    document.getElementById('doran-product-question-widget').className = "container radley-regular";
+	}
+	requestAnimationFrame(moveDoran);
 
 </script>
   </body>

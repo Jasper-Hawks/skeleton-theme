@@ -172,8 +172,12 @@
         });
     });
 
+function moveDesc(){
+	
   document.getElementById("expanded-description").style.display = 'none';
-  document.getElementById("expanded-description-container").innerHTML = document.getElementById("expanded-description").innerHTML;
+	  document.getElementById("expanded-description-container").innerHTML = document.getElementById("expanded-description").innerHTML;
+}
+	requestAnimationFrame(moveDesc);
     let slideIndex = 1;
   showSlides(slideIndex);
 
