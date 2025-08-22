@@ -4,7 +4,6 @@
 
   https://shopify.dev/docs/storefronts/themes/architecture/templates/collection
 {% endcomment %}
- {% render 'modal' %}
 <div class="container my-4"></div>
 
 <div class="container my-2">
@@ -56,13 +55,6 @@
           <hr>
         {%- endfor -%}
 
-        <input
-          id="main-apply-filter-btn"
-          class="filter-btn inconsolata-expanded"
-          style="display:none;"
-          type="submit"
-          value="Apply"
-        >
         <div class="sort-by--container pt-serif-regular">
         <label for="sort-by">Sort by</label>
         <select id="sort-by" class="sort-by">
@@ -143,7 +135,7 @@
             onClick="addToCartCollection({{ product.variants.first.id }})"
             class="ATCBtn bg-dark mt-4"
             value="Add to cart"
-data-bs-toggle="modal" data-bs-target="#exampleModalCenter"          >
+	    >
               <!--<button type="submit" class="ATCBtn bg-dark inconsolata-expanded">Add to Cart</button>-->
               <!--<button type="submit">Add to Cart</button> -->
               </form>
@@ -209,6 +201,7 @@ data-bs-toggle="modal" data-bs-target="#exampleModalCenter"          >
            // alert('Product added to cart!');
             updateCartCount();
                   fetchCartItems();
+		document.getElementById("cart-toggle").click();
 
         })
         .catch(error => {

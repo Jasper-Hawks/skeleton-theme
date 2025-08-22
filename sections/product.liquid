@@ -112,7 +112,7 @@
             class="ATCBtn bg-dark mt-4"
             value="Add to cart"
             onclick="fetchCartItems"
-            data-bs-toggle="modal" data-bs-target="#exampleModalCenter"          >
+	    >
 
           
           {{ form | payment_button }}
@@ -164,6 +164,7 @@
         .then(data => {
             updateCartCount();
                   fetchCartItems();
+		document.getElementById("cart-toggle").click();
 
         })
         .catch(error => {
