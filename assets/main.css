@@ -645,16 +645,19 @@ html{
   font-family: "MonsieurLaDoulaise-Regular";
   src: url( "MonsieurLaDoulaise-Regular.woff") format("woff");
   font-style: normal;
+      font-display: swap;
 }
 @font-face{
   font-family: "Radley-Regular";
   src: url( "Radley-Regular.woff" ) format("woff");
   font-style: normal;
+      font-display: swap;
 }
  @font-face{
   font-family: "PinyonScript-Regular";
   src: url( "PinyonScript-Regular.woff" ) format("woff");
   font-style: normal;
+font-display: swap;
 } 
 .radley-regular {
   font-family: "Radley-Regular", Times, serif !important;
