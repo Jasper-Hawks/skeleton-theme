@@ -152,6 +152,13 @@ body{
 
 }
 
+#aboutPic{
+background-image: url(../assets/jasper.webp);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+}
 
 .carousel-img-1{
 	background-image: url(../assets/IMG_8762_11zon.webp);
@@ -635,11 +642,6 @@ html{
     overflow-x: initial !important;
 }
 @font-face{
-  font-family: "Radley-Italic";
-  src: url( "Radley-Italic.woff") format("woff");
-  font-style: normal;
-}
-@font-face{
   font-family: "MonsieurLaDoulaise-Regular";
   src: url( "MonsieurLaDoulaise-Regular.woff") format("woff");
   font-style: normal;
@@ -655,32 +657,24 @@ html{
   font-style: normal;
 } 
 .radley-regular {
-  font-family: "Radley-Regular", serif !important;
+  font-family: "Radley-Regular", Times, serif !important;
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 .mld{
-    font-family: "MonsieurLaDoulaise-Regular", serif;
+    font-family: "MonsieurLaDoulaise-Regular", Times, serif;
       font-display: swap;
 
-  /* font-weight: 400;
-  font-style: normal; */
-}
-.radley-regular-italic {
-  font-family: "Radley-Italic", serif ;
-    font-display: swap;
-  font-weight: 400;
-  font-style: italic;
 }
 .pt-serif-regular {
-  font-family: "Radley-Regular", serif;
+  font-family: "Radley-Regular", Times, serif;
     font-display: swap;
   font-weight: 400;
   font-style: normal;
 }
 .pinyon-script-regular {
-  font-family: "PinyonScript-Regular", serif;
+  font-family: "PinyonScript-Regular", Times, serif;
     font-display: swap;
 
   font-weight: 400;
