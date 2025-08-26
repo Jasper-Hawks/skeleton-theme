@@ -55,7 +55,12 @@
         "ai_gen_block_384a04e_wtMFje": {
           "type": "ai_gen_block_384a04e",
           "settings": {
-            "collections": "{{ closest.product.collections }}",
+            "collections": [
+              "accessories",
+              "art",
+              "drinkware",
+              "stationary"
+            ],
             "item_width": 200,
             "image_height": 200,
             "gap": 20,
