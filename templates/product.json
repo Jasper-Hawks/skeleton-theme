@@ -55,20 +55,14 @@
         "ai_gen_block_384a04e_wtMFje": {
           "type": "ai_gen_block_384a04e",
           "settings": {
-            "collections": [
-              "accessories",
-              "all",
-              "art",
-              "drinkware",
-              "stationary"
-            ],
+            "collections": "{{ closest.product.collections }}",
             "item_width": 200,
             "image_height": 200,
             "gap": 20,
             "padding": 40,
             "border_radius": 8,
             "rotation_speed": 15,
-            "show_product_count": true,
+            "show_product_count": false,
             "title_size": 16,
             "count_size": 14,
             "background_color": "#ffffff",
