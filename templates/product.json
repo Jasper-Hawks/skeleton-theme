@@ -15,6 +15,45 @@
     },
     "custom_section_WM8PVn": {
       "type": "custom-section",
+      "blocks": {
+        "ai_gen_block_f515ba4_phrDK3": {
+          "type": "ai_gen_block_f515ba4",
+          "name": "Collections carousel",
+          "settings": {
+            "title": "Shop by Collection",
+            "subtitle": "Discover our curated collections",
+            "show_product_count": false,
+            "slides_per_view": 3,
+            "slides_per_view_mobile": 1,
+            "gap": 20,
+            "image_height": 300,
+            "show_navigation": true,
+            "show_dots": false,
+            "autoplay": true,
+            "autoplay_speed": 4000,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "card_background_color": "#ffffff",
+            "nav_button_color": "#ffffff",
+            "nav_button_text_color": "#000000",
+            "nav_button_hover_color": "#f0f0f0",
+            "dot_color": "#cccccc",
+            "dot_active_color": "#000000",
+            "heading_font": "helvetica_n4",
+            "title_size": 32,
+            "subtitle_size": 16,
+            "collection_title_size": 20,
+            "collection_count_size": 14,
+            "section_padding": 50,
+            "border_radius": 12,
+            "card_border_radius": 8
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f515ba4_phrDK3"
+      ],
       "name": "t:general.custom_section",
       "settings": {}
     },
