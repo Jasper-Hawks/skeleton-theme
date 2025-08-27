@@ -54,9 +54,6 @@
       "block_order": [
         "ai_gen_block_f515ba4_phrDK3"
       ],
-      "custom_css": [
-        ".custom-section__content {grid-column: 0 !important;}"
-      ],
       "name": "t:general.custom_section",
       "settings": {}
     },
