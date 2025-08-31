@@ -1,6 +1,622 @@
+{% doc %}
+  @prompt
+    Seach menu
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-search-menu-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    max-width: {{ block.settings.max_width }}px;
+  }
+
+  .ai-search-menu-toggle-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    border: 1px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    cursor: pointer;
+    font-size: {{ block.settings.font_size }}px;
+    width: 100%;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+  }
+
+  .ai-search-menu-toggle-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  .ai-search-menu-toggle-{{ ai_gen_id }}:focus {
+    outline: 2px solid {{ block.settings.button_text_color }};
+    outline-offset: 2px;
+  }
+
+  .ai-search-menu-icon-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .ai-search-menu-dropdown-{{ ai_gen_id }} {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: {{ block.settings.dropdown_background_color }};
+    border: 1px solid {{ block.settings.dropdown_border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    margin-top: 4px;
+  }
+
+  .ai-search-menu-dropdown-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .ai-search-menu-search-{{ ai_gen_id }} {
+    padding: 16px;
+    border-bottom: 1px solid {{ block.settings.dropdown_border_color }};
+  }
+
+  .ai-search-menu-input-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .ai-search-menu-input-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 12px 16px 12px 44px;
+    border: 1px solid {{ block.settings.input_border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    font-size: {{ block.settings.font_size }}px;
+    background-color: {{ block.settings.input_background_color }};
+    color: {{ block.settings.input_text_color }};
+  }
+
+  .ai-search-menu-input-{{ ai_gen_id }}:focus {
+    outline: 2px solid {{ block.settings.button_background_color }};
+    outline-offset: 2px;
+    border-color: {{ block.settings.button_background_color }};
+  }
+
+  .ai-search-menu-input-icon-{{ ai_gen_id }} {
+    position: absolute;
+    left: 14px;
+    width: 16px;
+    height: 16px;
+    color: {{ block.settings.input_text_color }};
+    opacity: 0.6;
+  }
+
+  .ai-search-menu-results-{{ ai_gen_id }} {
+    max-height: {{ block.settings.max_results_height }}px;
+    overflow-y: auto;
+  }
+
+  .ai-search-menu-result-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: {{ block.settings.dropdown_text_color }};
+    border-bottom: 1px solid {{ block.settings.dropdown_border_color }};
+    transition: background-color 0.2s ease;
+  }
+
+  .ai-search-menu-result-item-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.result_hover_background_color }};
+  }
+
+  .ai-search-menu-result-item-{{ ai_gen_id }}:last-child {
+    border-bottom: none;
+  }
+
+  .ai-search-menu-result-image-{{ ai_gen_id }} {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;border-radius: 4px;
+    object-fit: cover;
+    background-color: #f4f4f4;
+  }
+
+  .ai-search-menu-result-content-{{ ai_gen_id }} {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .ai-search-menu-result-title-{{ ai_gen_id }} {
+    font-weight: 600;
+    margin: 0 0 4px;font-size: {{ block.settings.font_size }}px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ai-search-menu-result-price-{{ ai_gen_id }} {
+    font-size: calc({{ block.settings.font_size }}px * 0.9);
+    color: {{ block.settings.dropdown_text_color }};
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .ai-search-menu-no-results-{{ ai_gen_id }} {
+    padding: 24px 16px;
+    text-align: center;
+    color: {{ block.settings.dropdown_text_color }};
+    opacity: 0.6;
+    font-style: italic;
+  }
+
+  .ai-search-menu-loading-{{ ai_gen_id }} {
+    padding: 24px 16px;
+    text-align: center;
+    color: {{ block.settings.dropdown_text_color }};
+    opacity: 0.6;
+  }
+
+  .ai-search-menu-view-all-{{ ai_gen_id }} {
+    display: block;
+    padding: 16px;
+    text-align: center;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0 0 {{ block.settings.border_radius }}px {{ block.settings.border_radius }}px;
+    transition: background-color 0.2s ease;
+  }
+
+  .ai-search-menu-view-all-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_color }};color: {{ block.settings.button_hover_text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-search-menu-{{ ai_gen_id }} {
+      max-width: 100%;
+    }
+    
+    .ai-search-menu-results-{{ ai_gen_id }} {
+      max-height: 300px;
+    }
+  }
+{% endstyle %}
+
+<search-menu-{{ ai_gen_id }}
+  class="ai-search-menu-{{ ai_gen_id }}"
+  data-search-url="{{ routes.search_url }}"
+  {{ block.shopify_attributes }}
+>
+  <button
+    class="ai-search-menu-toggle-{{ ai_gen_id }}"
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-label="Open search menu"
+  >
+    <span class="ai-search-menu-icon-{{ ai_gen_id }}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+    </span>
+    <span>{{ block.settings.button_text }}</span>
+    <span class="ai-search-menu-icon-{{ ai_gen_id }}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6,9 12,15 18,9"></polyline>
+      </svg>
+    </span>
+  </button>
+
+  <div class="ai-search-menu-dropdown-{{ ai_gen_id }}">
+    <div class="ai-search-menu-search-{{ ai_gen_id }}">
+      <div class="ai-search-menu-input-wrapper-{{ ai_gen_id }}">
+        <span class="ai-search-menu-input-icon-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </span>
+        <input
+          type="text"
+          class="ai-search-menu-input-{{ ai_gen_id }}"
+          placeholder="{{ block.settings.search_placeholder }}"
+          autocomplete="off"
+          aria-label="Search products"
+        >
+      </div>
+    </div>
+    
+    <div class="ai-search-menu-results-{{ ai_gen_id }}"><div class="ai-search-menu-no-results-{{ ai_gen_id }}" style="display: none;">
+        {{ block.settings.no_results_text }}
+      </div><div class="ai-search-menu-loading-{{ ai_gen_id }}" style="display: none;">
+        {{ block.settings.loading_text }}
+      </div></div>
+  </div>
+</search-menu-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class SearchMenu{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.isOpen = false;
+        this.searchTimeout = null;
+        this.currentQuery = '';
+      }
+
+      connectedCallback() {
+        this.toggle = this.querySelector('.ai-search-menu-toggle-{{ ai_gen_id }}');
+        this.dropdown = this.querySelector('.ai-search-menu-dropdown-{{ ai_gen_id }}');
+        this.input = this.querySelector('.ai-search-menu-input-{{ ai_gen_id }}');
+        this.results = this.querySelector('.ai-search-menu-results-{{ ai_gen_id }}');
+        this.noResults = this.querySelector('.ai-search-menu-no-results-{{ ai_gen_id }}');
+        this.loading = this.querySelector('.ai-search-menu-loading-{{ ai_gen_id }}');
+        this.searchUrl = this.dataset.searchUrl;
+
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.toggle.addEventListener('click', () => this.toggleDropdown());
+        this.input.addEventListener('input', (e) => this.handleSearch(e.target.value));
+        document.addEventListener('click', (e) => {
+          if (!this.contains(e.target)) {
+            this.closeDropdown();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.isOpen) {
+            this.closeDropdown();this.toggle.focus();
+          }
+        });
+      }
+
+      toggleDropdown() {
+        if (this.isOpen) {
+          this.closeDropdown();
+        } else {
+          this.openDropdown();
+        }
+      }
+
+      openDropdown() {
+        this.isOpen = true;
+        this.dropdown.classList.add('active');
+        this.toggle.setAttribute('aria-expanded', 'true');
+        setTimeout(() => {
+          this.input.focus();
+        }, 100);
+      }
+
+      closeDropdown() {
+        this.isOpen = false;
+        this.dropdown.classList.remove('active');
+        this.toggle.setAttribute('aria-expanded', 'false');}
+
+      handleSearch(query) {
+        clearTimeout(this.searchTimeout);
+        if (query.trim() === '') {
+          this.clearResults();
+          return;
+        }
+
+        if (query === this.currentQuery) {
+          return;
+        }
+
+        this.currentQuery = query;
+        this.showLoading();
+
+        this.searchTimeout = setTimeout(() => {
+          this.performSearch(query);
+        }, 300);
+      }
+
+      showLoading() {
+        this.clearResults();
+        this.loading.style.display = 'block';}
+
+      clearResults() {
+        this.results.querySelectorAll('.ai-search-menu-result-item-{{ ai_gen_id }}, .ai-search-menu-view-all-{{ ai_gen_id }}').forEach(el => el.remove());
+        this.noResults.style.display = 'none';
+        this.loading.style.display = 'none';
+      }
+
+      async performSearch(query) {
+        try {
+          const response = await fetch(`${this.searchUrl}?q=${encodeURIComponent(query)}&type=product&options[prefix]=last`);
+          const text = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, 'text/html');
+          
+          this.loading.style.display = 'none';
+          this.displayResults(doc, query);
+        } catch (error) {
+          console.error('Search error:', error);
+          this.loading.style.display = 'none';
+          this.noResults.style.display = 'block';
+        }
+      }
+
+      displayResults(doc, query) {
+        const products = doc.querySelectorAll('.search-result, [data-product], .product-item');
+        const maxResults = {{ block.settings.max_results }};
+        
+        if (products.length === 0) {
+          this.noResults.style.display = 'block';
+          return;
+        }
+
+        const resultsToShow = Array.from(products).slice(0, maxResults);
+        
+        resultsToShow.forEach(product => {
+          const resultItem = this.createResultItem(product);
+          if (resultItem) {
+            this.results.appendChild(resultItem);
+          }
+        });
+
+        if (products.length > 0) {
+          const viewAllLink = this.createViewAllLink(query);
+          this.results.appendChild(viewAllLink);
+        }
+      }
+
+      createResultItem(productElement) {
+        const titleElement = productElement.querySelector('h3 a, .product-title a, a[href*="/products/"]');
+        const imageElement = productElement.querySelector('img');
+        const priceElement = productElement.querySelector('.price, .product-price, [data-price]');
+
+        if (!titleElement) return null;
+
+        const item = document.createElement('a');
+        item.className = 'ai-search-menu-result-item-{{ ai_gen_id }}';
+        item.href = titleElement.href;
+
+        const image = document.createElement('img');
+        image.className = 'ai-search-menu-result-image-{{ ai_gen_id }}';
+        if (imageElement && imageElement.src) {
+          image.src = imageElement.src.replace(/(\.[^.]*$)/, '_40x40$1');
+          image.alt = imageElement.alt || titleElement.textContent;
+        } else {
+          image.style.backgroundColor = '#f4f4f4';
+        }
+
+        const content = document.createElement('div');
+        content.className = 'ai-search-menu-result-content-{{ ai_gen_id }}';
+
+        const title = document.createElement('h4');
+        title.className = 'ai-search-menu-result-title-{{ ai_gen_id }}';
+        title.textContent = titleElement.textContent.trim();
+
+        content.appendChild(title);
+
+        if (priceElement) {
+          const price = document.createElement('p');
+          price.className = 'ai-search-menu-result-price-{{ ai_gen_id }}';
+          price.textContent = priceElement.textContent.trim();
+          content.appendChild(price);
+        }
+
+        item.appendChild(image);
+        item.appendChild(content);
+
+        return item;
+      }
+
+      createViewAllLink(query) {
+        const link = document.createElement('a');
+        link.className = 'ai-search-menu-view-all-{{ ai_gen_id }}';
+        link.href = `${this.searchUrl}?q=${encodeURIComponent(query)}`;
+        link.textContent = '{{ block.settings.view_all_text }}';
+        return link;
+      }
+    }
+
+    customElements.define('search-menu-{{ ai_gen_id }}', SearchMenu{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Search menu",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Search products"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search placeholder",
+      "default": "Search for products..."
+    },
+    {
+      "type": "text",
+      "id": "no_results_text",
+      "label": "No results text",
+      "default": "No products found"
+    },
+    {
+      "type": "text",
+      "id": "loading_text",
+      "label": "Loading text",
+      "default": "Searching..."
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View all text",
+      "default": "View all results"
+    },
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximum width",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "max_results",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "label": "Maximum results",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "max_results_height",
+      "min": 200,
+      "max": 500,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximum results height",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Button colors"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Hover background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Dropdown colors"
+    },
+    {
+      "type": "color",
+      "id": "dropdown_background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "dropdown_text_color",
+      "label": "Text",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "dropdown_border_color",
+      "label": "Border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "result_hover_background_color",
+      "label": "Result hover background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "header",
+      "content": "Input colors"
+    },
+    {
+      "type": "color",
+      "id": "input_background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "input_text_color",
+      "label": "Text",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Border",
+      "default": "#e0e0e0"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Search menu"
+    }
+  ]
+}
 {% endschema %}
