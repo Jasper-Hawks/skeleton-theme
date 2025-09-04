@@ -121,6 +121,9 @@
         "ai_gen_block_75946a7_7AR7zy",
         "ai_gen_block_f515ba4_phrDK3"
       ],
+      "custom_css": [
+        "#shopify-block-AdW9zeXM0Y1p6VlFNU__ai_gen_block_a677c64_zjeTVC{grid-column:unset !important;}"
+      ],
       "name": "t:general.custom_section",
       "settings": {}
     },
