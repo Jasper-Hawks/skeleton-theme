@@ -98,10 +98,7 @@ filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(7%) hue-r
   z-index: -6;
   position: absolute;
   top: 0;
-  background-image: url(../assets/IMG_8635_11zon.webp);
 
- /*   -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
-    filter: grayscale(100%);*/
     z-index: 0;
 
 }
@@ -153,7 +150,6 @@ body{
 }
 
 #aboutPic{
-background-image: url(../assets/jasper.webp);
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -161,7 +157,6 @@ background-repeat: no-repeat;
 }
 
 .carousel-img-1{
-	background-image: url(../assets/IMG_8762_11zon.webp);
 	width: 300px;
 	height: 300px;
 	 background-size: cover;
@@ -172,7 +167,6 @@ background-repeat: no-repeat;
 
 }
 .carousel-img-2{
-	background-image: url(../assets/fountain-pen.webp);
 	width: 300px;
 	height: 300px;
 	 background-size: cover;
@@ -183,7 +177,6 @@ background-repeat: no-repeat;
 
 }
 .carousel-img-3{
-	background-image: url(../assets/cufflinks.webp);
 	width: 300px;
 	height: 300px;
 	 background-size: cover;
@@ -194,7 +187,6 @@ background-repeat: no-repeat;
 
 }
 .carousel-img-4{
-	background-image: url(../assets/IMG_8762_11zon.webp);
 	width: 300px;
 	height: 300px;
 	 background-size: cover;
@@ -295,7 +287,6 @@ a{
   position: relative;
   top: 0;
   background-image: url(../assets/IMG_8635.jpg);
-
    webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
     z-index: 0;
@@ -608,6 +599,14 @@ overflow-y:auto !important;
   background-color: rgba(0,0,0,.9)
 }
 @media (max-width: 768.98px) {
+	.product-listing{
+		width: 50% !important;
+
+	}
+	.product-title{
+
+		font-size: 1.25rem !important;
+	}
   .submenu{
         position: fixed; /* Keep the sidebar fixed */
 left: 0;

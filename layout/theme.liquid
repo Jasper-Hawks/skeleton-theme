@@ -52,6 +52,45 @@
  </script>
 
 <script>
+	if ('IntersectionObserver' in window){
+
+		document.addEventListener('DOMContentLoaded', function(){
+			function handleIntersection(entries){
+
+				entries.map((entry) => {
+
+
+					if (entry.isIntersecting){
+						entry.target.style.backgroundImage = "url('" + entry.target.dataset.bgimage + "')";
+						observer.unobserve(entry.target);
+
+					}
+				})
+			}
+
+			const lzBg = document.querySelectorAll('.lz-bg');
+			const observer = new IntersectionObserver(handleIntersection, {
+				rootMargin: '50px',
+
+			})
+			lzBg.forEach((lb) => {
+				observer.observe(lb)
+			})
+		})
+		
+	}else{
+			const lzBg = document.querySelectorAll('.lz-bg');
+		lzBg.forEach((lb) => { 
+			lb.style.backgroundImage = "url('" + lb.dataset.bgimage + "')"
+	})
+
+	}
+	
+</script>
+
+
+
+<script>
 	function moveDoran(){
 	    document.getElementById('doran-product-widget').className = "container radley-regular";
 	    document.getElementById('doran-product-question-widget').className = "container radley-regular";

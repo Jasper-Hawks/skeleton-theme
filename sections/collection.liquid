@@ -123,7 +123,7 @@
                   crop: 'center'
                 %}
               {% endif %}
-              <div class="collection-product__content inconsolata-expanded">
+              <div class="collection-product__content radley-regular fs-5">
                 <!-- TEST COMMENT -->
                 <p class="black-text product-title">{{ product.title | escape | link_to: product.url }}</p>
                 <p style="text-decoration:none;margin-bottom:0;"><s>{{ product.compare_at_price | money }}</s> {{ product.price | money }}</p>
@@ -136,8 +136,6 @@
             class="ATCBtn bg-dark mt-4"
             value="Add to cart"
 	    >
-              <!--<button type="submit" class="ATCBtn bg-dark inconsolata-expanded">Add to Cart</button>-->
-              <!--<button type="submit">Add to Cart</button> -->
               </form>
             </div>
           </div>

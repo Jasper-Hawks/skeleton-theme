@@ -4,8 +4,8 @@
     {% for collection in collections %}
       <div class="col inconsolata-expanded collection-display">
         <div
-          class="collection-display-img col-sm row align-items-center mx-2 p-0 my-1"
-          style="background-image: url('{{ collection.image | img_url: 'large' }}')"
+          class="lz-bg collection-display-img col-sm row align-items-center mx-2 p-0 my-1"
+		data-bgimage="{{ collection.image | img_url: 'large' }}"
         >
           <div class="carousel-animation text-center">
             <a href="{{ collection.url }}" class="row text-white h-100">
