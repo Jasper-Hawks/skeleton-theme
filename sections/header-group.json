@@ -11,12 +11,19 @@
   "type": "header",
   "name": "t:general.header",
   "sections": {
+    "175871826349cd0916": {
+      "type": "_blocks",
+      "settings": {}
+    },
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "menu": ""
+      }
     }
   },
   "order": [
+    "175871826349cd0916",
     "header"
-  ],
+  ]
 }
